@@ -1,0 +1,36 @@
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="500" fill="#F2F4F3"/>
+
+  <text x="500" y="55" font-family="Fraunces, serif" font-size="26" font-weight="600" fill="#142433" text-anchor="middle">
+    Convergence is just integration
+  </text>
+  <text x="500" y="82" font-family="Inter, sans-serif" font-size="15" fill="#52796F" text-anchor="middle">
+    with a slower, human-shaped API
+  </text>
+
+  <!-- three nodes -->
+  <g>
+    <circle cx="220" cy="270" r="70" fill="#142433"/>
+    <text x="220" y="265" font-family="Inter, sans-serif" font-size="14" fill="#F2F4F3" text-anchor="middle" font-weight="600">Programme</text>
+    <text x="220" y="285" font-family="Inter, sans-serif" font-size="14" fill="#F2F4F3" text-anchor="middle" font-weight="600">/ Product</text>
+
+    <circle cx="500" cy="180" r="70" fill="#1E6F5C"/>
+    <text x="500" y="175" font-family="Inter, sans-serif" font-size="14" fill="#F2F4F3" text-anchor="middle" font-weight="600">Government</text>
+    <text x="500" y="195" font-family="Inter, sans-serif" font-size="14" fill="#F2F4F3" text-anchor="middle" font-weight="600">/ 3rd-party API</text>
+
+    <circle cx="780" cy="270" r="70" fill="#D98D1B"/>
+    <text x="780" y="265" font-family="Inter, sans-serif" font-size="14" fill="#142433" text-anchor="middle" font-weight="600">Community</text>
+    <text x="780" y="285" font-family="Inter, sans-serif" font-size="14" fill="#142433" text-anchor="middle" font-weight="600">/ End user</text>
+  </g>
+
+  <line x1="280" y1="240" x2="440" y2="200" stroke="#94A3A0" stroke-width="2.5" stroke-dasharray="6,5"/>
+  <line x1="560" y1="200" x2="720" y2="240" stroke="#94A3A0" stroke-width="2.5" stroke-dasharray="6,5"/>
+  <line x1="290" y1="290" x2="710" y2="290" stroke="#94A3A0" stroke-width="2.5" stroke-dasharray="6,5"/>
+
+  <text x="500" y="410" font-family="Inter, sans-serif" font-size="15" fill="#142433" text-anchor="middle">
+    No API docs. No changelog. Just a person, a process, and patience.
+  </text>
+  <text x="500" y="440" font-family="JetBrains Mono, monospace" font-size="13" fill="#94A3A0" text-anchor="middle">
+    the skill transfers whether the "department" wears a badge or runs on AWS
+  </text>
+</svg>
