@@ -12,6 +12,7 @@ export type Post = {
   description: string;
   date: string;
   category: string;
+  thumbnail?: string;
   content: string;
 };
 
