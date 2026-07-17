@@ -4,6 +4,7 @@ import CategoryTag from "@/components/CategoryTag";
 import TypewriterRoles from "@/components/TypewriterRoles";
 import HeroHeadline from "@/components/HeroHeadline";
 import HomeCategoriesAndLatest from "@/components/HomeCategoriesAndLatest";
+import TerminalCard from "@/components/TerminalCard";
 
 export default function Home() {
   const posts = getAllPosts();
@@ -32,16 +33,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center h-72 md:h-96">
-          <div
-            className="absolute w-48 h-48 rounded-full blur-3xl pointer-events-none opacity-30 dark:opacity-20"
-            style={{ background: "#FF3B3B" }}
-          />
-          <div className="relative w-52 h-64 rounded-2xl border border-line bg-surface flex items-center justify-center">
-            <span className="text-mute text-xs text-center px-4">[ portrait photo ]</span>
-          </div>
-          <div className="absolute top-4 -left-2 bg-surface border border-line rounded-lg px-3 py-2 text-xs font-mono text-foreground">Next.js</div>
-          <div className="absolute bottom-8 -right-4 bg-surface border border-line rounded-lg px-3 py-2 text-xs font-mono text-foreground">Supabase</div>
+        <div className="relative flex items-center justify-center">
+          <TerminalCard />
         </div>
       </section>
 
