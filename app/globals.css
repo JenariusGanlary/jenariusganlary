@@ -1,36 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F2F4F3;
-  --foreground: #1B1F22;
-  --navy: #142433;
-  --ledger: #1E6F5C;
-  --ember: #D98D1B;
-  --hairline: #DADFDC;
+  --background: #FFFFFF;
+  --foreground: #0B0B0C;
+  --surface: #F5F5F6;
+  --line: #E4E4E7;
+  --mute: #6B6B73;
+  --accent: #2B6FFF;
+}
+
+.dark {
+  --background: #0B0B0C;
+  --foreground: #EDEDEF;
+  --surface: #111113;
+  --line: #1E1E21;
+  --mute: #8B8B93;
+  --accent: #2B6FFF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-navy: var(--navy);
-  --color-ledger: var(--ledger);
-  --color-ember: var(--ember);
-  --color-hairline: var(--hairline);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-mute: var(--mute);
+  --color-accent: var(--accent);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-::selection {
-  background-color: var(--ember);
-  color: var(--navy);
-}
+::selection { background-color: var(--accent); color: white; }
 
 .prose-body p { margin-bottom: 1.25em; line-height: 1.75; }
-.prose-body h2 { font-weight: 600; font-size: 1.5rem; margin-top: 2em; margin-bottom: 0.6em; color: var(--navy); }
-.prose-body h3 { font-weight: 600; font-size: 1.2rem; margin-top: 1.6em; margin-bottom: 0.5em; color: var(--navy); }
-.prose-body a { color: var(--ledger); text-decoration: underline; text-underline-offset: 2px; }
-.prose-body blockquote { border-left: 3px solid var(--ember); padding-left: 1em; font-style: italic; color: #3A3F45; margin: 1.5em 0; }
-.prose-body code { background: #E8ECEF; padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
+.prose-body h2 { font-weight: 700; font-size: 1.5rem; margin-top: 2em; margin-bottom: 0.6em; color: var(--foreground); }
+.prose-body h3 { font-weight: 700; font-size: 1.2rem; margin-top: 1.6em; margin-bottom: 0.5em; color: var(--foreground); }
+.prose-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.prose-body blockquote { border-left: 3px solid var(--accent); padding-left: 1em; font-style: italic; color: var(--mute); margin: 1.5em 0; }
+.prose-body code { background: var(--surface); padding: 0.15em 0.4em; border-radius: 4px; font-family: var(--font-mono); font-size: 0.9em; }
