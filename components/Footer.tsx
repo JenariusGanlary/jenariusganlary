@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line py-12">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-sm">
-        <div>
+    <footer className="border-t border-line py-10 md:py-12">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+        <div className="col-span-2 md:col-span-1">
           <p className="font-extrabold text-foreground mb-3">Jenarius Ganlary</p>
           <p className="text-mute">Building in public.</p>
         </div>

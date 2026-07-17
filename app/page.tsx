@@ -13,14 +13,14 @@ export default function Home() {
 
   return (
     <div>
-      <section className="max-w-6xl mx-auto px-6 pt-24 pb-20 grid md:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
+      <section className="max-w-6xl mx-auto px-6 pt-14 pb-14 md:pt-24 md:pb-20 grid md:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-16 items-center">
         <div>
-          <div className="flex items-center gap-2 mb-7 text-xs text-mute">
+          <div className="flex items-center gap-2 mb-6 md:mb-7 text-xs text-mute">
             <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             <TypewriterRoles />
           </div>
           <HeroHeadline />
-          <p className="text-lg text-mute max-w-md mb-9 leading-relaxed">
+          <p className="text-base md:text-lg text-mute max-w-md mb-7 md:mb-9 leading-relaxed">
             Helping developers and founders build better products.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -38,19 +38,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED ARTICLE */}
       {featured && (
-        <section className="max-w-6xl mx-auto px-6 py-16 border-t border-line">
-          <p className="text-xs font-mono text-mute mb-8">FEATURED</p>
+        <section className="max-w-6xl mx-auto px-6 py-12 md:py-16 border-t border-line">
+          <p className="text-xs font-mono text-mute mb-6 md:mb-8">FEATURED</p>
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <Link
               href={`/blog/${featured.slug}`}
               className="rounded-xl overflow-hidden bg-surface border border-line hover:border-[#2a2a2e] transition-colors"
             >
-              <div className="h-56 bg-[#161618]" />
-              <div className="p-7">
+              <div className="h-44 md:h-56 bg-[#161618]" />
+              <div className="p-5 md:p-7">
                 <CategoryTag category={featured.category} />
-                <h2 className="text-2xl font-bold mt-3 mb-3 text-foreground leading-snug">{featured.title}</h2>
+                <h2 className="text-xl md:text-2xl font-bold mt-3 mb-3 text-foreground leading-snug">{featured.title}</h2>
                 <p className="text-mute text-sm mb-4">{featured.description}</p>
                 <p className="text-xs text-mute font-mono">{featured.date}</p>
               </div>
@@ -61,10 +60,10 @@ export default function Home() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="rounded-xl bg-surface border border-line hover:border-[#2a2a2e] transition-colors p-6 flex gap-4"
+                  className="rounded-xl bg-surface border border-line hover:border-[#2a2a2e] transition-colors p-5 md:p-6 flex gap-4"
                 >
-                  <div className="w-20 h-20 rounded-lg shrink-0 bg-[#161618]" />
-                  <div>
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg shrink-0 bg-[#161618]" />
+                  <div className="min-w-0">
                     <CategoryTag category={post.category} />
                     <h3 className="font-semibold text-sm mt-1 mb-1 leading-snug text-foreground line-clamp-2">
                       {post.title}
@@ -80,18 +79,17 @@ export default function Home() {
 
       <HomeCategoriesAndLatest posts={posts} />
 
-      {/* RESOURCES */}
-      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-line">
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16 border-t border-line">
         <p className="text-xs font-mono text-mute mb-3">TOOLS I ACTUALLY USE</p>
         <h2 className="text-2xl font-bold mb-8 text-foreground">Resources</h2>
-        <div className="grid md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { name: "Cursor", desc: "Code editor" },
             { name: "Vercel", desc: "Hosting" },
             { name: "Supabase", desc: "Database & auth" },
             { name: "Resend", desc: "Transactional email" },
           ].map((tool) => (
-            <div key={tool.name} className="rounded-xl bg-surface border border-line p-6 hover:border-accent transition-colors cursor-pointer">
+            <div key={tool.name} className="rounded-xl bg-surface border border-line p-4 md:p-6 hover:border-accent transition-colors cursor-pointer">
               <p className="font-semibold text-sm mb-1 text-foreground">{tool.name}</p>
               <p className="text-xs text-mute">{tool.desc}</p>
             </div>
@@ -102,12 +100,11 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* NEWSLETTER CTA */}
-      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-line">
-        <div className="rounded-2xl border border-line bg-surface p-12 text-center">
-          <h2 className="text-3xl font-bold mb-3 text-foreground">Join thousands of developers and founders.</h2>
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16 border-t border-line">
+        <div className="rounded-2xl border border-line bg-surface p-6 md:p-12 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Join thousands of developers and founders.</h2>
           <p className="text-mute mb-8">Weekly insights. No spam. Just value.</p>
-          <div className="flex max-w-md mx-auto gap-2">
+          <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-2">
             <input
               placeholder="you@company.com"
               className="flex-1 bg-transparent border border-line rounded-md px-4 py-3 text-sm text-foreground"
