@@ -11,8 +11,8 @@ export default function HomeCategoriesAndLatest({ posts }: { posts: Post[] }) {
 
   return (
     <>
-      <section className="max-w-6xl mx-auto px-6 py-10 border-t border-line">
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-6 px-6 md:mx-0 md:px-0 md:flex-wrap">
+      <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 border-t border-line">
+        <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 md:mx-0 md:px-0 md:flex-wrap">
           <button
             onClick={() => setActive(null)}
             className={`shrink-0 text-sm px-4 py-2 rounded-full transition-colors ${
@@ -35,9 +35,9 @@ export default function HomeCategoriesAndLatest({ posts }: { posts: Post[] }) {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-16 border-t border-line">
-        <h2 className="text-2xl font-bold mb-8 text-foreground">Latest Articles</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 md:py-16 border-t border-line">
+        <h2 className="text-2xl font-bold mb-6 md:mb-8 text-foreground">Latest Articles</h2>
+        <div className="grid gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.slice(0, 6).map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}

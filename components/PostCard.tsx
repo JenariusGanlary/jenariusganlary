@@ -18,7 +18,7 @@ export default function PostCard({ post }: { post: Post }) {
           <span className="text-white/15 text-4xl font-bold tracking-tight font-mono">{ticker}</span>
         )}
       </div>
-      <div className="p-6 flex flex-col flex-1">
+      <div className="p-5 md:p-6 flex flex-col flex-1">
         <CategoryTag category={post.category} />
         <h2 className="text-lg font-bold mt-3 mb-2 text-foreground leading-snug line-clamp-2">
           {post.title}
