@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -30,46 +31,97 @@ export default function ContactPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-8 text-foreground">Contact</h1>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mb-12"
+      >
+        <div className="inline-flex items-center gap-2 mb-5 text-xs font-mono text-mute border border-line rounded-full px-3 py-1.5">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+          </span>
+          AVAILABLE FOR FREELANCE WORK
+        </div>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-foreground leading-tight mb-4">
+          Let's build<br />something.
+        </h1>
+        <p className="text-lg text-mute max-w-lg">
+          Whether it's a SaaS MVP, a freelance project through Ganlary Labs,
+          or just swapping notes on indie hacking — I read every message
+          myself.
+        </p>
+      </motion.div>
 
-      <div className="grid md:grid-cols-[1fr_0.7fr] gap-10">
-        <div>
+      <div className="grid md:grid-cols-[1fr_0.75fr] gap-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           {status === "sent" ? (
-            <p className="text-accent font-medium">Thanks — your message has been sent. I'll get back to you soon.</p>
+            <div className="rounded-xl border border-accent/30 bg-accent/5 p-8">
+              <p className="text-accent font-semibold text-lg mb-1">Message sent.</p>
+              <p className="text-mute text-sm">I'll get back to you soon — usually within a day.</p>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label className="block text-sm font-medium text-mute mb-1">Name</label>
+                <label className="block text-sm font-medium text-mute mb-2">Name</label>
                 <input required value={name} onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-transparent border border-line rounded-md px-4 py-2.5 text-foreground focus:outline-none focus:border-accent transition-colors" />
+                  className="w-full bg-surface border border-line rounded-lg px-4 py-3.5 text-foreground focus:outline-none focus:border-accent transition-colors" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-mute mb-1">Email</label>
+                <label className="block text-sm font-medium text-mute mb-2">Email</label>
                 <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-transparent border border-line rounded-md px-4 py-2.5 text-foreground focus:outline-none focus:border-accent transition-colors" />
+                  className="w-full bg-surface border border-line rounded-lg px-4 py-3.5 text-foreground focus:outline-none focus:border-accent transition-colors" />
               </div>
               <div>
-                <label className="block text-sm font-medium text-mute mb-1">Message</label>
+                <label className="block text-sm font-medium text-mute mb-2">What are you building?</label>
                 <textarea required rows={5} value={message} onChange={(e) => setMessage(e.target.value)}
-                  className="w-full bg-transparent border border-line rounded-md px-4 py-2.5 text-foreground focus:outline-none focus:border-accent transition-colors resize-none" />
+                  className="w-full bg-surface border border-line rounded-lg px-4 py-3.5 text-foreground focus:outline-none focus:border-accent transition-colors resize-none" />
               </div>
-              <button type="submit" disabled={status === "sending"}
-                className="bg-accent text-white px-6 py-3 rounded-md font-semibold hover:opacity-90 transition disabled:opacity-50">
-                {status === "sending" ? "Sending..." : "Send message"}
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="bg-accent text-white px-7 py-3.5 rounded-lg font-semibold hover:opacity-90 transition disabled:opacity-50 w-full sm:w-auto"
+              >
+                {status === "sending" ? "Sending..." : "Send message →"}
               </button>
               {status === "error" && <p className="text-red-500 text-sm">Something went wrong — please try again.</p>}
             </form>
           )}
-        </div>
+        </motion.div>
 
-        <div className="bg-surface border border-line rounded-xl p-6 h-fit">
-          <p className="text-xs font-mono text-mute mb-3">WHAT TO EXPECT</p>
-          <ul className="space-y-3 text-sm text-mute">
-            <li>&bull; Usually a reply within a day</li>
-            <li>&bull; Open to consulting, collabs, and sponsorships</li>
-            <li>&bull; Reader questions always welcome</li>
-          </ul>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="space-y-4"
+        >
+          <div className="bg-surface border border-line rounded-xl p-6">
+            <p className="text-xs font-mono text-mute mb-4">WHAT I TAKE ON</p>
+            <ul className="space-y-3 text-sm text-foreground/90">
+              <li className="flex gap-2"><span className="text-accent">→</span> SaaS MVP builds</li>
+              <li className="flex gap-2"><span className="text-accent">→</span> AI feature integration</li>
+              <li className="flex gap-2"><span className="text-accent">→</span> Small business websites</li>
+              <li className="flex gap-2"><span className="text-accent">→</span> Sponsorships & collabs</li>
+            </ul>
+          </div>
+
+          <div className="bg-surface border border-line rounded-xl p-6">
+            <p className="text-xs font-mono text-mute mb-2">PREFER EMAIL?</p>
+            <a href="mailto:hello@jenariusganlary.com" className="text-accent font-semibold hover:opacity-80 transition break-all">
+              hello@jenariusganlary.com
+            </a>
+          </div>
+
+          <div className="bg-surface border border-line rounded-xl p-6">
+            <p className="text-xs font-mono text-mute mb-2">RESPONSE TIME</p>
+            <p className="text-sm text-foreground/90">Usually within a day, wherever in the world you're writing from.</p>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

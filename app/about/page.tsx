@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = { title: "About" };
 
 const stats = [
-  { label: "Building", value: "CreatorBit" },
-  { label: "Based in", value: "Arunachal Pradesh" },
-  { label: "Writing since", value: "2026" },
-  { label: "Stack", value: "Next.js · Supabase" },
+  { label: "Building", value: "CreatorBit & Ganlary Labs" },
+  { label: "Based in", value: "Guwahati, Assam" },
+  { label: "Background", value: "Zoology → Code" },
+  { label: "Stack", value: "React · Node.js · Next.js" },
 ];
 
 export default function AboutPage() {
@@ -25,39 +25,48 @@ export default function AboutPage() {
 
       <div className="prose-body text-mute space-y-5">
         <p>
-          I'm Jenarius Ganlary — a software engineer, SaaS founder, and
-          technical writer based in Arunachal Pradesh, India.
+          I started a bachelor's degree studying zoology. I now build
+          software for a living. Nobody plans that path — it just happens
+          when you follow whatever's genuinely interesting instead of
+          whatever's supposed to come next.
         </p>
         <p>
-          By day, I manage MIS and documentation for a Holistic Rural
-          Development Programme in Sagalee, coordinating field data,
-          government convergence strategy, and programme monitoring for a
-          CSR-funded initiative. It's not a typical "tech job" on paper, but
-          it's taught me more about building resilient systems, honest
-          documentation, and working within real constraints than most
-          engineering roles do.
+          What actually connects the two: I've always been more interested
+          in how systems behave under real conditions than how they look on
+          paper. That instinct is what took me from a government office
+          building an AI-powered meeting system for district staff, to a
+          startup shipping five client apps on tight deadlines, to a fully
+          remote US team, to a classroom teaching data structures — and now
+          to a rural development programme in Arunachal Pradesh, where I
+          spend my days making sure field data survives contact with spotty
+          internet, tired staff, and real deadlines.
         </p>
         <p>
-          Outside of that, I'm building <strong className="text-foreground">CreatorBit</strong>,
-          a SaaS platform for the creator economy, using Next.js, Supabase,
-          and the Claude API. This blog is where I write about that build —
-          the tech decisions, the failures, the finance side of running a
-          product — alongside broader notes on SaaS, AI tools, and startups
-          for other founders and indie hackers.
+          That last one taught me more about building resilient systems
+          than any of the "real" engineering jobs did. Turns out the
+          discipline required to keep an NGO's MIS honest under pressure is
+          the exact same discipline that keeps a SaaS product from quietly
+          rotting after launch.
         </p>
         <p>
-          I hold an MCA from the University of Science and Technology
-          Meghalaya, and before this I worked at NIC/MeitY in Guwahati,
-          MetaMorphose, and Headstarter AI.
+          These days that discipline goes into two places: <strong className="text-foreground">CreatorBit</strong>,
+          a SaaS platform for the creator economy I'm building with Next.js,
+          Supabase, and the Claude API — and <strong className="text-foreground">Ganlary Labs</strong>,
+          where I take on freelance work building SaaS MVPs, adding AI
+          features to existing products, and shipping websites for small
+          businesses who need something that actually works, not another
+          template.
         </p>
         <p>
-          When I'm not building or writing, I'm usually out on my Royal
-          Enfield, tinkering with a recording setup, or losing an hour to
-          Mobile Legends.
+          This blog is the running commentary on all of it — what I'm
+          learning building CreatorBit, what freelance clients teach me
+          that no course ever did, and the occasional detour into whatever
+          my day job in rural development happens to teach a software
+          engineer that week.
         </p>
         <p>
-          If you're building something similar — or just want to talk shop —
-          reach out through the <a href="/contact">contact page</a>.
+          If any of this overlaps with what you're building — or you need
+          something built — the <a href="/contact">contact page</a> works.
         </p>
       </div>
     </div>
