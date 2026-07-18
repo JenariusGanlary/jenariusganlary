@@ -18,6 +18,17 @@ export const metadata: Metadata = {
     template: "%s | Jenarius Ganlary",
   },
   description: "Personal blog on tech, finance, and startups for indie hackers.",
+  openGraph: {
+    type: "website",
+    siteName: "Jenarius Ganlary",
+    title: "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers",
+    description: "Personal blog on tech, finance, and startups for indie hackers.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers",
+    description: "Personal blog on tech, finance, and startups for indie hackers.",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

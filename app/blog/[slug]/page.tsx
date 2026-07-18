@@ -22,6 +22,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       publishedTime: post.date,
       images: post.thumbnail ? [post.thumbnail] : undefined,
     },
+    twitter: {
+      card: post.thumbnail ? "summary_large_image" : "summary",
+      title: post.title,
+      description: post.description,
+      images: post.thumbnail ? [post.thumbnail] : undefined,
+    },
   };
 }
 
