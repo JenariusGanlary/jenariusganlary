@@ -24,7 +24,7 @@ export default function HeroHeadline() {
   }, []);
 
   return (
-    <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.06] tracking-tight mb-6 text-foreground">
+    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.06] tracking-tight mb-6 text-foreground">
       <motion.span
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -41,9 +41,15 @@ export default function HeroHeadline() {
       >
         Writing about AI.
       </motion.span>
-      <span className="block whitespace-nowrap">
-        {typed}
-        <span className="inline-block w-[3px] h-[0.85em] bg-accent ml-1 align-middle animate-pulse" />
+
+      {/* Reserves the correct space (and wraps normally if needed) using invisible full text,
+          with the actual typed animation layered on top — this can never overflow the viewport. */}
+      <span className="relative block">
+        <span className="invisible" aria-hidden="true">{THIRD_LINE}</span>
+        <span className="absolute inset-0">
+          {typed}
+          <span className="inline-block w-[3px] h-[0.85em] bg-accent ml-1 align-middle animate-pulse" />
+        </span>
       </span>
     </h1>
   );
