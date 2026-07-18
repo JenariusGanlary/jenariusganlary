@@ -9,24 +9,23 @@ const groups = [
   {
     label: "Dev Tools",
     items: [
-      { name: "Cursor", desc: "AI-powered code editor — where most of the actual coding happens." },
-      { name: "Next.js", desc: "The React framework behind this site, CreatorBit, and most client work." },
-      { name: "Tailwind CSS", desc: "Utility-first styling — fast to write, easy to keep consistent." },
+      { name: "Cursor", desc: "AI-powered code editor — where most of the actual coding happens.", url: "https://cursor.com" },
+      { name: "Next.js", desc: "The React framework behind this site, CreatorBit, and most client work.", url: "https://nextjs.org" },
+      { name: "Tailwind CSS", desc: "Utility-first styling — fast to write, easy to keep consistent.", url: "https://tailwindcss.com" },
     ],
   },
   {
     label: "Hosting & Infra",
     items: [
-      { name: "Vercel", desc: "Hosting for this site and CreatorBit — zero-friction deploys straight from GitHub." },
-      { name: "Supabase", desc: "Postgres, auth, and storage without managing your own database server." },
-      { name: "Resend", desc: "Transactional email that actually lands in the inbox." },
+      { name: "Vercel", desc: "Hosting for this site and CreatorBit — zero-friction deploys straight from GitHub.", url: "https://vercel.com" },
+      { name: "Supabase", desc: "Postgres, auth, and storage without managing your own database server.", url: "https://supabase.com" },
+      { name: "Resend", desc: "Transactional email that actually lands in the inbox.", url: "https://resend.com" },
     ],
   },
   {
     label: "AI Tools",
     items: [
-      { name: "Claude", desc: "Used for writing, coding, and — yes — most of this blog's build process." },
-      { name: "Claude API", desc: "Powers AI features inside CreatorBit and client projects." },
+      { name: "Claude", desc: "Used for writing, coding, and — yes — most of this blog's build process.", url: "https://claude.ai" },
     ],
   },
 ];
@@ -47,13 +46,13 @@ export default function ResourcesPage() {
           <h2 className="text-lg font-bold text-foreground mb-4">{group.label}</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {group.items.map((item) => (
-              <div
-                key={item.name}
-                className="rounded-xl bg-surface border border-line p-5 hover:border-accent transition-colors"
-              >
-                <p className="font-semibold text-sm text-foreground mb-1">{item.name}</p>
+              <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer" className="rounded-xl bg-surface border border-line p-5 hover:border-accent transition-colors block">
+                <div className="flex items-center justify-between mb-1">
+                  <p className="font-semibold text-sm text-foreground">{item.name}</p>
+                  <span className="text-mute text-xs">&rarr;</span>
+                </div>
                 <p className="text-xs text-mute leading-relaxed">{item.desc}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>

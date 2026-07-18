@@ -1,6 +1,8 @@
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import CategoryTag from "@/components/CategoryTag";
 import ShareRow from "@/components/ShareRow";
+import AuthorBio from "@/components/AuthorBio";
+import RelatedPosts from "@/components/RelatedPosts";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -62,6 +64,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <div className="prose-body" dangerouslySetInnerHTML={{ __html: post.content }} />
 
       <ShareRow title={post.title} url={url} />
+      <AuthorBio />
+      <RelatedPosts currentSlug={post.slug} category={post.category} />
 
       <div className="mt-8">
         <Link href="/blog" className="text-accent text-sm font-medium hover:opacity-80 transition">
