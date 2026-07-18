@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import CategoryTag from "@/components/CategoryTag";
+import { CATEGORIES } from "@/lib/categories";
 import TypewriterRoles from "@/components/TypewriterRoles";
 import HeroHeadline from "@/components/HeroHeadline";
 import HomeCategoriesAndLatest from "@/components/HomeCategoriesAndLatest";
@@ -46,7 +47,15 @@ export default function Home() {
               href={`/blog/${featured.slug}`}
               className="rounded-xl overflow-hidden bg-surface border border-line hover:border-[#2a2a2e] transition-colors"
             >
-              <div className="h-44 md:h-56 bg-[#161618]" />
+              <div className="h-44 md:h-56 bg-[#161618] flex items-center justify-center overflow-hidden">
+                {featured.thumbnail ? (
+                  <img src={featured.thumbnail} alt={featured.title} className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-white/30 text-3xl font-bold font-mono">
+                    {CATEGORIES.find((c) => c.slug === featured.category)?.ticker}
+                  </span>
+                )}
+              </div>
               <div className="p-5 md:p-7">
                 <CategoryTag category={featured.category} />
                 <h2 className="text-xl md:text-2xl font-bold mt-3 mb-3 text-foreground leading-snug">{featured.title}</h2>
@@ -62,7 +71,15 @@ export default function Home() {
                   href={`/blog/${post.slug}`}
                   className="rounded-xl bg-surface border border-line hover:border-[#2a2a2e] transition-colors p-5 flex gap-4"
                 >
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg shrink-0 bg-[#161618]" />
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg shrink-0 bg-[#161618] flex items-center justify-center overflow-hidden">
+                    {post.thumbnail ? (
+                      <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
+                    ) : (
+                      <span className="text-white/30 text-xs font-bold font-mono">
+                        {CATEGORIES.find((c) => c.slug === post.category)?.ticker}
+                      </span>
+                    )}
+                  </div>
                   <div className="min-w-0">
                     <CategoryTag category={post.category} />
                     <h3 className="font-semibold text-sm mt-1 mb-1 leading-snug text-foreground line-clamp-2">
