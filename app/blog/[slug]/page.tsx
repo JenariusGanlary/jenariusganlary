@@ -1,50 +1,67 @@
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import CategoryTag from "@/components/CategoryTag";
+import ShareRow from "@/components/ShareRow";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
+  return {
+    title: post.title,
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      publishedTime: post.date,
+      images: post.thumbnail ? [post.thumbnail] : undefined,
+    },
+  };
+}
+
+function estimateReadTime(html: string) {
+  const words = html.replace(/<[^>]+>/g, " ").trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+  const readTime = estimateReadTime(post.content);
+  const url = `https://jenariusganlary.com/blog/${post.slug}`;
 
   return (
-    <article className="max-w-2xl mx-auto py-8">
-      <Link
-        href="/blog"
-        className="text-sm text-gray-500 hover:text-navy mb-8 block"
-        style={{ fontFamily: "var(--font-mono)" }}
-      >
-        ← Back to blog
+    <article className="max-w-2xl mx-auto py-6 md:py-8">
+      <Link href="/blog" className="text-sm text-mute hover:text-foreground transition mb-8 inline-block font-mono">
+        &larr; Back to articles
       </Link>
 
-      <CategoryTag category={post.category} />
-
-      <h1
-        className="text-3xl md:text-4xl font-semibold mt-3 mb-3 text-navy leading-tight"
-        style={{ fontFamily: "var(--font-display)" }}
-      >
+      <div className="inline-flex items-center gap-2 mb-3">
+        <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+        <CategoryTag category={post.category} />
+      </div>
+      <h1 className="text-3xl md:text-4xl font-extrabold mt-1 mb-3 text-foreground leading-tight">
         {post.title}
       </h1>
-
-      <p
-        className="text-sm text-gray-400 mb-10 pb-8 border-b border-hairline"
-        style={{ fontFamily: "var(--font-mono)" }}
-      >
-        {post.date}
+      <p className="text-sm text-mute mb-10 pb-8 border-b border-line font-mono">
+        {post.date} <span className="mx-2 opacity-40">&middot;</span> {readTime} min read
       </p>
 
-      <div
-        className="prose-body"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+      <div className="prose-body" dangerouslySetInnerHTML={{ __html: post.content }} />
+
+      <ShareRow title={post.title} url={url} />
+
+      <div className="mt-8">
+        <Link href="/blog" className="text-accent text-sm font-medium hover:opacity-80 transition">
+          &larr; Read more articles
+        </Link>
+      </div>
     </article>
   );
 }

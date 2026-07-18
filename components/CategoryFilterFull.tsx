@@ -33,9 +33,9 @@ export default function CategoryFilterFull({ posts }: { posts: Post[] }) {
         ))}
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((post) => (
-          <PostCard key={post.slug} post={post} />
-        ))}
+        {filtered.map((post, i) => (
+  <PostCard key={post.slug} post={post} index={i} />
+))}
       </div>
     </div>
   );

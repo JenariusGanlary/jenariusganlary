@@ -38,9 +38,9 @@ export default function HomeCategoriesAndLatest({ posts }: { posts: Post[] }) {
       <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 md:py-16 border-t border-line">
         <h2 className="text-2xl font-bold mb-6 md:mb-8 text-foreground">Latest Articles</h2>
         <div className="grid gap-5 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.slice(0, 6).map((post) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
+         {filtered.slice(0, 6).map((post, i) => (
+  <PostCard key={post.slug} post={post} index={i} />
+))}
         </div>
       </section>
     </>

@@ -2,10 +2,27 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "About" };
 
+const stats = [
+  { label: "Building", value: "CreatorBit" },
+  { label: "Based in", value: "Arunachal Pradesh" },
+  { label: "Writing since", value: "2026" },
+  { label: "Stack", value: "Next.js · Supabase" },
+];
+
 export default function AboutPage() {
   return (
     <div className="max-w-2xl mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-6 text-foreground">About</h1>
+      <h1 className="text-3xl font-bold mb-8 text-foreground">About</h1>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 pb-10 border-b border-line">
+        {stats.map((s) => (
+          <div key={s.label}>
+            <p className="text-xs font-mono text-mute mb-1">{s.label.toUpperCase()}</p>
+            <p className="text-sm font-semibold text-foreground">{s.value}</p>
+          </div>
+        ))}
+      </div>
+
       <div className="prose-body text-mute space-y-5">
         <p>
           I'm Jenarius Ganlary — a software engineer, SaaS founder, and
