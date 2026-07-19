@@ -50,8 +50,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     "@type": "Article",
     headline: post.title,
     description: post.description,
-    datePublished: post.date,
-    dateModified: post.date,
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
     author: {
       "@type": "Person",
       name: "Jenarius Ganlary",
