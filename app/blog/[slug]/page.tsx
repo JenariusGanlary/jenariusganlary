@@ -45,8 +45,36 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const readTime = estimateReadTime(post.content);
   const url = `https://jenariusganlary.com/blog/${post.slug}`;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: "Jenarius Ganlary",
+      url: "https://jenariusganlary.com/about",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Jenarius Ganlary",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    ...(post.thumbnail && { image: `https://jenariusganlary.com${post.thumbnail}` }),
+  };
+
   return (
     <article className="max-w-2xl mx-auto py-6 md:py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Link href="/blog" className="text-sm text-mute hover:text-foreground transition mb-8 inline-block font-mono">
         &larr; Back to articles
       </Link>
