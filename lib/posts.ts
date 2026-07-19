@@ -2,7 +2,9 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkRehype from "remark-rehype";
+import rehypeSlug from "rehype-slug";
+import rehypeStringify from "rehype-stringify";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -15,6 +17,10 @@ export type Post = {
   thumbnail?: string;
   content: string;
 };
+
+export type TocItem = { text: string; id: string; level: number };
+
+export type PostWithToc = Post & { toc: TocItem[] };
 
 export function getAllPosts(): Post[] {
   const filenames = fs.readdirSync(postsDirectory);
@@ -36,12 +42,35 @@ export function getAllPosts(): Post[] {
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export async function getPostBySlug(slug: string): Promise<Post> {
+function extractToc(markdownContent: string): TocItem[] {
+  const headingRegex = /^(##|###)\s+(.+)$/gm;
+  const items: TocItem[] = [];
+  let match;
+  while ((match = headingRegex.exec(markdownContent)) !== null) {
+    const level = match[1].length;
+    const text = match[2].trim();
+    const id = text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-");
+    items.push({ text, id, level });
+  }
+  return items;
+}
+
+export async function getPostBySlug(slug: string): Promise<PostWithToc> {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
-  const processedContent = await remark().use(html).process(content);
-  const contentHtml = processedContent.toString();
+
+  const toc = extractToc(content);
+
+  const processed = await remark()
+    .use(remarkRehype)
+    .use(rehypeSlug)
+    .use(rehypeStringify)
+    .process(content);
+
   return {
     slug,
     title: data.title,
@@ -49,6 +78,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     date: data.date,
     category: data.category,
     thumbnail: data.thumbnail,
-    content: contentHtml,
+    content: processed.toString(),
+    toc,
   };
 }

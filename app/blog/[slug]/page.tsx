@@ -3,6 +3,7 @@ import CategoryTag from "@/components/CategoryTag";
 import ShareRow from "@/components/ShareRow";
 import AuthorBio from "@/components/AuthorBio";
 import RelatedPosts from "@/components/RelatedPosts";
+import TableOfContents from "@/components/TableOfContents";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -57,9 +58,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <h1 className="text-3xl md:text-4xl font-extrabold mt-1 mb-3 text-foreground leading-tight">
         {post.title}
       </h1>
-      <p className="text-sm text-mute mb-10 pb-8 border-b border-line font-mono">
+      <p className="text-sm text-mute mb-8 pb-8 border-b border-line font-mono">
         {post.date} <span className="mx-2 opacity-40">&middot;</span> {readTime} min read
       </p>
+
+      <TableOfContents items={post.toc} />
 
       <div className="prose-body" dangerouslySetInnerHTML={{ __html: post.content }} />
 
