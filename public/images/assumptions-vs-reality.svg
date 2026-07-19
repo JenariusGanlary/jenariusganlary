@@ -1,0 +1,33 @@
+<svg width="900" height="620" viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="620" fill="#F3F5F7"/>
+
+  <text x="450" y="55" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#0B0B0C" text-anchor="middle" font-weight="800">Assumption vs. Reality</text>
+  <text x="450" y="82" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#6B6B73" text-anchor="middle">What changed once I was actually in the field</text>
+
+  <!-- column headers -->
+  <rect x="60" y="115" width="360" height="44" rx="8" fill="#142433"/>
+  <text x="240" y="143" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#FFFFFF" text-anchor="middle" font-weight="700">IT SECTOR ASSUMPTION</text>
+
+  <rect x="480" y="115" width="360" height="44" rx="8" fill="#2B6FFF"/>
+  <text x="660" y="143" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#FFFFFF" text-anchor="middle" font-weight="700">FIELD REALITY</text>
+
+  <!-- rows -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#0B0B0C">
+    <text x="80" y="200">"Move fast, iterate later"</text>
+    <text x="500" y="200">Trust is earned slowly, not shipped</text>
+
+    <text x="80" y="260">Success = growth metrics</text>
+    <text x="500" y="260">Success = a family's income held steady</text>
+
+    <text x="80" y="320">Data is abundant, assumed clean</text>
+    <text x="500" y="320">Data is hard-won, often by hand</text>
+
+    <text x="80" y="380">Users adapt to the product</text>
+    <text x="500" y="380">The system adapts to the person</text>
+
+    <text x="80" y="440">Downtime is an inconvenience</text>
+    <text x="500" y="440">Connectivity is never guaranteed</text>
+  </g>
+
+  <line x1="450" y1="180" x2="450" y2="470" stroke="#DADFDC" stroke-width="1"/>
+</svg>
