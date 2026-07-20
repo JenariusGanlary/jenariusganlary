@@ -12,7 +12,8 @@ const stats = [
 
 const skills = [
   "Next.js", "React", "TypeScript", "Node.js", "Supabase",
-  "Claude API", "SaaS Architecture", "MIS & Data Systems",
+  "Claude API", "SaaS Development", "SaaS Architecture",
+  "MIS & Data Systems", "Artificial Intelligence", "Startups", "Indie Hacking",
 ];
 
 const socialLinks = [

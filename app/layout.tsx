@@ -32,41 +32,10 @@ export const metadata: Metadata = {
 };
 
 // Site-wide structured data (GEO/SEO Phase 1).
-// This is the identity graph that AI search engines (ChatGPT, Perplexity, Gemini,
-// Google AI Overviews) use to figure out WHO is behind this content and whether
-// to trust/cite it. It appears on every page via the root layout.
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://jenariusganlary.com/#person",
-  name: "Jenarius Ganlary",
-  alternateName: "Zen",
-  url: "https://jenariusganlary.com",
-  jobTitle: "Full-Stack Developer & Data Analyst",
-  description:
-    "Full-stack developer and data analyst writing about SaaS, AI tools, startups, and indie hacking. Building CreatorBit and running Ganlary Labs.",
-  email: "mailto:hello@jenariusganlary.com",
-  sameAs: [
-    "https://github.com/JenariusGanlary",
-    "https://www.linkedin.com/in/jenarius-ganlary/",
-  ],
-  knowsAbout: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "SaaS Development",
-    "Artificial Intelligence",
-    "Startups",
-    "Indie Hacking",
-  ],
-  worksFor: [
-    {
-      "@type": "Organization",
-      name: "Ganlary Labs",
-    },
-  ],
-};
-
+// The full Person entity (bio, skills, social links) lives on app/about/page.tsx
+// as the single source of truth — this WebSite schema just points to it by
+// @id rather than repeating a second, slightly-different copy of the same
+// person on every page.
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -84,11 +53,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable} ${mono.variable}`} suppressHydrationWarning>
       <body className="font-sans">
-        <script
-          id="person-jsonld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
         <script
           id="website-jsonld"
           type="application/ld+json"
