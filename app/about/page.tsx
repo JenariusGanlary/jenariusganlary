@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = { title: "About" };
 
@@ -9,18 +10,93 @@ const stats = [
   { label: "Stack", value: "React · Node.js · Next.js" },
 ];
 
+const skills = [
+  "Next.js", "React", "TypeScript", "Node.js", "Supabase",
+  "Claude API", "SaaS Architecture", "MIS & Data Systems",
+];
+
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/JenariusGanlary", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/jenarius-ganlary/", external: true },
+  { label: "Email", href: "mailto:hello@jenariusganlary.com", external: false },
+];
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://jenariusganlary.com/#person",
+  name: "Jenarius Ganlary",
+  alternateName: "Zen",
+  url: "https://jenariusganlary.com/about",
+  jobTitle: "Full-Stack Developer & Data Analyst",
+  description:
+    "Full-stack developer and data analyst writing about SaaS, AI tools, startups, and indie hacking. Building CreatorBit and running Ganlary Labs.",
+  email: "mailto:hello@jenariusganlary.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Guwahati",
+    addressRegion: "Assam",
+    addressCountry: "IN",
+  },
+  sameAs: [
+    "https://github.com/JenariusGanlary",
+    "https://www.linkedin.com/in/jenarius-ganlary/",
+  ],
+  knowsAbout: skills,
+  worksFor: [
+    {
+      "@type": "Organization",
+      name: "Ganlary Labs",
+    },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <div className="max-w-2xl mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-8 text-foreground">About</h1>
+      <script
+        id="about-person-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 pb-10 border-b border-line">
+      <h1 className="text-3xl font-bold mb-6 text-foreground">About</h1>
+
+      <div className="flex flex-wrap gap-2 mb-8">
+        {socialLinks.map((link) => (
+          <Link
+            key={link.label}
+            href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noreferrer" : undefined}
+            className="text-xs font-mono border border-line rounded-full px-3 py-1.5 text-foreground/80 hover:border-accent hover:text-foreground transition-colors"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 pb-8 border-b border-line">
         {stats.map((s) => (
           <div key={s.label}>
             <p className="text-xs font-mono text-mute mb-1">{s.label.toUpperCase()}</p>
             <p className="text-sm font-semibold text-foreground">{s.value}</p>
           </div>
         ))}
+      </div>
+
+      <div className="mb-10 pb-10 border-b border-line">
+        <p className="text-xs font-mono text-mute mb-3">AREAS OF EXPERTISE</p>
+        <div className="flex flex-wrap gap-2">
+          {skills.map((skill) => (
+            <span
+              key={skill}
+              className="text-xs font-medium bg-surface border border-line rounded-full px-3 py-1.5 text-foreground/80"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="prose-body text-mute space-y-5">
@@ -66,7 +142,7 @@ export default function AboutPage() {
         </p>
         <p>
           If any of this overlaps with what you're building — or you need
-          something built — the <a href="/contact">contact page</a> works.
+          something built — the <Link href="/contact">contact page</Link> works.
         </p>
       </div>
     </div>
