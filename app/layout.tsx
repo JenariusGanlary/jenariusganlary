@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     template: "%s | Jenarius Ganlary",
   },
   description: "Personal blog on tech, finance, and startups for indie hackers.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     siteName: "Jenarius Ganlary",

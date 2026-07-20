@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Resources",
   description: "Tools I actually use to build SaaS products, ship freelance work, and run this blog.",
+  alternates: { canonical: "/resources" },
 };
 
 const groups = [

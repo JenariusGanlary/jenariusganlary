@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Newsletter",
+  description: "Building SaaS, freelancing through Ganlary Labs, and writing about both — straight to your inbox.",
+  alternates: { canonical: "/newsletter" },
+};
+
 const benefits = [
   "One email, roughly weekly — no daily noise",
   "What's actually working (and not) building CreatorBit and freelancing",

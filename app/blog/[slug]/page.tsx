@@ -16,9 +16,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
+  const url = `https://www.jenariusganlary.com/blog/${post.slug}`;
   return {
     title: post.title,
     description: post.description,
+    alternates: { canonical: url },
     openGraph: {
       title: post.title,
       description: post.description,

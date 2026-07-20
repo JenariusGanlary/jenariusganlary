@@ -9,6 +9,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Articles",
   description: "Tech, finance, and startup notes for indie hackers.",
+  alternates: { canonical: "/blog" },
 };
 
 const collectionPageJsonLd = {

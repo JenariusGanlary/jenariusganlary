@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "About" };
+export const metadata: Metadata = {
+  title: "About",
+  alternates: { canonical: "/about" },
+};
 
 const stats = [
   { label: "Building", value: "CreatorBit & Ganlary Labs" },
