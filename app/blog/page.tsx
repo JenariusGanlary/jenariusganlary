@@ -11,6 +11,26 @@ export const metadata: Metadata = {
   description: "Tech, finance, and startup notes for indie hackers.",
 };
 
+const collectionPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Articles",
+  description: "Tech, finance, and startup notes for indie hackers.",
+  url: "https://jenariusganlary.com/blog",
+  isPartOf: {
+    "@id": "https://jenariusganlary.com/#website",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://jenariusganlary.com" },
+    { "@type": "ListItem", position: 2, name: "Articles", item: "https://jenariusganlary.com/blog" },
+  ],
+};
+
 export default function BlogPage() {
   const posts = getAllPosts();
   const [featured, ...rest] = posts;
@@ -18,6 +38,17 @@ export default function BlogPage() {
 
   return (
     <div className="py-8">
+      <script
+        id="collection-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
+      />
+      <script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <h1 className="text-3xl font-bold mb-8 text-foreground">Articles</h1>
 
       {featured && (

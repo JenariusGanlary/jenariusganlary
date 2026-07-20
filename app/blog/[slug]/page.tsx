@@ -69,6 +69,19 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     ...(post.thumbnail && { image: `https://jenariusganlary.com${post.thumbnail}` }),
   };
 
+  // Reflects real, navigable pages only — Home and Articles are actual routes.
+  // Categories are a client-side filter on /blog, not a real URL, so they're
+  // deliberately left out of the breadcrumb trail rather than faking one.
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://jenariusganlary.com" },
+      { "@type": "ListItem", position: 2, name: "Articles", item: "https://jenariusganlary.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: url },
+    ],
+  };
+
   // Only generated when the post actually has a "Frequently asked questions"
   // section with real Q&A pairs — never fabricated for posts without one.
   const faqJsonLd =
@@ -93,6 +106,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         id="article-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {faqJsonLd && (
         <script
