@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -31,12 +30,7 @@ export default function ContactPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-12"
-      >
+      <div className="mb-12 animate-fade-up">
         <div className="inline-flex items-center gap-2 mb-5 text-xs font-mono text-mute border border-line rounded-full px-3 py-1.5">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
@@ -52,14 +46,10 @@ export default function ContactPage() {
           or just swapping notes on indie hacking — I read every message
           myself.
         </p>
-      </motion.div>
+      </div>
 
       <div className="grid md:grid-cols-[1fr_0.75fr] gap-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
+        <div className="animate-fade-up" style={{ animationDelay: "0.1s" }}>
           {status === "sent" ? (
             <div className="rounded-xl border border-accent/30 bg-accent/5 p-8">
               <p className="text-accent font-semibold text-lg mb-1">Message sent.</p>
@@ -92,14 +82,9 @@ export default function ContactPage() {
               {status === "error" && <p className="text-red-500 text-sm">Something went wrong — please try again.</p>}
             </form>
           )}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="space-y-4"
-        >
+        <div className="space-y-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <div className="bg-surface border border-line rounded-xl p-6">
             <p className="text-xs font-mono text-mute mb-4">WHAT I TAKE ON</p>
             <ul className="space-y-3 text-sm text-foreground/90">
@@ -121,7 +106,7 @@ export default function ContactPage() {
             <p className="text-xs font-mono text-mute mb-2">RESPONSE TIME</p>
             <p className="text-sm text-foreground/90">Usually within a day, wherever in the world you're writing from.</p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
