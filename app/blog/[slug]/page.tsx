@@ -4,6 +4,7 @@ import ShareRow from "@/components/ShareRow";
 import AuthorBio from "@/components/AuthorBio";
 import RelatedPosts from "@/components/RelatedPosts";
 import TableOfContents from "@/components/TableOfContents";
+import FAQSection from "@/components/FAQSection";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -119,6 +120,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <TableOfContents items={post.toc} />
 
       <div className="prose-body" dangerouslySetInnerHTML={{ __html: post.content }} />
+
+      <FAQSection items={post.faq} />
 
       <ShareRow title={post.title} url={url} />
       <AuthorBio />

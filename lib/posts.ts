@@ -60,35 +60,55 @@ function extractToc(markdownContent: string): TocItem[] {
 }
 
 // Extracts real Q&A pairs from a "## Frequently asked questions" section,
-// written as **Question**\nAnswer. Returns [] if the post has no such
-// section — we never fabricate FAQ content that isn't actually in the post.
-function extractFaq(markdownContent: string): FaqItem[] {
+// written as **Question**\nAnswer, and removes that section from the
+// returned content so it can be rendered separately as a styled component
+// instead of running together as plain prose. Anything after the FAQ
+// section (like a "Related reading" footer line) is preserved.
+// Returns the content unchanged with faq: [] if there's no FAQ section,
+// or if it exists but doesn't match the expected Q&A pattern — we never
+// fabricate FAQ content that isn't actually in the post.
+function extractFaq(markdownContent: string): { faq: FaqItem[]; content: string } {
   const faqHeadingMatch = markdownContent.match(/^##\s+Frequently asked questions\s*$/im);
-  if (!faqHeadingMatch || faqHeadingMatch.index === undefined) return [];
+  if (!faqHeadingMatch || faqHeadingMatch.index === undefined) {
+    return { faq: [], content: markdownContent };
+  }
 
-  const startIdx = faqHeadingMatch.index + faqHeadingMatch[0].length;
-  const rest = markdownContent.slice(startIdx);
+  const headingStart = faqHeadingMatch.index;
+  const afterHeading = faqHeadingMatch.index + faqHeadingMatch[0].length;
+  const rest = markdownContent.slice(afterHeading);
   const nextHeadingMatch = rest.match(/\n##\s+/);
   const section = nextHeadingMatch ? rest.slice(0, nextHeadingMatch.index) : rest;
 
   const items: FaqItem[] = [];
   const qaRegex = /\*\*(.+?)\*\*\s*\n([\s\S]+?)(?=\n\*\*|\n---|\s*$)/g;
   let m;
+  let lastMatchEnd = 0;
   while ((m = qaRegex.exec(section)) !== null) {
     const question = m[1].trim();
     const answer = m[2].trim();
-    if (question && answer) items.push({ question, answer });
+    if (question && answer) {
+      items.push({ question, answer });
+      lastMatchEnd = m.index + m[0].length;
+    }
   }
-  return items;
+
+  if (items.length === 0) return { faq: [], content: markdownContent };
+
+  const trueEndIdx = afterHeading + lastMatchEnd;
+  const strippedContent = (
+    markdownContent.slice(0, headingStart) + markdownContent.slice(trueEndIdx)
+  ).trim();
+
+  return { faq: items, content: strippedContent };
 }
 
 export async function getPostBySlug(slug: string): Promise<PostWithToc> {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  const { data, content: rawContent } = matter(fileContents);
 
-  const toc = extractToc(content);
-  const faq = extractFaq(content);
+  const toc = extractToc(rawContent);
+  const { faq, content } = extractFaq(rawContent);
 
   const processed = await remark()
     .use(remarkRehype)
