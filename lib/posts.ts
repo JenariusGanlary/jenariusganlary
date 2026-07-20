@@ -19,8 +19,9 @@ export type Post = {
 };
 
 export type TocItem = { text: string; id: string; level: number };
+export type FaqItem = { question: string; answer: string };
 
-export type PostWithToc = Post & { toc: TocItem[] };
+export type PostWithToc = Post & { toc: TocItem[]; faq: FaqItem[] };
 
 export function getAllPosts(): Post[] {
   const filenames = fs.readdirSync(postsDirectory);
@@ -58,12 +59,36 @@ function extractToc(markdownContent: string): TocItem[] {
   return items;
 }
 
+// Extracts real Q&A pairs from a "## Frequently asked questions" section,
+// written as **Question**\nAnswer. Returns [] if the post has no such
+// section — we never fabricate FAQ content that isn't actually in the post.
+function extractFaq(markdownContent: string): FaqItem[] {
+  const faqHeadingMatch = markdownContent.match(/^##\s+Frequently asked questions\s*$/im);
+  if (!faqHeadingMatch || faqHeadingMatch.index === undefined) return [];
+
+  const startIdx = faqHeadingMatch.index + faqHeadingMatch[0].length;
+  const rest = markdownContent.slice(startIdx);
+  const nextHeadingMatch = rest.match(/\n##\s+/);
+  const section = nextHeadingMatch ? rest.slice(0, nextHeadingMatch.index) : rest;
+
+  const items: FaqItem[] = [];
+  const qaRegex = /\*\*(.+?)\*\*\s*\n([\s\S]+?)(?=\n\*\*|\n---|\s*$)/g;
+  let m;
+  while ((m = qaRegex.exec(section)) !== null) {
+    const question = m[1].trim();
+    const answer = m[2].trim();
+    if (question && answer) items.push({ question, answer });
+  }
+  return items;
+}
+
 export async function getPostBySlug(slug: string): Promise<PostWithToc> {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
   const toc = extractToc(content);
+  const faq = extractFaq(content);
 
   const processed = await remark()
     .use(remarkRehype)
@@ -80,5 +105,6 @@ export async function getPostBySlug(slug: string): Promise<PostWithToc> {
     thumbnail: data.thumbnail,
     content: processed.toString(),
     toc,
+    faq,
   };
 }
