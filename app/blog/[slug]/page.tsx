@@ -44,7 +44,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   const readTime = estimateReadTime(post.content);
-  const url = `https://jenariusganlary.com/blog/${post.slug}`;
+  const url = `https://www.jenariusganlary.com/blog/${post.slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -56,7 +56,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     author: {
       "@type": "Person",
       name: "Jenarius Ganlary",
-      url: "https://jenariusganlary.com/about",
+      url: "https://www.jenariusganlary.com/about",
     },
     publisher: {
       "@type": "Person",
@@ -66,7 +66,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       "@type": "WebPage",
       "@id": url,
     },
-    ...(post.thumbnail && { image: `https://jenariusganlary.com${post.thumbnail}` }),
+    ...(post.thumbnail && { image: `https://www.jenariusganlary.com${post.thumbnail}` }),
   };
 
   // Reflects real, navigable pages only — Home and Articles are actual routes.
@@ -76,8 +76,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://jenariusganlary.com" },
-      { "@type": "ListItem", position: 2, name: "Articles", item: "https://jenariusganlary.com/blog" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.jenariusganlary.com" },
+      { "@type": "ListItem", position: 2, name: "Articles", item: "https://www.jenariusganlary.com/blog" },
       { "@type": "ListItem", position: 3, name: post.title, item: url },
     ],
   };

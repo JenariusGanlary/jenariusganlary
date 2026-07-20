@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jenariusganlary.com"),
+  metadataBase: new URL("https://www.jenariusganlary.com"),
   title: {
     default: "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers",
     template: "%s | Jenarius Ganlary",
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://jenariusganlary.com/#website",
+  "@id": "https://www.jenariusganlary.com/#website",
   name: "Jenarius Ganlary",
-  url: "https://jenariusganlary.com",
+  url: "https://www.jenariusganlary.com",
   description: "Personal blog on tech, finance, and startups for indie hackers.",
   publisher: {
-    "@id": "https://jenariusganlary.com/#person",
+    "@id": "https://www.jenariusganlary.com/#person",
   },
   inLanguage: "en-US",
 };

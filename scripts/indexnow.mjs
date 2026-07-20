@@ -8,7 +8,7 @@ import fs from "fs";
 import path from "path";
 
 const KEY = "d57a05759ee544d4be6afa531dc1d30a";
-const HOST = "jenariusganlary.com";
+const HOST = "www.jenariusganlary.com";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 function getPostSlugs() {

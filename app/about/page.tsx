@@ -25,10 +25,10 @@ const socialLinks = [
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://jenariusganlary.com/#person",
+  "@id": "https://www.jenariusganlary.com/#person",
   name: "Jenarius Ganlary",
   alternateName: "Zen",
-  url: "https://jenariusganlary.com/about",
+  url: "https://www.jenariusganlary.com/about",
   jobTitle: "Full-Stack Developer & Data Analyst",
   description:
     "Full-stack developer and data analyst writing about SaaS, AI tools, startups, and indie hacking. Building CreatorBit and running Ganlary Labs.",

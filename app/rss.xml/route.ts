@@ -2,7 +2,7 @@ import { getAllPosts } from "@/lib/posts";
 
 export async function GET() {
   const posts = getAllPosts();
-  const baseUrl = "https://jenariusganlary.com";
+  const baseUrl = "https://www.jenariusganlary.com";
 
   const items = posts
     .map(

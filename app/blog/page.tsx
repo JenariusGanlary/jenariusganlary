@@ -16,9 +16,9 @@ const collectionPageJsonLd = {
   "@type": "CollectionPage",
   name: "Articles",
   description: "Tech, finance, and startup notes for indie hackers.",
-  url: "https://jenariusganlary.com/blog",
+  url: "https://www.jenariusganlary.com/blog",
   isPartOf: {
-    "@id": "https://jenariusganlary.com/#website",
+    "@id": "https://www.jenariusganlary.com/#website",
   },
 };
 
@@ -26,8 +26,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://jenariusganlary.com" },
-    { "@type": "ListItem", position: 2, name: "Articles", item: "https://jenariusganlary.com/blog" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.jenariusganlary.com" },
+    { "@type": "ListItem", position: 2, name: "Articles", item: "https://www.jenariusganlary.com/blog" },
   ],
 };
 
