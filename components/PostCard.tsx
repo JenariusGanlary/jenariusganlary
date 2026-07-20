@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import CategoryTag from "./CategoryTag";
 import { CATEGORIES } from "@/lib/categories";
 import type { Post } from "@/lib/posts";
 
 export default function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
   const ticker = CATEGORIES.find((c) => c.slug === post.category)?.ticker;
+  const isSvg = post.thumbnail?.endsWith(".svg");
 
   return (
     <div className="h-full">
@@ -12,9 +14,19 @@ export default function PostCard({ post, index = 0 }: { post: Post; index?: numb
         href={`/blog/${post.slug}`}
         className="flex flex-col h-full rounded-xl overflow-hidden bg-surface border border-line hover:border-accent hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
       >
-        <div className="aspect-video flex items-center justify-center bg-[#161618] shrink-0">
+        <div className="relative aspect-video flex items-center justify-center bg-[#161618] shrink-0">
           {post.thumbnail ? (
-            <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
+            isSvg ? (
+              <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
+            ) : (
+              <Image
+                src={post.thumbnail}
+                alt={post.title}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover"
+              />
+            )
           ) : (
             <span className="text-white/30 text-4xl font-bold tracking-tight font-mono">{ticker}</span>
           )}

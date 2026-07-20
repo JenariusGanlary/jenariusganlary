@@ -4,6 +4,7 @@ import CategoryTag from "@/components/CategoryTag";
 import { CATEGORIES } from "@/lib/categories";
 import CategoryFilterFull from "@/components/CategoryFilterFull";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Articles",
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const posts = getAllPosts();
   const [featured, ...rest] = posts;
+  const featuredIsSvg = featured?.thumbnail?.endsWith(".svg");
 
   return (
     <div className="py-8">
@@ -23,9 +25,20 @@ export default function BlogPage() {
           href={`/blog/${featured.slug}`}
           className="block mb-12 rounded-xl overflow-hidden border border-line bg-surface hover:border-[#2a2a2e] transition-colors"
         >
-          <div className="aspect-[21/9] bg-[#161618] flex items-center justify-center overflow-hidden">
+          <div className="relative aspect-[21/9] bg-[#161618] flex items-center justify-center overflow-hidden">
             {featured.thumbnail ? (
-              <img src={featured.thumbnail} alt={featured.title} className="w-full h-full object-cover" />
+              featuredIsSvg ? (
+                <img src={featured.thumbnail} alt={featured.title} className="w-full h-full object-cover" />
+              ) : (
+                <Image
+                  src={featured.thumbnail}
+                  alt={featured.title}
+                  fill
+                  priority
+                  sizes="(min-width: 1200px) 1152px, 100vw"
+                  className="object-cover"
+                />
+              )
             ) : (
               <span className="text-white/30 text-4xl font-bold font-mono">
                 {CATEGORIES.find((c) => c.slug === featured.category)?.ticker}

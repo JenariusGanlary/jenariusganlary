@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts } from "@/lib/posts";
 import CategoryTag from "@/components/CategoryTag";
 import { CATEGORIES } from "@/lib/categories";
@@ -11,6 +12,7 @@ export default function Home() {
   const posts = getAllPosts();
   const [featured, ...rest] = posts;
   const supporting = rest.slice(0, 3);
+  const featuredIsSvg = featured?.thumbnail?.endsWith(".svg");
 
   return (
     <div>
@@ -47,9 +49,20 @@ export default function Home() {
               href={`/blog/${featured.slug}`}
               className="rounded-xl overflow-hidden bg-surface border border-line hover:border-[#2a2a2e] transition-colors"
             >
-              <div className="h-44 md:h-56 bg-[#161618] flex items-center justify-center overflow-hidden">
+              <div className="relative h-44 md:h-56 bg-[#161618] flex items-center justify-center overflow-hidden">
                 {featured.thumbnail ? (
-                  <img src={featured.thumbnail} alt={featured.title} className="w-full h-full object-cover" />
+                  featuredIsSvg ? (
+                    <img src={featured.thumbnail} alt={featured.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <Image
+                      src={featured.thumbnail}
+                      alt={featured.title}
+                      fill
+                      priority
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  )
                 ) : (
                   <span className="text-white/30 text-3xl font-bold font-mono">
                     {CATEGORIES.find((c) => c.slug === featured.category)?.ticker}
@@ -65,30 +78,43 @@ export default function Home() {
             </Link>
 
             <div className="grid gap-4">
-              {supporting.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="rounded-xl bg-surface border border-line hover:border-[#2a2a2e] transition-colors p-5 flex gap-4"
-                >
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg shrink-0 bg-[#161618] flex items-center justify-center overflow-hidden">
-                    {post.thumbnail ? (
-                      <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
-                    ) : (
-                      <span className="text-white/30 text-xs font-bold font-mono">
-                        {CATEGORIES.find((c) => c.slug === post.category)?.ticker}
-                      </span>
-                    )}
-                  </div>
-                  <div className="min-w-0">
-                    <CategoryTag category={post.category} />
-                    <h3 className="font-semibold text-sm mt-1 mb-1 leading-snug text-foreground line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-xs text-mute font-mono">{post.date}</p>
-                  </div>
-                </Link>
-              ))}
+              {supporting.map((post) => {
+                const isSvg = post.thumbnail?.endsWith(".svg");
+                return (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="rounded-xl bg-surface border border-line hover:border-[#2a2a2e] transition-colors p-5 flex gap-4"
+                  >
+                    <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg shrink-0 bg-[#161618] flex items-center justify-center overflow-hidden">
+                      {post.thumbnail ? (
+                        isSvg ? (
+                          <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
+                        ) : (
+                          <Image
+                            src={post.thumbnail}
+                            alt={post.title}
+                            fill
+                            sizes="80px"
+                            className="object-cover"
+                          />
+                        )
+                      ) : (
+                        <span className="text-white/30 text-xs font-bold font-mono">
+                          {CATEGORIES.find((c) => c.slug === post.category)?.ticker}
+                        </span>
+                      )}
+                    </div>
+                    <div className="min-w-0">
+                      <CategoryTag category={post.category} />
+                      <h3 className="font-semibold text-sm mt-1 mb-1 leading-snug text-foreground line-clamp-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-xs text-mute font-mono">{post.date}</p>
+                    </div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
