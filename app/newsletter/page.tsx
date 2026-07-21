@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Newsletter",
-  description: "Building SaaS, freelancing through Ganlary Labs, and writing about both — straight to your inbox.",
-  alternates: { canonical: "/newsletter" },
-};
+  description:
+    "Building SaaS, freelancing through Ganlary Labs, and writing about both — straight to your inbox. One email, roughly weekly, no daily noise.",
+  path: "/newsletter",
+});
 
 const benefits = [
   "One email, roughly weekly — no daily noise",
@@ -31,6 +33,7 @@ export default function NewsletterPage() {
         <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto mb-2">
           <input
             placeholder="you@company.com"
+            aria-label="Email address"
             className="flex-1 bg-transparent border border-line rounded-md px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
           />
           <button className="bg-accent text-white px-5 py-3 rounded-md text-sm font-semibold hover:opacity-90 transition">

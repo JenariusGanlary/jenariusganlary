@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "About",
-  alternates: { canonical: "/about" },
-};
+  description:
+    "Full-stack developer and data analyst — from zoology to code, building CreatorBit and Ganlary Labs while working in rural development in Northeast India.",
+  path: "/about",
+});
 
 const stats = [
   { label: "Building", value: "CreatorBit & Ganlary Labs" },
@@ -105,13 +108,13 @@ export default function AboutPage() {
 
       <div className="prose-body text-mute space-y-5">
         <p>
-          I started a bachelor's degree studying zoology. I now build
+          I started a bachelor&apos;s degree studying zoology. I now build
           software for a living. Nobody plans that path — it just happens
-          when you follow whatever's genuinely interesting instead of
-          whatever's supposed to come next.
+          when you follow whatever&apos;s genuinely interesting instead of
+          whatever&apos;s supposed to come next.
         </p>
         <p>
-          What actually connects the two: I've always been more interested
+          What actually connects the two: I&apos;ve always been more interested
           in how systems behave under real conditions than how they look on
           paper. That instinct is what took me from a government office
           building an AI-powered meeting system for district staff, to a
@@ -123,14 +126,14 @@ export default function AboutPage() {
         </p>
         <p>
           That last one taught me more about building resilient systems
-          than any of the "real" engineering jobs did. Turns out the
-          discipline required to keep an NGO's MIS honest under pressure is
+          than any of the &quot;real&quot; engineering jobs did. Turns out the
+          discipline required to keep an NGO&apos;s MIS honest under pressure is
           the exact same discipline that keeps a SaaS product from quietly
           rotting after launch.
         </p>
         <p>
           These days that discipline goes into two places: <strong className="text-foreground">CreatorBit</strong>,
-          a SaaS platform for the creator economy I'm building with Next.js,
+          a SaaS platform for the creator economy I&apos;m building with Next.js,
           Supabase, and the Claude API — and <strong className="text-foreground">Ganlary Labs</strong>,
           where I take on freelance work building SaaS MVPs, adding AI
           features to existing products, and shipping websites for small
@@ -138,14 +141,14 @@ export default function AboutPage() {
           template.
         </p>
         <p>
-          This blog is the running commentary on all of it — what I'm
+          This blog is the running commentary on all of it — what I&apos;m
           learning building CreatorBit, what freelance clients teach me
           that no course ever did, and the occasional detour into whatever
           my day job in rural development happens to teach a software
           engineer that week.
         </p>
         <p>
-          If any of this overlaps with what you're building — or you need
+          If any of this overlaps with what you&apos;re building — or you need
           something built — the <Link href="/contact">contact page</Link> works.
         </p>
       </div>

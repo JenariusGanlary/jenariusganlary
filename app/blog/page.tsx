@@ -7,7 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { buildPageMetadata, SITE_URL } from "@/lib/metadata";
 
-const PAGE_DESCRIPTION = "Tech, finance, and startup notes for indie hackers.";
+const PAGE_DESCRIPTION =
+  "Every article on SaaS, AI tools, indie hacking, developer life, and finance for builders — practical, first-hand notes from building products in public.";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Articles",

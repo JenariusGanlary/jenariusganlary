@@ -7,11 +7,16 @@ import TableOfContents from "@/components/TableOfContents";
 import FAQSection from "@/components/FAQSection";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { buildPageMetadata, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/metadata";
 
 // Every post always ships a share image: its own thumbnail if it has one,
 // otherwise the site-wide default. X/LinkedIn/Facebook can't render SVG
-// covers, so thumbnails must be PNG/JPG/WEBP — never .svg.
-const DEFAULT_OG_IMAGE = "/images/og-default.png";
+// covers, so SVG thumbnails are excluded here and fall back to the default —
+// enforced in code, not just by convention.
+function getShareImage(thumbnail: string | undefined): string {
+  if (!thumbnail || thumbnail.endsWith(".svg")) return DEFAULT_OG_IMAGE;
+  return thumbnail;
+}
 
 export function generateStaticParams() {
   const posts = getAllPosts();
@@ -21,27 +26,16 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  const url = `https://www.jenariusganlary.com/blog/${post.slug}`;
-  const shareImage = post.thumbnail ?? DEFAULT_OG_IMAGE;
-  return {
+  return buildPageMetadata({
     title: post.title,
     description: post.description,
-    alternates: { canonical: url },
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      type: "article",
-      publishedTime: post.date,
-      url,
-      images: [shareImage],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.description,
-      images: [shareImage],
-    },
-  };
+    path: `/blog/${post.slug}`,
+    ogImage: getShareImage(post.thumbnail),
+    ogImageAlt: post.title,
+    type: "article",
+    // Full ISO 8601 with timezone — posts publish in the evening IST.
+    publishedTime: `${post.date}T18:30:00+05:30`,
+  });
 }
 
 function estimateReadTime(html: string) {
@@ -53,7 +47,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   const readTime = estimateReadTime(post.content);
-  const url = `https://www.jenariusganlary.com/blog/${post.slug}`;
+  const url = `${SITE_URL}/blog/${post.slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -75,7 +69,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       "@type": "WebPage",
       "@id": url,
     },
-    ...(post.thumbnail && { image: `https://www.jenariusganlary.com${post.thumbnail}` }),
+    ...(post.thumbnail && { image: `${SITE_URL}${post.thumbnail}` }),
   };
 
   // Reflects real, navigable pages only — Home and Articles are actual routes.
