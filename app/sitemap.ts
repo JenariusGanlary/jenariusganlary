@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/posts";
+import { CATEGORIES } from "@/lib/categories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.jenariusganlary.com";
@@ -20,6 +21,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1 : 0.7,
   }));
 
+  // Topic-hub pages — generated from CATEGORIES so a future pillar is
+  // included automatically, same as its route is.
+  const categoryPages = CATEGORIES.map((cat) => ({
+    url: `${baseUrl}/blog/category/${cat.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   const posts = getAllPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
@@ -27,5 +37,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...posts];
+  return [...staticPages, ...categoryPages, ...posts];
 }
