@@ -39,7 +39,7 @@ The uncomfortable lesson is that open source only protects you as far as the bac
 
 I had internalized "open source = safe bet" as a heuristic somewhere along the way, and this killed it for me. The correct heuristic is narrower: open source protects you when the open part is the part you depend on. A fully self-hostable database is a real hedge. An open-source client for a proprietary API is a convenience that can be revoked.
 
-This is the same reasoning I worked through when I wrote about [why I picked Supabase over Firebase](/blog/why-i-picked-supabase-over-firebase) — Supabase's self-hostable Postgres core was a genuine exit hatch in a way that Firebase's open SDKs never were. I got that one right partly by luck. The Gemini CLI shutdown turned the luck into a rule I can apply deliberately.
+This is the same reasoning I worked through when I picked Supabase over Firebase for CreatorBit — Supabase's self-hostable Postgres core was a genuine exit hatch in a way that Firebase's open SDKs never were. I got that one right partly by luck. The Gemini CLI shutdown turned the luck into a rule I can apply deliberately.
 
 ![Diagram contrasting an open-source client connected to a proprietary backend against a fully self-hostable tool, showing where the dependency actually lives](/images/open-client-proprietary-backend.png)
 
@@ -79,7 +79,7 @@ Estimate, in actual hours, what it takes to move off the tool. Not "is there an 
 
 For my own projects, a dead tool is an annoyance. For Ganlary Labs client work, it's a liability I'd be handing to someone who trusted my judgment — so the framework applies with the dials turned up. A client's MVP might not get touched by a developer for six months after handover. Every tool choice in that build is a bet that has to survive unattended.
 
-Concretely, this changed two habits. I now document, in the handover notes, which parts of a client's stack depend on vendor-hosted AI services and what the fallback is if any of them changes terms or dies. And for anything AI-powered in a client build, the integration goes behind a thin abstraction layer — not because abstraction is free (it isn't, and I've written about paying for good tools rather than contorting around them in [5 Tools Every Solo Developer Should Actually Pay For](/blog/5-tools-every-solo-developer-should-actually-pay-for)), but because the exit cost calculation is different when the person paying it isn't you.
+Concretely, this changed two habits. I now document, in the handover notes, which parts of a client's stack depend on vendor-hosted AI services and what the fallback is if any of them changes terms or dies. And for anything AI-powered in a client build, the integration goes behind a thin abstraction layer — not because abstraction is free (it isn't, and I've written about paying for good tools rather than contorting around them in [5 Solo Developer Tools Actually Worth Paying For](/blog/five-solo-developer-tools)), but because the exit cost calculation is different when the person paying it isn't you.
 
 The Gemini CLI shutdown wasn't unusual, and that's the point. Tools in this space are being launched, pivoted, and killed faster than any ecosystem I've worked in — faster than the JavaScript framework churn people used to joke about, because this time the churn includes the serving infrastructure, not just the API surface. The developers who came out of June 18 fine weren't the ones who predicted it. They were the ones whose setups didn't care.
 
