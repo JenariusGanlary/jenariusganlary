@@ -132,7 +132,7 @@ export default function Home() {
             { name: "Supabase", desc: "Database & auth" },
             { name: "Resend", desc: "Transactional email" },
           ].map((tool) => (
-            <div key={tool.name} className="rounded-xl bg-surface border border-line p-4 md:p-6 hover:border-accent transition-colors cursor-pointer">
+            <div key={tool.name} className="rounded-xl bg-surface border border-line p-4 md:p-6 hover:border-accent transition-colors">
               <p className="font-semibold text-sm mb-1 text-foreground">{tool.name}</p>
               <p className="text-xs text-mute">{tool.desc}</p>
             </div>
@@ -145,11 +145,12 @@ export default function Home() {
 
       <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 md:py-16 border-t border-line">
         <div className="rounded-2xl border border-line bg-surface p-6 md:p-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Join thousands of developers and founders.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Join the newsletter.</h2>
           <p className="text-mute mb-6 md:mb-8">Weekly insights. No spam. Just value.</p>
           <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-2">
             <input
               placeholder="you@company.com"
+              aria-label="Email address"
               className="flex-1 bg-transparent border border-line rounded-md px-4 py-3 text-sm text-foreground"
             />
             <button className="bg-accent text-white px-5 py-3 rounded-md text-sm font-semibold hover:opacity-90 transition">
