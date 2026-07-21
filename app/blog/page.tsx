@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/posts";
 import CategoryTag from "@/components/CategoryTag";
 import { CATEGORIES } from "@/lib/categories";
+import { formatDate } from "@/lib/dates";
 import CategoryFilterFull from "@/components/CategoryFilterFull";
 import Link from "next/link";
 import Image from "next/image";
@@ -87,7 +88,9 @@ export default function BlogPage() {
               {featured.title}
             </h2>
             <p className="text-mute mb-2">{featured.description}</p>
-            <p className="text-xs text-mute font-mono">{featured.date}</p>
+            <p className="text-xs text-mute font-mono">
+              <time dateTime={featured.date}>{formatDate(featured.date)}</time>
+            </p>
           </div>
         </Link>
       )}

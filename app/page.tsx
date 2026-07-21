@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getAllPosts } from "@/lib/posts";
 import CategoryTag from "@/components/CategoryTag";
 import { CATEGORIES } from "@/lib/categories";
+import { formatDate } from "@/lib/dates";
 import TypewriterRoles from "@/components/TypewriterRoles";
 import HeroHeadline from "@/components/HeroHeadline";
 import HomeCategoriesAndLatest from "@/components/HomeCategoriesAndLatest";
@@ -73,7 +74,9 @@ export default function Home() {
                 <CategoryTag category={featured.category} />
                 <h2 className="text-xl md:text-2xl font-bold mt-3 mb-3 text-foreground leading-snug">{featured.title}</h2>
                 <p className="text-mute text-sm mb-4">{featured.description}</p>
-                <p className="text-xs text-mute font-mono">{featured.date}</p>
+                <p className="text-xs text-mute font-mono">
+                  <time dateTime={featured.date}>{formatDate(featured.date)}</time>
+                </p>
               </div>
             </Link>
 
@@ -110,7 +113,9 @@ export default function Home() {
                       <h3 className="font-semibold text-sm mt-1 mb-1 leading-snug text-foreground line-clamp-2">
                         {post.title}
                       </h3>
-                      <p className="text-xs text-mute font-mono">{post.date}</p>
+                      <p className="text-xs text-mute font-mono">
+                        <time dateTime={post.date}>{formatDate(post.date)}</time>
+                      </p>
                     </div>
                   </Link>
                 );

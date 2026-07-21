@@ -11,8 +11,8 @@ export default function ShareRow({ title, url }: { title: string; url: string })
     setTimeout(() => setCopied(false), 2000);
   }
 
-  const twitterUrl =
-    "https://twitter.com/intent/tweet?text=" +
+  const xUrl =
+    "https://x.com/intent/post?text=" +
     encodeURIComponent(title) +
     "&url=" +
     encodeURIComponent(url);
@@ -30,7 +30,7 @@ export default function ShareRow({ title, url }: { title: string; url: string })
       >
         {copied ? "Copied!" : "Copy link"}
       </button>
-      <a href={twitterUrl} target="_blank" rel="noreferrer" className="text-sm border border-line rounded-md px-3 py-1.5 text-foreground/80 hover:border-accent hover:text-foreground transition-colors">
+      <a href={xUrl} target="_blank" rel="noreferrer" className="text-sm border border-line rounded-md px-3 py-1.5 text-foreground/80 hover:border-accent hover:text-foreground transition-colors">
         X
       </a>
       <a href={linkedinUrl} target="_blank" rel="noreferrer" className="text-sm border border-line rounded-md px-3 py-1.5 text-foreground/80 hover:border-accent hover:text-foreground transition-colors">

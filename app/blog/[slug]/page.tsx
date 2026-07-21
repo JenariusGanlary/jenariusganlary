@@ -8,6 +8,7 @@ import FAQSection from "@/components/FAQSection";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { buildPageMetadata, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/metadata";
+import { formatDate } from "@/lib/dates";
 
 // Every post always ships a share image: its own thumbnail if it has one,
 // otherwise the site-wide default. X/LinkedIn/Facebook can't render SVG
@@ -135,7 +136,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {post.title}
       </h1>
       <p className="text-sm text-mute mb-8 pb-8 border-b border-line font-mono">
-        {post.date} <span className="mx-2 opacity-40">&middot;</span> {readTime} min read
+        <time dateTime={post.date}>{formatDate(post.date)}</time> <span className="mx-2 opacity-40">&middot;</span> {readTime} min read
       </p>
 
       <TableOfContents items={post.toc} />

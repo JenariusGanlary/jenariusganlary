@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import CategoryTag from "./CategoryTag";
 import { CATEGORIES } from "@/lib/categories";
+import { formatDate } from "@/lib/dates";
 import type { Post } from "@/lib/posts";
 
 export default function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
@@ -45,7 +46,9 @@ export default function PostCard({ post, index = 0 }: { post: Post; index?: numb
           <p className="text-mute text-sm mb-4 leading-relaxed line-clamp-2">
             {post.description}
           </p>
-          <p className="text-xs text-mute font-mono mt-auto">{post.date}</p>
+          <p className="text-xs text-mute font-mono mt-auto">
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+          </p>
         </div>
       </Link>
     </div>
