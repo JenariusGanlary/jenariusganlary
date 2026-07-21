@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Resources",
-  description: "Tools I actually use to build SaaS products, ship freelance work, and run this blog.",
-  alternates: { canonical: "/resources" },
-};
+  description:
+    "Tools I actually use to build SaaS products, ship freelance work, and run this blog.",
+  path: "/resources",
+});
 
 const groups = [
   {
@@ -38,7 +40,7 @@ export default function ResourcesPage() {
       <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-foreground">Resources</h1>
       <p className="text-mute mb-12 max-w-xl">
         No sponsored placements — this is the actual stack behind CreatorBit,
-        Ganlary Labs client work, and this blog itself. I'll update it as
+        Ganlary Labs client work, and this blog itself. I&apos;ll update it as
         things change.
       </p>
 
@@ -66,7 +68,7 @@ export default function ResourcesPage() {
           <a href="/affiliate-disclosure" className="text-accent hover:opacity-80 transition">
             Affiliate Disclosure page
           </a>
-          . I only list tools I've personally used and would recommend
+          . I only list tools I&apos;ve personally used and would recommend
           regardless of any commission.
         </p>
       </div>

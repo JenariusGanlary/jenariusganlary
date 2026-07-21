@@ -5,19 +5,22 @@ import { CATEGORIES } from "@/lib/categories";
 import CategoryFilterFull from "@/components/CategoryFilterFull";
 import Link from "next/link";
 import Image from "next/image";
+import { buildPageMetadata, SITE_URL } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+const PAGE_DESCRIPTION = "Tech, finance, and startup notes for indie hackers.";
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Articles",
-  description: "Tech, finance, and startup notes for indie hackers.",
-  alternates: { canonical: "/blog" },
-};
+  description: PAGE_DESCRIPTION,
+  path: "/blog",
+});
 
 const collectionPageJsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Articles",
-  description: "Tech, finance, and startup notes for indie hackers.",
-  url: "https://www.jenariusganlary.com/blog",
+  description: PAGE_DESCRIPTION,
+  url: `${SITE_URL}/blog`,
   isPartOf: {
     "@id": "https://www.jenariusganlary.com/#website",
   },
@@ -27,8 +30,8 @@ const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.jenariusganlary.com" },
-    { "@type": "ListItem", position: 2, name: "Articles", item: "https://www.jenariusganlary.com/blog" },
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Articles", item: `${SITE_URL}/blog` },
   ],
 };
 

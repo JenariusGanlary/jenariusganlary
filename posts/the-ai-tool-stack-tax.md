@@ -98,7 +98,7 @@ If a tool is low-usage, overlaps with something else you're already paying for, 
 
 The reason stacks bloat in the first place is that founders make each individual tool decision in isolation and never revisit the aggregate. Put a recurring calendar reminder — quarterly is enough — to run steps 1 through 5 again. Treat it with the same seriousness you'd treat a review of your cloud hosting bill or your payment processor fees, because functionally, that's what it is.
 
-I did write up the tools I actually still use and rely on — you can see that list in [10 Best AI Tools for Indie Founders](/articles/10-best-ai-tools-indie-founders) — but I'd point out the difference between that post and this one deliberately. That list is what survived an audit like the one above. It's not an argument for adding more; it's what was left after cutting everything that didn't earn its place.
+I keep a short list of the tools that actually survived an audit like the one above — the ones I still use and rely on daily. That list isn't an argument for adding more; it's what was left after cutting everything that didn't earn its place. I'll publish the full breakdown as its own post soon.
 
 ## Why Founders Keep Tools They Already Know They Should Cut
 
