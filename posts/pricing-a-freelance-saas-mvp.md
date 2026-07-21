@@ -3,12 +3,12 @@ title: "How to Price a Freelance SaaS MVP (A Framework, Not Just 'Charge What Yo
 description: "A practical, tiered pricing framework for freelance MVP builds — how to scope it, quote it, and protect yourself from scope creep."
 date: "2026-07-18"
 category: "finance-builders"
-thumbnail: "/images/pricing-tiers-cover.svg"
+thumbnail: "/images/pricing-tiers-cover.png"
 ---
 
 "Charge what you're worth" is useless advice. It tells you nothing about how to actually arrive at a number, and it's exactly the kind of platitude that leaves freelance developers either underpricing out of fear or overpricing out of guesswork — both of which lose the client. What actually works is a repeatable framework you can run every single time a new MVP request lands in your inbox.
 
-![Three ascending pricing tiers labeled Starter, Core MVP, and Full Build, representing a freelance SaaS MVP pricing framework](/images/pricing-tiers-cover.svg)
+![Three ascending pricing tiers labeled Starter, Core MVP, and Full Build, representing a freelance SaaS MVP pricing framework](/images/pricing-tiers-cover.png)
 
 This is the framework I actually use through Ganlary Labs, refined over enough client conversations to know exactly where it breaks down and where it holds.
 

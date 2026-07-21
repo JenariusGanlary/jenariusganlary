@@ -8,6 +8,11 @@ import FAQSection from "@/components/FAQSection";
 import Link from "next/link";
 import type { Metadata } from "next";
 
+// Every post always ships a share image: its own thumbnail if it has one,
+// otherwise the site-wide default. X/LinkedIn/Facebook can't render SVG
+// covers, so thumbnails must be PNG/JPG/WEBP — never .svg.
+const DEFAULT_OG_IMAGE = "/images/og-default.png";
+
 export function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({ slug: post.slug }));
@@ -17,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   const url = `https://www.jenariusganlary.com/blog/${post.slug}`;
+  const shareImage = post.thumbnail ?? DEFAULT_OG_IMAGE;
   return {
     title: post.title,
     description: post.description,
@@ -26,13 +32,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: post.description,
       type: "article",
       publishedTime: post.date,
-      images: post.thumbnail ? [post.thumbnail] : undefined,
+      url,
+      images: [shareImage],
     },
     twitter: {
-      card: post.thumbnail ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: post.thumbnail ? [post.thumbnail] : undefined,
+      images: [shareImage],
     },
   };
 }

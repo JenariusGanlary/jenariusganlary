@@ -6,11 +6,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadingProgress from "@/components/ReadingProgress";
 import { ThemeProvider } from "next-themes";
-
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-display" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.jenariusganlary.com"),
   title: {
@@ -26,14 +24,23 @@ export const metadata: Metadata = {
     siteName: "Jenarius Ganlary",
     title: "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers",
     description: "Personal blog on tech, finance, and startups for indie hackers.",
+    url: "https://www.jenariusganlary.com",
+    images: [
+      {
+        url: "/images/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers",
     description: "Personal blog on tech, finance, and startups for indie hackers.",
+    images: ["/images/og-default.png"],
   },
 };
-
 // Site-wide structured data (GEO/SEO Phase 1).
 // The full Person entity (bio, skills, social links) lives on app/about/page.tsx
 // as the single source of truth — this WebSite schema just points to it by
@@ -51,7 +58,6 @@ const websiteJsonLd = {
   },
   inLanguage: "en-US",
 };
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable} ${mono.variable}`} suppressHydrationWarning>

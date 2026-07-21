@@ -3,12 +3,12 @@ title: "What Managing a Rural Development Programme Taught Me About Building Pro
 description: "Lessons on MIS design, stakeholder convergence, documentation discipline, and systems thinking from running field operations in rural India — and why every SaaS founder should think like a programme manager."
 date: "2026-07-17"
 category: "building-in-public"
-thumbnail: "/images/citizens-foundation-cover.svg"
+thumbnail: "/images/citizens-foundation-cover.png"
 ---
 
 Most lessons about building products come from other builders. Mine came from a place nobody expects: managing MIS and documentation for a rural development programme in Sagalee, Arunachal Pradesh — a role that has almost nothing to do with SaaS on paper, and almost everything to do with it underneath.
 
-![Rural terrain illustration representing a development programme in Sagalee, Arunachal Pradesh](/images/citizens-foundation-cover.svg)
+![Rural terrain illustration representing a development programme in Sagalee, Arunachal Pradesh](/images/citizens-foundation-cover.png)
 
 ## The day job that isn't a "tech" job
 

@@ -3,12 +3,12 @@ title: "What Changed in My Head When I Moved From IT to Rural Livelihoods Work"
 description: "A mindset shift from tech-sector thinking to NGO field work — and why the two aren't as far apart as they look."
 date: "2026-07-19"
 category: "building-in-public"
-thumbnail: "/images/it-to-ngo-cover.svg"
+thumbnail: "/images/it-to-ngo-cover.png"
 ---
 
 I've spent the last few years moving between government IT projects, a startup, a fully remote US team, a classroom — and now, a rural development programme in Sagalee, Arunachal Pradesh, coordinating MIS and livelihood data for households I've actually met. Nothing in my computer science degree prepared me for this job. Nothing in this job resembles what I thought "tech work" meant. And somewhere in the middle of that mismatch, my actual thinking changed in ways I didn't expect.
 
-![A laptop icon on one side and hills representing rural livelihoods on the other, connected by a dashed bridge, symbolizing the transition from IT sector to rural development work](/images/it-to-ngo-cover.svg)
+![A laptop icon on one side and hills representing rural livelihoods on the other, connected by a dashed bridge, symbolizing the transition from IT sector to rural development work](/images/it-to-ngo-cover.png)
 
 This isn't a "lessons learned" post about MIS systems — I've written that one already. This is about the actual mindset shift underneath it, because that's the part nobody warns you about when you take a job that looks, on paper, like a step sideways from "real" tech work.
 
