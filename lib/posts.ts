@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
@@ -178,6 +179,7 @@ export async function getPostBySlug(slug: string): Promise<PostWithToc> {
   const { faq, content } = extractFaq(rawContent);
 
   const processed = await remark()
+    .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeSlug)
     .use(rehypeStringify)
