@@ -9,13 +9,20 @@ import { ThemeProvider } from "next-themes";
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-display" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+
+// Single source of truth for the site description — used in metadata,
+// Open Graph, Twitter cards, and JSON-LD so they can never drift apart.
+// Kept in the 120–160 character range for full-width SERP snippets.
+const SITE_DESCRIPTION =
+  "Practical writing on SaaS, AI tools, indie hacking, and finance for builders — from a full-stack developer building in public from Northeast India.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.jenariusganlary.com"),
   title: {
     default: "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers",
     template: "%s | Jenarius Ganlary",
   },
-  description: "Personal blog on tech, finance, and startups for indie hackers.",
+  description: SITE_DESCRIPTION,
   alternates: {
     canonical: "/",
   },
@@ -23,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Jenarius Ganlary",
     title: "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers",
-    description: "Personal blog on tech, finance, and startups for indie hackers.",
+    description: SITE_DESCRIPTION,
     url: "https://www.jenariusganlary.com",
     images: [
       {
@@ -37,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers",
-    description: "Personal blog on tech, finance, and startups for indie hackers.",
+    description: SITE_DESCRIPTION,
     images: ["/images/og-default.png"],
   },
 };
@@ -52,7 +59,7 @@ const websiteJsonLd = {
   "@id": "https://www.jenariusganlary.com/#website",
   name: "Jenarius Ganlary",
   url: "https://www.jenariusganlary.com",
-  description: "Personal blog on tech, finance, and startups for indie hackers.",
+  description: SITE_DESCRIPTION,
   publisher: {
     "@id": "https://www.jenariusganlary.com/#person",
   },
