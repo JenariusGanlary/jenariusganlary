@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -56,6 +57,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           id="website-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        {/* Google AdSense site-verification + ad-serving script.
+            Loads on every page, unconditionally — required for Google's
+            site-ownership verification to detect it. Uses beforeInteractive
+            so Next.js injects it into the server-rendered HTML directly,
+            since Google's crawler and curl-based checks only see the raw
+            server HTML, not client-hydrated DOM. */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4240391525576407"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
         />
         <AnalyticsScripts />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
