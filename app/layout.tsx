@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReadingProgress from "@/components/ReadingProgress";
+import CookieConsent from "@/components/CookieConsent";
+import AnalyticsScripts from "@/components/AnalyticsScripts";
 import { ThemeProvider } from "next-themes";
 import {
   buildPageMetadata,
@@ -56,23 +57,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-YWGV9NL8Q0"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-YWGV9NL8Q0');
-          `}
-        </Script>
+        <AnalyticsScripts />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <ReadingProgress />
           <Header />
           <main className="max-w-6xl mx-auto px-4 py-10 min-h-screen">{children}</main>
           <Footer />
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>
