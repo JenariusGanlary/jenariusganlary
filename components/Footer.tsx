@@ -27,6 +27,7 @@ export default function Footer() {
           <p className="font-semibold text-foreground/80 mb-3">Legal</p>
           <div className="flex flex-col gap-2 text-mute">
             <Link href="/privacy-policy" className="hover:text-foreground transition">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="hover:text-foreground transition">Terms & Conditions</Link>
             <Link href="/affiliate-disclosure" className="hover:text-foreground transition">Affiliate Disclosure</Link>
           </div>
         </div>
