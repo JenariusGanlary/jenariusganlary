@@ -63,14 +63,18 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       url: "https://www.jenariusganlary.com/about",
     },
     publisher: {
-      "@type": "Person",
-      name: "Jenarius Ganlary",
+      "@type": "Organization",
+      name: "Ganlary Labs",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/og-default.png`,
+      },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url,
     },
-    ...(post.thumbnail && { image: `${SITE_URL}${post.thumbnail}` }),
+    image: `${SITE_URL}${getShareImage(post.thumbnail)}`,
   };
 
   // Reflects real, navigable pages only — Home and Articles are actual routes.
