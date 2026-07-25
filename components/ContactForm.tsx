@@ -6,7 +6,12 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  // Honeypot field. Real visitors never see or interact with this (it's
+  // visually hidden and excluded from tab order / screen readers below) —
+  // bots that fill every input on the page blindly will fill it, and the
+  // API route silently drops any submission where it's non-empty.
+  const [company, setCompany] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error" | "rateLimited">("idle");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -15,13 +20,16 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, company }),
       });
       if (res.ok) {
         setStatus("sent");
         setName("");
         setEmail("");
         setMessage("");
+        setCompany("");
+      } else if (res.status === 429) {
+        setStatus("rateLimited");
       } else {
         setStatus("error");
       }
@@ -73,6 +81,21 @@ export default function ContactForm() {
           className="w-full bg-surface border border-line rounded-lg px-4 py-3.5 text-foreground focus:outline-none focus:border-accent transition-colors resize-none"
         />
       </div>
+      {/* Honeypot — invisible and unreachable to real users (off-screen,
+          not tab-focusable, hidden from assistive tech), but present in the
+          DOM for bots that fill every field indiscriminately. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-auto w-px h-px overflow-hidden">
+        <label htmlFor="contact-company">Company</label>
+        <input
+          id="contact-company"
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+        />
+      </div>
       <button
         type="submit"
         disabled={status === "sending"}
@@ -81,6 +104,9 @@ export default function ContactForm() {
         {status === "sending" ? "Sending..." : "Send message →"}
       </button>
       {status === "error" && <p className="text-red-500 text-sm">Something went wrong — please try again.</p>}
+      {status === "rateLimited" && (
+        <p className="text-red-500 text-sm">Too many messages sent recently — please try again in a bit.</p>
+      )}
     </form>
   );
 }
