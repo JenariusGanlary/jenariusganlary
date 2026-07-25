@@ -40,7 +40,7 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-xl border border-accent/30 bg-accent/5 p-8">
+      <div role="status" aria-live="polite" className="rounded-xl border border-accent/30 bg-accent/5 p-8">
         <p className="text-accent font-semibold text-lg mb-1">Message sent.</p>
         <p className="text-mute text-sm">I&apos;ll get back to you soon — usually within a day.</p>
       </div>
@@ -103,10 +103,12 @@ export default function ContactForm() {
       >
         {status === "sending" ? "Sending..." : "Send message →"}
       </button>
-      {status === "error" && <p className="text-red-500 text-sm">Something went wrong — please try again.</p>}
-      {status === "rateLimited" && (
-        <p className="text-red-500 text-sm">Too many messages sent recently — please try again in a bit.</p>
-      )}
+      <div role="status" aria-live="polite">
+        {status === "error" && <p className="text-red-500 text-sm">Something went wrong — please try again.</p>}
+        {status === "rateLimited" && (
+          <p className="text-red-500 text-sm">Too many messages sent recently — please try again in a bit.</p>
+        )}
+      </div>
     </form>
   );
 }

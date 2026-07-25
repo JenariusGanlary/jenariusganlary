@@ -33,7 +33,13 @@ export default function Header() {
 
         <div className="flex md:hidden items-center gap-2">
           <ThemeToggle />
-          <button onClick={() => setOpen(!open)} aria-label="Toggle menu" className="text-foreground p-1">
+          <button
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            className="text-foreground p-1"
+          >
             {open ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -48,7 +54,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-line px-5 py-5 flex flex-col gap-4 text-[15px] font-medium bg-background">
+        <div id="mobile-nav" className="md:hidden border-t border-line px-5 py-5 flex flex-col gap-4 text-[15px] font-medium bg-background">
           <Link href="/" onClick={() => setOpen(false)} className="text-foreground/80 hover:text-foreground transition">Home</Link>
           <Link href="/blog" onClick={() => setOpen(false)} className="text-foreground/80 hover:text-foreground transition">Articles</Link>
           <Link href="/newsletter" onClick={() => setOpen(false)} className="text-foreground/80 hover:text-foreground transition">Newsletter</Link>
