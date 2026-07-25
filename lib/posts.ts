@@ -6,6 +6,9 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import { visit } from "unist-util-visit";
+import { toString as hastToString } from "hast-util-to-string";
+import type { Root, Element } from "hast";
 import { z } from "zod";
 import { CATEGORIES } from "./categories";
 
@@ -87,6 +90,14 @@ export type FaqItem = { question: string; answer: string };
 
 export type PostWithToc = Post & { toc: TocItem[]; faq: FaqItem[] };
 
+// FAQSection renders its own "Frequently asked questions" <h2> directly
+// (it's stripped out of the markdown before the remark/rehype pipeline runs,
+// so rehype-slug never sees it and can't assign it an id). Both the TOC and
+// FAQSection need to agree on the exact same id — sharing this constant is
+// what guarantees that instead of two independent hardcoded strings.
+export const FAQ_HEADING_ID = "frequently-asked-questions";
+const FAQ_HEADING_TEXT = "Frequently asked questions";
+
 export function getAllPosts(): Post[] {
   const filenames = fs.readdirSync(postsDirectory).filter((f) => f.endsWith(".md"));
   const posts = filenames.map((filename) => {
@@ -109,20 +120,28 @@ export function getAllPosts(): Post[] {
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-function extractToc(markdownContent: string): TocItem[] {
-  const headingRegex = /^(##|###)\s+(.+)$/gm;
-  const items: TocItem[] = [];
-  let match;
-  while ((match = headingRegex.exec(markdownContent)) !== null) {
-    const level = match[1].length;
-    const text = match[2].trim();
-    const id = text
-      .toLowerCase()
-      .replace(/[^\w\s-]/g, "")
-      .replace(/\s+/g, "-");
-    items.push({ text, id, level });
-  }
-  return items;
+// Collects TOC entries directly from the rendered HAST tree, AFTER
+// rehype-slug has already assigned each h2/h3 its final `id`. This replaces
+// a previous hand-rolled regex slugifier that ran on raw markdown and
+// duplicated rehype-slug's job with different (buggy) collision handling —
+// two headings with the same text got the same TOC-generated id even
+// though rehype-slug correctly suffixed the second one with "-1", so the
+// second TOC link silently jumped to the first heading. Reading the id
+// rehype-slug actually assigned, instead of recomputing it, makes that
+// class of bug structurally impossible: there is only one slugifier now.
+function collectToc(toc: TocItem[]) {
+  return () => (tree: Root) => {
+    visit(tree, "element", (node: Element) => {
+      if (node.tagName !== "h2" && node.tagName !== "h3") return;
+      const id = node.properties?.id;
+      if (typeof id !== "string" || id.length === 0) return;
+      toc.push({
+        id,
+        text: hastToString(node).trim(),
+        level: node.tagName === "h2" ? 2 : 3,
+      });
+    });
+  };
 }
 
 // Extracts real Q&A pairs from a "## Frequently asked questions" section,
@@ -175,15 +194,24 @@ export async function getPostBySlug(slug: string): Promise<PostWithToc> {
   const { data, content: rawContent } = matter(fileContents);
   const frontmatter = validateFrontmatter(filename, data);
 
-  const toc = extractToc(rawContent);
   const { faq, content } = extractFaq(rawContent);
 
+  const toc: TocItem[] = [];
   const processed = await remark()
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeSlug)
+    .use(collectToc(toc))
     .use(rehypeStringify)
     .process(content);
+
+  // FAQSection renders its heading outside this pipeline (see comment on
+  // FAQ_HEADING_ID above), so it's added to the TOC separately here rather
+  // than being picked up by collectToc — only when a FAQ section actually
+  // exists, never fabricated for posts without one.
+  if (faq.length > 0) {
+    toc.push({ id: FAQ_HEADING_ID, text: FAQ_HEADING_TEXT, level: 2 });
+  }
 
   return {
     slug,

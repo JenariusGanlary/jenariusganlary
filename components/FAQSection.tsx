@@ -1,4 +1,5 @@
 import type { FaqItem } from "@/lib/posts";
+import { FAQ_HEADING_ID } from "@/lib/posts";
 
 export default function FAQSection({ items }: { items: FaqItem[] }) {
   if (items.length === 0) return null;
@@ -6,7 +7,7 @@ export default function FAQSection({ items }: { items: FaqItem[] }) {
   return (
     <section className="mt-10 pt-8 border-t border-line">
       <p className="text-xs font-mono text-mute mb-3">FAQ</p>
-      <h2 id="frequently-asked-questions" className="text-2xl font-bold mb-6 text-foreground scroll-mt-24">
+      <h2 id={FAQ_HEADING_ID} className="text-2xl font-bold mb-6 text-foreground scroll-mt-24">
         Frequently asked questions
       </h2>
       <div className="space-y-4">
