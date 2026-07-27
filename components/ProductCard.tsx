@@ -3,13 +3,13 @@ import type { Product } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href={product.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col sm:flex-row gap-5 rounded-xl bg-surface border border-line p-5 md:p-6 hover:border-accent transition-colors">
-      <div className="relative w-full sm:w-40 h-40 sm:h-auto shrink-0 rounded-lg overflow-hidden bg-[#161618]">
+    <Link href={product.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col gap-4 rounded-xl bg-surface border border-line p-5 md:p-6 hover:border-accent transition-colors">
+      <div className="relative w-full aspect-video shrink-0 rounded-lg overflow-hidden bg-[#161618]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={product.thumbnail}
           alt={product.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
       </div>
 
