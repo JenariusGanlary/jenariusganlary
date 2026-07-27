@@ -8,6 +8,8 @@ import TypewriterRoles from "@/components/TypewriterRoles";
 import HeroHeadline from "@/components/HeroHeadline";
 import HomeCategoriesAndLatest from "@/components/HomeCategoriesAndLatest";
 import TerminalCard from "@/components/TerminalCard";
+import ProductCard from "@/components/ProductCard";
+import { PRODUCTS } from "@/lib/products";
 
 export default function Home() {
   const posts = getAllPosts();
@@ -126,6 +128,18 @@ export default function Home() {
       )}
 
       <HomeCategoriesAndLatest posts={posts} />
+
+      {PRODUCTS.length > 0 && (
+        <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 md:py-16 border-t border-line">
+          <p className="text-xs font-mono text-mute mb-3">FROM ME</p>
+          <h2 className="text-2xl font-bold mb-6 md:mb-8 text-foreground">Products</h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            {PRODUCTS.map((product) => (
+              <ProductCard key={product.url} product={product} />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 md:py-16 border-t border-line">
         <p className="text-xs font-mono text-mute mb-3">TOOLS I ACTUALLY USE</p>
