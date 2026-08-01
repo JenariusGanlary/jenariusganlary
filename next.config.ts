@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+﻿import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async redirects() {
@@ -12,10 +12,10 @@ const nextConfig: NextConfig = {
       // inside a :path(...) capture. /ads.txt was getting redirected right
       // along with everything else despite the exception being in the code.
       //
-      // That logic now lives in middleware.ts instead, as plain conditional
+      // That logic now lives in proxy.ts instead, as plain conditional
       // JS (if host is the apex domain and path isn't /ads.txt, redirect to
       // www) — no regex trick required, so there's nothing to silently fail
-      // to compile. See middleware.ts for the full explanation.
+      // to compile. See proxy.ts for the full explanation.
 
       // The one post that shipped with a date-prefixed slug before the
       // frontmatter/slug contract existed. Permanent (301/308) so search
