@@ -1,0 +1,49 @@
+﻿name: ads.txt smoke test
+
+# Catches the exact regression class that slipped through for over a week:
+# ads.txt existing in code but silently redirecting (or 404ing) on one of
+# the two live hosts. This checks the real, deployed domains directly, not
+# the repo — a passing build doesn't guarantee this, since the original bug
+# was a routing/redirect problem invisible to `npm run build`.
+
+on:
+  schedule:
+    # Runs daily at 06:00 UTC
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  check-ads-txt:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        host:
+          - "https://jenariusganlary.com/ads.txt"
+          - "https://www.jenariusganlary.com/ads.txt"
+    steps:
+      - name: Request ads.txt and verify a direct 200
+        run: |
+          echo "Checking ${{ matrix.host }}"
+
+          # -s: silent, -o /dev/null: discard body, -w: print status code only
+          # No -L: we deliberately do NOT follow redirects. A redirect here
+          # is exactly the failure mode we're catching (Google's ads.txt
+          # crawler does not reliably follow cross-host redirects).
+          status=$(curl -s -o /dev/null -w "%{http_code}" "${{ matrix.host }}")
+
+          echo "Status: $status"
+
+          if [ "$status" != "200" ]; then
+            echo "::error::ads.txt at ${{ matrix.host }} returned $status instead of a direct 200 (likely redirecting or missing)."
+            exit 1
+          fi
+
+      - name: Verify body contains the AdSense publisher line
+        run: |
+          body=$(curl -s "${{ matrix.host }}")
+          echo "$body"
+
+          if ! echo "$body" | grep -q "pub-4240391525576407"; then
+            echo "::error::ads.txt at ${{ matrix.host }} did not contain the expected AdSense publisher ID."
+            exit 1
+          fi
