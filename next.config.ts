@@ -12,10 +12,17 @@ const nextConfig: NextConfig = {
       // canonical host redirect, Google can index the same page under both
       // hosts as if they were two separate sites, splitting ranking signal
       // between them instead of consolidating it onto one.
+      //
+      // EXCEPTION: /ads.txt is excluded from this redirect (via the negative
+      // lookahead below) so it resolves with a direct 200 on BOTH
+      // jenariusganlary.com and www.jenariusganlary.com. AdSense's ads.txt
+      // crawler checks the exact registered domain and does not reliably
+      // follow redirects for this file — a 308 here was causing AdSense to
+      // report "ads.txt not found" even though the file existed one hop away.
       {
-        source: "/:path*",
+        source: "/:path((?!ads\\.txt$).*)",
         has: [{ type: "host", value: "jenariusganlary.com" }],
-        destination: "https://www.jenariusganlary.com/:path*",
+        destination: "https://www.jenariusganlary.com/:path",
         permanent: true,
       },
       // The one post that shipped with a date-prefixed slug before the
