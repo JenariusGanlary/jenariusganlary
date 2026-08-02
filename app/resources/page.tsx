@@ -30,6 +30,7 @@ const groups = [
     label: "AI Tools",
     items: [
       { name: "Claude", desc: "Used for writing, coding, and — yes — most of this blog's build process.", url: "https://claude.ai", affiliate: false },
+      { name: "Wispr Flow", desc: "Voice dictation that turns speech into clean, formatted text anywhere on your Mac or PC. Try it free.", url: "https://ref.wisprflow.ai/jenariusganlary-in-gmail-com", affiliate: true },
     ],
   },
 ];
@@ -50,13 +51,7 @@ export default function ResourcesPage() {
           <h2 className="text-lg font-bold text-foreground mb-4">{group.label}</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {group.items.map((item) => (
-              <a
-                key={item.name}
-                href={item.url}
-                target="_blank"
-                rel={item.affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer"}
-                className="rounded-xl bg-surface border border-line p-5 hover:border-accent transition-colors block"
-              >
+              <a key={item.name} href={item.url} target="_blank" rel={item.affiliate ? "sponsored noopener noreferrer" : "noopener noreferrer"} className="rounded-xl bg-surface border border-line p-5 hover:border-accent transition-colors block">
                 <div className="flex items-center justify-between mb-1">
                   <p className="font-semibold text-sm text-foreground">{item.name}</p>
                   <span className="text-mute text-xs">&rarr;</span>
@@ -71,7 +66,8 @@ export default function ResourcesPage() {
       <div className="rounded-xl bg-surface border border-line p-6 mt-8">
         <p className="text-xs font-mono text-mute mb-2">A NOTE ON HONESTY</p>
         <p className="text-sm text-mute">
-          The Hostinger link above is an affiliate link, disclosed on the{" "}
+          The Hostinger and Wispr Flow links above are affiliate links,
+          disclosed on the{" "}
           <a href="/affiliate-disclosure" className="text-accent hover:opacity-80 transition">
             Affiliate Disclosure page
           </a>
