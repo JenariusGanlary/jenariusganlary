@@ -13,7 +13,7 @@ export default function PostCard({ post, index = 0 }: { post: Post; index?: numb
     <div className="h-full">
       <Link
         href={`/blog/${post.slug}`}
-        className="flex flex-col h-full rounded-xl overflow-hidden bg-surface border border-line hover:border-accent hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+        className="flex flex-col h-full rounded-xl overflow-hidden bg-surface border-2 border-line hover:border-accent hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
       >
         {/* The thumbnail is decorative here: the card's visible title sits right
             below it inside the same link, so the image gets an empty alt and the

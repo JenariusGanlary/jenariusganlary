@@ -3,7 +3,7 @@ import type { Product } from "@/lib/products";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href={product.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col gap-4 rounded-xl bg-surface border border-line p-5 md:p-6 hover:border-accent transition-colors">
+    <Link href={product.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col gap-4 rounded-xl bg-surface border-2 border-line p-5 md:p-6 hover:border-accent transition-all shadow-sm hover:shadow-md">
       <div className="relative w-full aspect-video shrink-0 rounded-lg overflow-hidden bg-[#161618]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

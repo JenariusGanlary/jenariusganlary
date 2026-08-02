@@ -48,13 +48,23 @@ export default function Home() {
         <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 md:py-16 border-t border-line">
           <p className="text-xs font-mono text-mute mb-5 md:mb-8">FEATURED</p>
           <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-6">
-            <Link href={`/blog/${featured.slug}`} className="rounded-xl overflow-hidden bg-surface border border-line hover:border-[#2a2a2e] transition-colors">
+            <Link
+              href={`/blog/${featured.slug}`}
+              className="rounded-xl overflow-hidden bg-surface border-2 border-line hover:border-accent transition-all shadow-sm hover:shadow-md"
+            >
               <div className="relative h-44 md:h-56 bg-[#161618] flex items-center justify-center overflow-hidden">
                 {featured.thumbnail ? (
                   featuredIsSvg ? (
                     <img src={featured.thumbnail} alt={featured.title} className="w-full h-full object-cover" />
                   ) : (
-                    <Image src={featured.thumbnail} alt={featured.title} fill priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+                    <Image
+                      src={featured.thumbnail}
+                      alt={featured.title}
+                      fill
+                      priority
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover"
+                    />
                   )
                 ) : (
                   <span className="text-white/30 text-3xl font-bold font-mono">
@@ -76,13 +86,23 @@ export default function Home() {
               {supporting.map((post) => {
                 const isSvg = post.thumbnail?.endsWith(".svg");
                 return (
-                  <Link key={post.slug} href={`/blog/${post.slug}`} className="rounded-xl bg-surface border border-line hover:border-[#2a2a2e] transition-colors p-5 flex gap-4">
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="rounded-xl bg-surface border-2 border-line hover:border-accent transition-all shadow-sm hover:shadow-md p-5 flex gap-4"
+                  >
                     <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg shrink-0 bg-[#161618] flex items-center justify-center overflow-hidden">
                       {post.thumbnail ? (
                         isSvg ? (
                           <img src={post.thumbnail} alt={post.title} className="w-full h-full object-cover" />
                         ) : (
-                          <Image src={post.thumbnail} alt={post.title} fill sizes="80px" className="object-cover" />
+                          <Image
+                            src={post.thumbnail}
+                            alt={post.title}
+                            fill
+                            sizes="80px"
+                            className="object-cover"
+                          />
                         )
                       ) : (
                         <span className="text-white/30 text-xs font-bold font-mono">
@@ -131,7 +151,7 @@ export default function Home() {
             { name: "Supabase", desc: "Database & auth" },
             { name: "Wispr Flow", desc: "Voice dictation" },
           ].map((tool) => (
-            <div key={tool.name} className="rounded-xl bg-surface border border-line p-4 md:p-6 hover:border-accent transition-colors">
+            <div key={tool.name} className="rounded-xl bg-surface border-2 border-line p-4 md:p-6 hover:border-accent transition-all shadow-sm hover:shadow-md">
               <p className="font-semibold text-sm mb-1 text-foreground">{tool.name}</p>
               <p className="text-xs text-mute">{tool.desc}</p>
             </div>
@@ -143,11 +163,15 @@ export default function Home() {
       </section>
 
       <section className="max-w-6xl mx-auto px-5 md:px-6 py-10 md:py-16 border-t border-line">
-        <div className="rounded-2xl border border-line bg-surface p-6 md:p-12 text-center">
+        <div className="rounded-2xl border-2 border-line bg-surface p-6 md:p-12 text-center shadow-sm">
           <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Join the newsletter.</h2>
           <p className="text-mute mb-6 md:mb-8">Weekly insights. No spam. Just value.</p>
           <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-2">
-            <input placeholder="you@company.com" aria-label="Email address" className="flex-1 bg-transparent border border-line rounded-md px-4 py-3 text-sm text-foreground" />
+            <input
+              placeholder="you@company.com"
+              aria-label="Email address"
+              className="flex-1 bg-transparent border border-line rounded-md px-4 py-3 text-sm text-foreground"
+            />
             <button className="bg-accent text-white px-5 py-3 rounded-md text-sm font-semibold hover:opacity-90 transition">
               Subscribe
             </button>
