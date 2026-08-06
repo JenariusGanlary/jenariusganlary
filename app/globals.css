@@ -43,7 +43,64 @@ body {
 .prose-body h3 { font-weight: 700; font-size: 1.2rem; margin-top: 1.6em; margin-bottom: 0.5em; color: var(--foreground); }
 .prose-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 .prose-body blockquote { border-left: 3px solid var(--accent); padding-left: 1em; font-style: italic; color: var(--mute); margin: 1.5em 0; }
-.prose-body code { background: var(--surface); padding: 0.15em 0.4em; border-radius: 4px; font-family: var(--font-mono); font-size: 0.9em; }
+
+/* Inline code, e.g. `like this`. Scoped with :not(pre) so it never leaks
+   into fenced code blocks below — pre/code inside fences are styled
+   separately, with colors driven by rehype-pretty-code/Shiki instead. */
+.prose-body :not(pre) > code {
+  background: var(--surface);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Fenced code blocks (```sql ... ```), processed by rehype-pretty-code at
+   build time. Structural styling (box, spacing, scroll) lives here; token
+   colors and the background come from Shiki's dual-theme CSS variables
+   below, not hardcoded here. */
+.prose-body pre {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1em 1.25em;
+  margin: 1.75em 0;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  -webkit-overflow-scrolling: touch;
+}
+.prose-body pre code {
+  font-size: inherit;
+  font-family: inherit;
+  white-space: pre;
+  display: block;
+}
+
+/* Shiki dual-theme colors (rehype-pretty-code theme: { light, dark }).
+   Shiki puts CSS custom properties (--shiki-light, --shiki-light-bg,
+   --shiki-dark, --shiki-dark-bg) directly on the <pre>/<code> elements as
+   inline styles; these rules just decide which pair is visible. The site
+   toggles dark mode via next-themes adding a .dark class to <html>, so we
+   key off that class rather than the prefers-color-scheme media query
+   Shiki's own docs default to.
+*/
+.prose-body pre,
+.prose-body code[data-theme*=" "] {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+.prose-body code[data-theme*=" "] span {
+  color: var(--shiki-light);
+}
+.dark .prose-body pre,
+.dark .prose-body code[data-theme*=" "] {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}
+.dark .prose-body code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+}
 
 /* Lists — Tailwind preflight strips default bullets/numbers, so restore them
    for article prose. */

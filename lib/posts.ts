@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
+import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
 import { visit } from "unist-util-visit";
@@ -200,6 +201,19 @@ export async function getPostBySlug(slug: string): Promise<PostWithToc> {
   const processed = await remark()
     .use(remarkGfm)
     .use(remarkRehype)
+    // Syntax highlighting for fenced code blocks (```sql, ```ts, etc.),
+    // powered by Shiki. Runs on the hast tree right after remarkRehype,
+    // same as rehype-pretty-code's documented order. Dual theme means each
+    // token gets both a light and dark color/background baked in as CSS
+    // custom properties (--shiki-light, --shiki-dark, etc.) — see the
+    // corresponding CSS in globals.css that switches between them based on
+    // the .dark class next-themes toggles on <html>.
+    .use(rehypePrettyCode, {
+      theme: {
+        light: "github-light",
+        dark: "github-dark-dimmed",
+      },
+    })
     .use(rehypeSlug)
     .use(collectToc(toc))
     .use(rehypeStringify)
