@@ -12,7 +12,7 @@ import type { FaqItem } from "@/lib/posts";
 export const metadata: Metadata = buildPageMetadata({
   title: "Work With Me",
   description:
-    "Full-stack web development, AI chatbots, and AI-powered booking systems from Ganlary Labs — starting at $1,500. See real project case studies and book a discovery call.",
+    "AI-powered products, websites, and chatbots from Ganlary Labs — an AI Product Engineering Studio. Starting at $1,500. See real project case studies and book a discovery call.",
   path: "/work-with-me",
 });
 
@@ -20,12 +20,12 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     question: "What happens after I book a call?",
     answer:
-      "We'll spend the call Auditing your website (If you already have one) and understanding your goals, current setup, and what you actually need built. After that, you get a scoped proposal with a fixed price and timeline before any work begins — no surprise costs.",
+      "We'll spend the call understanding your goals, current setup, and what you actually need built. After that, you get a scoped proposal with a fixed price and timeline before any work begins — no surprise costs.",
   },
   {
     question: "How long does a typical project take?",
     answer:
-      "Full-Stack Website projects usually run max to 1 weeks. The AI Chatbot tier runs 2 weeks. Full AI + Booking System projects run 2-3 weeks. Exact timelines depend on scope and how quickly content and assets are ready.",
+      "Full-Stack Website projects usually run 2–3 weeks. The AI Chatbot tier runs 3–4 weeks. Full AI + Booking System projects run 4–6 weeks. Exact timelines depend on scope and how quickly content and assets are ready.",
   },
   {
     question: "Do the listed prices include hosting and domain costs?",
@@ -47,7 +47,7 @@ const FAQ_ITEMS: FaqItem[] = [
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: "Web & AI Software Development",
+  serviceType: "AI Product Engineering",
   provider: {
     "@id": "https://www.jenariusganlary.com/#person",
   },
@@ -84,14 +84,15 @@ export default function WorkWithMePage() {
           className="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-6 text-foreground"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Websites and AI systems,
+          AI products,
           <br />
-          built and shipped.
+          engineered and shipped.
         </h1>
         <p className="text-base md:text-lg text-mute leading-relaxed mb-9 max-w-xl mx-auto">
-          I&apos;m Zen — full-stack developer running Ganlary Labs. I build
-          production-ready websites, AI chatbots, and AI-powered booking
-          systems for businesses that need something that actually works.
+          I&apos;m Zen, founder of Ganlary Labs — an AI Product Engineering
+          Studio. We build AI-powered products and systems for businesses,
+          from custom websites and AI chatbots to fully automated booking
+          flows — production-ready, not proof-of-concept.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link

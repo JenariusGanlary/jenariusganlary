@@ -136,7 +136,7 @@ export default function AboutPage() {
         <p>
           That discipline currently goes into two things: <strong className="text-foreground">CreatorBit</strong>,
           a SaaS platform for the creator economy built with Next.js,
-          Supabase, and the Claude API — and <strong className="text-foreground">Ganlary Labs</strong>,
+          Supabase, and the Claude API — and <Link href="/work-with-me" className="font-semibold text-accent hover:opacity-80 transition">Ganlary Labs</Link>,
           where I take on freelance work building SaaS MVPs, integrating AI
           features into existing products, and developing websites for
           businesses that need something functional and well-built, not
