@@ -94,7 +94,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Visitors to jenariusganlary.com — potential clients evaluating Ganlary Labs — often have quick questions about pricing, availability, or project fit that either go unanswered or require a full contact form and a wait for a reply. A static site has no way to give instant, contextual answers.",
     build:
       "An AI-powered chatbot embedded directly into jenariusganlary.com, capable of answering visitor questions about services, pricing, past projects, and general Q&A — in real time, without needing to submit a contact form and wait. Beyond serving visitors, it doubles as a live, working demonstration of the exact \u201cWebsite + AI Chatbot\u201d service tier offered through Ganlary Labs — visitors don't just read about the offering, they experience it directly on this site.",
-    stack: ["Next.js", "TypeScript", "Claude API"],
+    stack: ["Next.js", "TypeScript", "Google Gemini API"],
     outcome:
       "Currently in active development. Once live, this will be the flagship example for the AI Chatbot service tier — proof-of-concept and case study in one, running right here on this site.",
   },

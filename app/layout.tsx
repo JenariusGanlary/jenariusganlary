@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ReadingProgress from "@/components/ReadingProgress";
 import CookieConsent from "@/components/CookieConsent";
 import AnalyticsScripts from "@/components/AnalyticsScripts";
+import ChatWidget from "@/components/ChatWidget";
 import { ThemeProvider } from "next-themes";
 import {
   buildPageMetadata,
@@ -22,19 +23,12 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...buildPageMetadata({ description: SITE_DESCRIPTION, path: "/" }),
-  // The template still applies to any page that hasn't been migrated to
-  // buildPageMetadata() yet — migrated pages use { absolute } and skip it.
   title: {
     default: SITE_TITLE,
     template: `%s | ${SITE_NAME}`,
   },
 };
 
-// Site-wide structured data (GEO/SEO Phase 1).
-// The full Person entity (bio, skills, social links) lives on app/about/page.tsx
-// as the single source of truth — this WebSite schema just points to it by
-// @id rather than repeating a second, slightly-different copy of the same
-// person on every page.
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -57,9 +51,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        {/* AdSense + GA scripts both live in AnalyticsScripts now, gated
-            behind cookie consent. Nothing analytics/ads-related loads here
-            unconditionally — see components/AnalyticsScripts.tsx. */}
         <AnalyticsScripts />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <ReadingProgress />
@@ -67,6 +58,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <main className="max-w-6xl mx-auto px-4 py-10 min-h-screen">{children}</main>
           <Footer />
           <CookieConsent />
+          <ChatWidget />
         </ThemeProvider>
       </body>
     </html>

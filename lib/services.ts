@@ -27,12 +27,12 @@ export const SERVICE_TIERS: ServiceTier[] = [
     name: "Website + AI Chatbot",
     price: "$2,000",
     description:
-      "Everything in the Full-Stack tier, plus a Claude-powered chatbot that answers visitor questions in real time — no more waiting on a contact form.",
+      "Everything in the Full-Stack tier, plus an AI chatbot that answers visitor questions in real time — no more waiting on a contact form.",
     features: [
       "Everything in Tier 01",
       "Custom AI chatbot trained on your business",
       "Real-time Q&A for visitors, day or night",
-      "Built on the same AI stack powering CreatorBit",
+      "See it live on this very site — the chat widget in the corner",
     ],
     cta: "Add an AI chatbot",
   },
