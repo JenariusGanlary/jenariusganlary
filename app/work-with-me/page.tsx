@@ -20,12 +20,12 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     question: "What happens after I book a call?",
     answer:
-      "We'll spend the call understanding your goals, current setup, and what you actually need built. After that, you get a scoped proposal with a fixed price and timeline before any work begins — no surprise costs.",
+      "We'll spend the call Auditing your website (If you already have one) and understanding your goals, current setup, and what you actually need built. After that, you get a scoped proposal with a fixed price and timeline before any work begins — no surprise costs.",
   },
   {
     question: "How long does a typical project take?",
     answer:
-      "Full-Stack Website projects usually run 2–3 weeks. The AI Chatbot tier runs 3–4 weeks. Full AI + Booking System projects run 4–6 weeks. Exact timelines depend on scope and how quickly content and assets are ready.",
+      "Full-Stack Website projects usually run max to 1 weeks. The AI Chatbot tier runs 2 weeks. Full AI + Booking System projects run 2-3 weeks. Exact timelines depend on scope and how quickly content and assets are ready.",
   },
   {
     question: "Do the listed prices include hosting and domain costs?",
