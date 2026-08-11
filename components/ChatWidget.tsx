@@ -11,7 +11,7 @@ interface ChatMessage {
 const GREETING: ChatMessage = {
   role: "assistant",
   content:
-    "Hey, I'm Zen's AI assistant. Ask me about services, pricing, or past projects — happy to help you figure out what fits.",
+    "Hey! I'm Ganlary Labs' AI assistant. Ask me about our AI product engineering work, services, or past projects — happy to help you figure out what fits.",
 };
 
 const TEASER_TEXT = "Need help finding the right service? Ask me anything — takes 10 seconds.";
