@@ -18,6 +18,7 @@ const stats = [
 
 const skills = [
   "Next.js", "React", "TypeScript", "Node.js", "Supabase",
+  "Java", "Spring Boot",
   "Claude API", "SaaS Development", "SaaS Architecture",
   "MIS & Data Systems", "Artificial Intelligence", "Startups", "Indie Hacking",
 ];
@@ -109,44 +110,43 @@ export default function AboutPage() {
 
       <div className="prose-body text-mute space-y-5">
         <p>
-          I started a bachelor&apos;s degree studying zoology. I now build
-          software for a living. Nobody plans that path — it just happens
-          when you follow whatever&apos;s genuinely interesting instead of
-          whatever&apos;s supposed to come next.
+          I began my academic career studying zoology. Today, I build
+          software professionally. It is not a conventional path, but it
+          reflects a consistent principle: I follow what is genuinely
+          interesting rather than what is expected to come next.
         </p>
         <p>
-          What actually connects the two: I&apos;ve always been more interested
-          in how systems behave under real conditions than how they look on
-          paper. That instinct is what took me from a government office
-          building an AI-powered meeting system for district staff, to a
-          startup shipping five client apps on tight deadlines, to a fully
-          remote US team, to a classroom teaching data structures — and now
-          to a rural development programme in Arunachal Pradesh, where I
-          spend my days making sure field data survives contact with spotty
-          internet, tired staff, and real deadlines.
+          What connects the two disciplines is a focus on how systems
+          behave under real conditions rather than how they appear on
+          paper. That focus has taken me from building an AI-powered
+          meeting system for district government staff, to shipping five
+          client applications on tight deadlines at a startup, to working
+          with a fully remote U.S. team, to teaching data structures in a
+          classroom — and now to a rural development programme in
+          Arunachal Pradesh, where I ensure field data holds up against
+          unreliable internet, overextended staff, and real deadlines.
         </p>
         <p>
-          That last one taught me more about building resilient systems
-          than any of the &quot;real&quot; engineering jobs did. Turns out the
-          discipline required to keep an NGO&apos;s MIS honest under pressure is
-          the exact same discipline that keeps a SaaS product from quietly
-          rotting after launch.
+          That last role has taught me more about building resilient
+          systems than any traditional engineering position. Keeping an
+          NGO&apos;s MIS accurate under pressure requires the same discipline
+          it takes to keep a SaaS product from quietly degrading after
+          launch.
         </p>
         <p>
-          These days that discipline goes into two places: <strong className="text-foreground">CreatorBit</strong>,
-          a SaaS platform for the creator economy I&apos;m building with Next.js,
+          That discipline currently goes into two things: <strong className="text-foreground">CreatorBit</strong>,
+          a SaaS platform for the creator economy built with Next.js,
           Supabase, and the Claude API — and <strong className="text-foreground">Ganlary Labs</strong>,
-          where I take on freelance work building SaaS MVPs, adding AI
-          features to existing products, and shipping websites for small
-          businesses who need something that actually works, not another
-          template.
+          where I take on freelance work building SaaS MVPs, integrating AI
+          features into existing products, and developing websites for
+          businesses that need something functional and well-built, not
+          another template.
         </p>
         <p>
-          This blog is the running commentary on all of it — what I&apos;m
-          learning building CreatorBit, what freelance clients teach me
-          that no course ever did, and the occasional detour into whatever
-          my day job in rural development happens to teach a software
-          engineer that week.
+          This blog documents that work in progress — lessons from building
+          CreatorBit, insights freelance clients bring that no course ever
+          covered, and the occasional intersection between rural
+          development work and software engineering.
         </p>
         <p>
           If any of this overlaps with what you&apos;re building — or you need
