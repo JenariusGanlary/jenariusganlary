@@ -31,6 +31,7 @@ export default function Footer() {
           <p className="font-semibold text-foreground/80 mb-3">Site</p>
           <div className="flex flex-col gap-2 text-mute">
             <Link href="/about" className="hover:text-foreground transition">About</Link>
+            <Link href="/work-with-me" className="hover:text-foreground transition">Work With Me</Link>
             <Link href="/contact" className="hover:text-foreground transition">Contact</Link>
           </div>
         </div>

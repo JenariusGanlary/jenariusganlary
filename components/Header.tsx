@@ -19,6 +19,7 @@ export default function Header() {
           <Link href="/blog" className="hover:text-foreground transition">Articles</Link>
           <Link href="/newsletter" className="hover:text-foreground transition">Newsletter</Link>
           <Link href="/about" className="hover:text-foreground transition">About</Link>
+          <Link href="/work-with-me" className="hover:text-foreground transition">Work With Me</Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
@@ -59,6 +60,7 @@ export default function Header() {
           <Link href="/blog" onClick={() => setOpen(false)} className="text-foreground/80 hover:text-foreground transition">Articles</Link>
           <Link href="/newsletter" onClick={() => setOpen(false)} className="text-foreground/80 hover:text-foreground transition">Newsletter</Link>
           <Link href="/about" onClick={() => setOpen(false)} className="text-foreground/80 hover:text-foreground transition">About</Link>
+          <Link href="/work-with-me" onClick={() => setOpen(false)} className="text-foreground/80 hover:text-foreground transition">Work With Me</Link>
           <Link
             href="/blog"
             onClick={() => setOpen(false)}
