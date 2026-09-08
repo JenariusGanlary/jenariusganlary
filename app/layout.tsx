@@ -8,6 +8,7 @@ import CookieConsent from "@/components/CookieConsent";
 import AnalyticsScripts from "@/components/AnalyticsScripts";
 import ChatWidget from "@/components/ChatWidget";
 import MonetagAds from "@/components/MonetagAds";
+import MonetagVignette from "@/components/MonetagVignette";
 import { ThemeProvider } from "next-themes";
 import {
   buildPageMetadata,
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <AnalyticsScripts />
         <MonetagAds />
+        <MonetagVignette />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <ReadingProgress />
           <Header />
