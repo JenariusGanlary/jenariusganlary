@@ -7,6 +7,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import CookieConsent from "@/components/CookieConsent";
 import AnalyticsScripts from "@/components/AnalyticsScripts";
 import ChatWidget from "@/components/ChatWidget";
+import MonetagAds from "@/components/MonetagAds";
 import { ThemeProvider } from "next-themes";
 import {
   buildPageMetadata,
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <AnalyticsScripts />
+        <MonetagAds />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <ReadingProgress />
           <Header />
