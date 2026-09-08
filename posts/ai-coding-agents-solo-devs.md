@@ -3,7 +3,7 @@ title: "Cursor vs Claude Code vs GitHub Copilot vs Devin Desktop: The Real 2026 
 description: "Windsurf is gone, Devin Desktop is here, and every coding agent comparison online is already out of date. A budget-first breakdown of Cursor, Claude Code, GitHub Copilot, and Devin Desktop for solo developers and indie hackers, with a combo you can actually run."
 date: "2026-07-20"
 category: "saas-ai-tools"
-thumbnail: "/images/ai-coding-agents-2026-cover.png"
+thumbnail: "/images/ai-coding-agents-2026-cover.webp"
 ---
 
 If you searched for a Cursor vs Claude Code vs Copilot comparison recently and it still says "Windsurf," close the tab. Windsurf doesn't exist anymore. On June 2, 2026, Cognition — the company behind the autonomous AI engineer Devin — folded Windsurf into its own product line and relaunched it as Devin Desktop. Same editor, same VS Code foundation, new name, new default screen, and a genuinely different pitch. Most of the "top AI coding tools" content still ranking on Google hasn't caught up, which means a lot of solo developers are reading advice about a product that's been quietly renamed for over a month.
@@ -36,7 +36,7 @@ For a one-person team, the real decision usually isn't "which tool is objectivel
 
 **Devin Desktop** (formerly Windsurf) is now positioned as the orchestration layer: a local editor plus a command center for supervising both local agents and Cognition's cloud-based Devin on bigger, longer-running tasks.
 
-![Four overlapping circles labeled Cursor, Claude Code, GitHub Copilot, and Devin Desktop around a central budget icon](/images/ai-coding-agents-venn-diagram.png)
+![Four overlapping circles labeled Cursor, Claude Code, GitHub Copilot, and Devin Desktop around a central budget icon](/images/ai-coding-agents-venn-diagram.webp)
 
 ## Pricing tiers, realistically, for a pre-revenue budget
 

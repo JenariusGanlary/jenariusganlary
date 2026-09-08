@@ -3,7 +3,7 @@ title: "From Zoology to Software Engineer: My Full Story"
 description: "How I went from borrowing a friend's laptop and a Zoology degree to an NGO data role, and why I'm still building CreatorBit and Ganlary Labs on the side."
 date: "2026-07-27"
 category: "building-in-public"
-thumbnail: "/images/zoology-to-software-engineer-cover.png"
+thumbnail: "/images/zoology-to-software-engineer-cover.webp"
 ---
 
 I learned to type on my uncle's desktop in class 2. He had a PC, I didn't, and that one fact decided a lot of what came after. I'd play COD 2 on it every chance I got, and somewhere between respawns I fell in love with the machine itself, not just the game. Every school holiday after that, the plan was the same: get to my uncle's house, turn on the PC, and either play something or poke around the settings until I broke something and had to figure out how to fix it.
@@ -18,7 +18,7 @@ I still didn't own a PC through all of school. I used to borrow my friend's lapt
 
 When HS ended, it was time to pick a bachelor's degree. I don't have a satisfying answer for why I chose Zoology Honours. It wasn't a calculated career move. It was one of those decisions you make at eighteen without really knowing what you're deciding. I completed my bachelor's in Zoology. On paper, that's about as far from "software engineer" as you can get.
 
-![A worn desktop PC in a dim room, representing a childhood spent learning computers on borrowed machines](/images/childhood-desktop-computer.png)
+![A worn desktop PC in a dim room, representing a childhood spent learning computers on borrowed machines](/images/childhood-desktop-computer.webp)
 
 ## Guwahati, Job Hunting, and Depression
 
@@ -46,7 +46,7 @@ I enrolled in a Full Stack Development course on Coding Ninjas. I left before fi
 
 What actually got me consistent was going back into structured education: I pursued an MCA at University of Science and Technology Meghalaya. While doing that, I kept taking on freelance web development jobs on the side, which meant I was learning the formal computer science fundamentals in class and immediately testing them against real client problems outside of it. That combination — structured coursework plus paid freelance work happening at the same time — did more for my actual skill level than either one would have done alone.
 
-![A cluttered desk with a laptop, notebooks, and coffee, representing juggling an MCA degree with freelance client work](/images/mca-freelance-desk-setup.png)
+![A cluttered desk with a laptop, notebooks, and coffee, representing juggling an MCA degree with freelance client work](/images/mca-freelance-desk-setup.webp)
 
 ## NIC, an Agency, and Teaching: Testing Different Rooms
 

@@ -3,14 +3,14 @@ title: "Why RAM Prices Are So High: AI Broke the Memory Market"
 description: "Why RAM prices are so high in 2026: AI datacenters are consuming most of the world's memory. What happened, and how I'd spec a dev machine now."
 date: "2026-07-22"
 category: "tech-dev-life"
-thumbnail: "/images/why-ram-prices-are-so-high.png"
+thumbnail: "/images/why-ram-prices-are-so-high.webp"
 ---
 
 RAM prices are high because AI datacenters are buying most of the world's memory supply, and the three companies that make almost all of it have redirected their factories toward serving that demand. This is not a normal supply-and-demand cycle that corrects itself in a quarter or two. Analysts at IDC expect AI infrastructure to consume roughly 70% of global memory output in 2026 — up from 20–30% as recently as 2022 — and every serious forecast puts meaningful relief somewhere between late 2027 and 2028.
 
 I've been watching this unfold from two angles at once: as a developer who eventually needs to replace hardware like everyone else, and as someone building a SaaS product whose infrastructure costs sit downstream of the same memory market. This post explains what actually happened, why this is genuinely the worst moment in two decades to upgrade a laptop or buy RAM, and how I'd think about spec'ing a builder's setup while the market is broken.
 
-![Chart-style illustration showing why RAM prices are so high as AI datacenter demand overtakes consumer memory supply](/images/why-ram-prices-are-so-high.png)
+![Chart-style illustration showing why RAM prices are so high as AI datacenter demand overtakes consumer memory supply](/images/why-ram-prices-are-so-high.webp)
 
 ## What actually happened to RAM prices
 
@@ -32,7 +32,7 @@ This matters because memory fabs are not flexible. A new fab takes years and bil
 
 There's also a wildcard worth naming honestly: a lawsuit alleging price coordination among memory makers is working through the courts, and these same companies were convicted of exactly that in the DRAM price-fixing cases twenty years ago. I have no idea how that resolves, and the shortage math is real either way — but it's a reminder that a three-supplier market with insatiable demand doesn't need a conspiracy to behave badly. The incentives do the work.
 
-![Diagram showing DRAM wafer supply being reallocated from consumer laptops and desktops toward HBM for AI datacenters](/images/dram-wafer-reallocation.png)
+![Diagram showing DRAM wafer supply being reallocated from consumer laptops and desktops toward HBM for AI datacenters](/images/dram-wafer-reallocation.webp)
 
 ## Why this is the worst time to upgrade a laptop or RAM
 
@@ -78,7 +78,7 @@ If I genuinely had to buy a primary dev machine today, here's the framework:
 
 The one place I would not cut: if the machine is non-upgradeable and you'll keep it past 2028, buy more memory than feels necessary today. Every trend in developer tooling — agents, local inference, heavier browsers, containerization — points toward workflows needing more RAM, not less, and you're buying at the exact moment "add it later" stopped being an option.
 
-![Decision framework flowchart for buying a developer laptop during the 2026 RAM shortage](/images/dev-machine-decision-framework.png)
+![Decision framework flowchart for buying a developer laptop during the 2026 RAM shortage](/images/dev-machine-decision-framework.webp)
 
 ## When will RAM prices come down
 

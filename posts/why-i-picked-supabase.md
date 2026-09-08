@@ -3,7 +3,7 @@ title: "Supabase vs Firebase: Why I Picked Supabase"
 description: "Supabase vs Firebase for a production SaaS: why relational data, open-source exit costs, and predictable pricing made me pick Supabase for CreatorBit."
 date: "2026-07-21"
 category: "tech-dev-life"
-thumbnail: "/images/why-i-picked-supabase-cover.png"
+thumbnail: "/images/why-i-picked-supabase-cover.webp"
 ---
 
 I picked Supabase over Firebase for CreatorBit for three reasons: my data is relational and Postgres handles that natively while Firestore makes you model around it, Supabase's open-source Postgres core gives me a real exit if I ever need one, and its pricing is predictable in a way Firebase's per-operation billing is not. That's the whole decision in one sentence.
@@ -28,7 +28,7 @@ In Postgres, that's a join — the thing relational databases have spent forty y
 
 I sketched CreatorBit's data model both ways during the evaluation, and the Firestore version kept growing little maintenance obligations — duplicated fields to keep in sync, aggregation documents to maintain, queries restructured to fit what the document model could answer. Each one is manageable. Collectively, they're a schema's worth of integrity rules reimplemented by hand in application code, by the person who is also the frontend developer, the DevOps team, and customer support. Postgres enforces those rules for free, in the database, where they can't be forgotten.
 
-![Supabase vs Firebase data modeling comparison showing normalized relational tables connected by keys beside duplicated denormalized documents](/images/supabase-vs-firebase-data-model.png)
+![Supabase vs Firebase data modeling comparison showing normalized relational tables connected by keys beside duplicated denormalized documents](/images/supabase-vs-firebase-data-model.webp)
 
 The honest caveat: if your data genuinely is document-shaped — user profiles, content blobs, configuration, things that live and die as self-contained units — Firestore's schemaless flexibility is an asset, not a compromise. Mine isn't. Most SaaS data isn't. But "Postgres because relational" only wins when your data is actually relational, and it's worth checking rather than assuming.
 

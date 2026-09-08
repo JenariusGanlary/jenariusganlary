@@ -3,7 +3,7 @@ title: "The Indie Hacker's Guide to Runway Math"
 description: "The three numbers that actually tell you how much time you have left, and why most founders track the wrong one."
 date: "2026-06-15"
 category: "finance-builders"
-thumbnail: "/images/runway-math-cover.png"
+thumbnail: "/images/runway-math-cover.webp"
 ---
 
 Most solo founders track their bank balance and call it runway. That number lies to you.
@@ -28,7 +28,7 @@ Once a month, I write down three numbers:
 
 Divide the first by the second, adjust for the third. That's the real runway — and it's a smaller number than my bank balance would suggest almost every time I run it.
 
-![A monthly budget spreadsheet showing cash on hand, average burn, and revenue growth tracked in separate rows](/images/runway-tracking-spreadsheet.png)
+![A monthly budget spreadsheet showing cash on hand, average burn, and revenue growth tracked in separate rows](/images/runway-tracking-spreadsheet.webp)
 
 ## What Changes When a Day Job Is Funding the Runway
 

@@ -4,14 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/validate-thumbnails.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "compress-images": "node scripts/compress-images.mjs",
+    "compress-images:apply": "node scripts/compress-images.mjs --apply",
+    "normalize-thumbnail": "node scripts/normalize-thumbnail.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
     "hast-util-to-string": "^3.0.1",
+    "image-size": "^2.0.2",
     "next": "16.2.11",
     "next-themes": "^0.4.6",
     "react": "19.2.4",
@@ -36,6 +41,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

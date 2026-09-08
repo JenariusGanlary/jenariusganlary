@@ -12,7 +12,7 @@ export const SITE_TITLE =
   "Jenarius Ganlary — Tech, Finance & Startups for Indie Hackers";
 export const SITE_DESCRIPTION =
   "Practical writing on SaaS, AI tools, indie hacking, and finance for builders — from a full-stack developer building in public from Northeast India.";
-export const DEFAULT_OG_IMAGE = "/images/og-default.png";
+export const DEFAULT_OG_IMAGE = "/images/og-default.webp";
 
 type PageMetadataInput = {
   /** Page title WITHOUT the site name — e.g. "Resources". Omit for the homepage. */

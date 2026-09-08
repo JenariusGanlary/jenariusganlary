@@ -3,7 +3,7 @@ title: "Best AI Tools for Indie Founders in 2026"
 description: "The AI tools for indie founders I actually pay for — from CreatorBit to freelance client work — and what I'd cancel first."
 date: "2026-07-25"
 category: "saas-ai-tools"
-thumbnail: "/images/best-ai-tools-indie-founders-desk-2026.png"
+thumbnail: "/images/best-ai-tools-indie-founders-desk-2026.webp"
 ---
 
 I run four different jobs off the same laptop most weeks. There's CreatorBit, the SaaS I'm building for the creator economy. There's Ganlary Labs, my freelance shop, where I'm building MVPs and AI features for other people's businesses. There's my actual day job as an MIS & Data Analyst on a rural development programme in Arunachal Pradesh, where I write Python scripts that turn field reports into something a funder can read. And somewhere in between, there's this blog.
@@ -20,7 +20,7 @@ Perplexity AI does one job better than ChatGPT for me: anything where I need a c
 
 I tried TrendHunter AI for a few weeks when I was scouting ideas for CreatorBit's content calendar. Honestly, it never became a habit. The trend signal was too broad for a niche as specific as creator-economy tooling — I got more useful signal from just reading what indie hackers were actually complaining about on X and in Discord communities. I still have the account, but I couldn't tell you the last time I opened it.
 
-![A cluttered desk setup showing ChatGPT and Perplexity AI open side by side on a laptop screen, with a printed HRDP quarterly report and handwritten notes nearby](/images/chatgpt-perplexity-desk-setup.png)
+![A cluttered desk setup showing ChatGPT and Perplexity AI open side by side on a laptop screen, with a printed HRDP quarterly report and handwritten notes nearby](/images/chatgpt-perplexity-desk-setup.webp)
 
 ## Building the Product: Claude, Claude Code, GitHub Copilot, Cursor, Replit Agent, and Manus AI
 
@@ -36,7 +36,7 @@ Replit Agent earns its place specifically for freelance client work through Ganl
 
 Manus AI is the newest addition and the one I'm still testing the edges of. I've used it for longer-running research and multi-step tasks where I want something working in the background while I'm doing HRDP fieldwork coordination — the kind of task where I don't need to babysit every step, just check the output at the end. It's not yet load-bearing for CreatorBit, but it's earned a place I didn't expect it to a few months ago.
 
-![SCREENSHOT NEEDED: A real terminal window showing Claude Code mid-task on the CreatorBit repository, with VS Code open in a second pane](/images/placeholder-claude-code-terminal.png)
+![SCREENSHOT NEEDED: A real terminal window showing Claude Code mid-task on the CreatorBit repository, with VS Code open in a second pane](/images/placeholder-claude-code-terminal.webp)
 
 ## Design Without a Designer: Figma AI, Uizard, and Galileo AI
 

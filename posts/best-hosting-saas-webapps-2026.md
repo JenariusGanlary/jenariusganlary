@@ -3,7 +3,7 @@ title: "Best Hosting for SaaS and Web Apps in 2026 (Compared)"
 description: "A real comparison of Vercel, Railway, Render, Fly.io, and VPS hosting for SaaS apps in 2026 — pricing, trade-offs, and how I'd actually choose."
 date: "2026-07-27"
 category: "saas-ai-tools"
-thumbnail: "/images/best-hosting-saas-webapps-cover.png"
+thumbnail: "/images/best-hosting-saas-webapps-cover.webp"
 ---
 
 Every few months, someone in a founder Discord posts a hosting bill that doesn't match what they budgeted for, and the thread turns into forty replies of people relitigating Vercel vs. Railway vs. "just get a VPS." I've had versions of that conversation with myself more than once while running my own SaaS on Next.js and Supabase. So instead of another ranked listicle, here's the actual decision-making I go through, plus where I've been wrong.
@@ -16,7 +16,7 @@ What changed by 2026 is that all of these platforms have matured into genuinely 
 
 That last part matters more than any feature comparison. The single most common regret I hear from other indie developers isn't "I picked the wrong platform" — it's "I didn't understand how this platform bills for the thing that ended up being expensive for my app specifically." Bandwidth, background workers, database connections, and cold starts all get priced differently across these platforms, and none of it shows up clearly on a pricing page.
 
-![A developer's desk with a laptop showing a cloud hosting dashboard next to a notebook with hand-drawn pricing comparisons](/images/hosting-comparison-desk.png)
+![A developer's desk with a laptop showing a cloud hosting dashboard next to a notebook with hand-drawn pricing comparisons](/images/hosting-comparison-desk.webp)
 
 ## The Real Contenders
 
@@ -64,7 +64,7 @@ A small VPS costs a flat, low, predictable amount regardless of how many users y
 
 **Best for:** developers comfortable with basic server administration who want the lowest cost per user at any real scale, or who are running a stack (older frameworks, specific language runtimes) that doesn't map cleanly onto a modern PaaS.
 
-![A simple comparison chart showing five hosting platform icons connected to labeled trade-off tags like pricing, control, and reliability](/images/hosting-tradeoffs-chart.png)
+![A simple comparison chart showing five hosting platform icons connected to labeled trade-off tags like pricing, control, and reliability](/images/hosting-tradeoffs-chart.webp)
 
 ## Comparison at a Glance
 

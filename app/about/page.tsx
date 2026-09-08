@@ -41,7 +41,7 @@ const personJsonLd = {
   description:
     "Full-stack developer and data analyst writing about SaaS, AI tools, startups, and indie hacking. Building CreatorBit and running Ganlary Labs.",
   email: "mailto:hello@jenariusganlary.com",
-  image: "https://www.jenariusganlary.com/images/jenarius-ganlary-headshot.jpeg",
+  image: "https://www.jenariusganlary.com/images/jenarius-ganlary-headshot.webp",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Guwahati",
@@ -74,7 +74,7 @@ export default function AboutPage() {
       <div className="flex items-center gap-5 mb-6">
         <div className="relative h-20 w-20 sm:h-24 sm:w-24 shrink-0 rounded-full overflow-hidden border border-line">
           <Image
-            src="/images/jenarius-ganlary-headshot.jpeg"
+            src="/images/jenarius-ganlary-headshot.webp"
             alt="Jenarius Ganlary (Zen), full-stack developer and data analyst"
             fill
             sizes="(min-width: 640px) 96px, 80px"

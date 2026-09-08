@@ -3,7 +3,7 @@ title: "When to Switch AI Coding Tools (And When Not To)"
 description: "A solo developer's framework for telling a real upgrade from tool FOMO, with honest examples from actually switching between AI coding tools."
 date: "2026-07-26"
 category: "tech-dev-life"
-thumbnail: "/images/when-to-switch-ai-coding-tools-cover.png"
+thumbnail: "/images/when-to-switch-ai-coding-tools-cover.webp"
 ---
 
 Switch AI coding tools when the new one removes an entire category of friction you hit daily — not when it's simply "better" in a demo. If you can't name the specific workflow it fixes, you're not evaluating a tool, you're chasing a feeling. I've made both mistakes, and the difference only became obvious after I started tracking which switches actually stuck.
@@ -24,7 +24,7 @@ I'll be honest about the pull here, because I think pretending you're immune to 
 
 The actual signal I've learned to look for is quieter. It's not excitement about a new tool — it's irritation with the old one. If I catch myself working around the same limitation three or four times in a week, that's real data. A flashy release note is not.
 
-![A cluttered desk with a laptop showing a code editor and a phone displaying a tool comparison, natural window light](/images/when-to-switch-ai-coding-tools-desk.png)
+![A cluttered desk with a laptop showing a code editor and a phone displaying a tool comparison, natural window light](/images/when-to-switch-ai-coding-tools-desk.webp)
 
 ## The framework I actually use before I switch
 

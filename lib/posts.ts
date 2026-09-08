@@ -12,6 +12,7 @@ import { toString as hastToString } from "hast-util-to-string";
 import type { Root, Element } from "hast";
 import { z } from "zod";
 import { CATEGORIES } from "./categories";
+import { rehypeImageDimensions } from "./rehype-image-dimensions";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -215,6 +216,11 @@ export async function getPostBySlug(slug: string): Promise<PostWithToc> {
       },
     })
     .use(rehypeSlug)
+    // Reads each in-content <img>'s real file dimensions off disk and
+    // injects width/height + lazy loading — prevents layout shift for
+    // article-body images the way next/image already does for thumbnails.
+    // See lib/rehype-image-dimensions.ts for the full explanation.
+    .use(rehypeImageDimensions)
     .use(collectToc(toc))
     .use(rehypeStringify)
     .process(content);

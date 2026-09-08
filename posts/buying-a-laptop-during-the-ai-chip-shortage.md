@@ -3,7 +3,7 @@ title: "I Tried to Buy a Laptop and the AI Chip Shortage Won"
 description: "I went laptop shopping in 2026 and hit the AI-driven RAM shortage head-on. Here's what it actually cost and how I decided what to buy."
 date: "2026-08-01"
 category: "tech-dev-life"
-thumbnail: "/images/laptop-shopping-ai-shortage-cover.png"
+thumbnail: "/images/laptop-shopping-ai-shortage-cover.webp"
 ---
 
 I went into a laptop purchase thinking it would take an afternoon. Pick a spec sheet, compare two or three models, buy the one that made sense for the money. Instead I spent almost two weeks going back and forth, watching listings change price between browser tabs, and eventually accepting that the laptop market right now has almost nothing to do with the laptop market I remembered from even a year ago.
@@ -28,7 +28,7 @@ I didn't buy the machine I originally wanted. I bought less than I would have a 
 
 I dropped a RAM tier from what I'd have picked without thinking twice a year ago, and made peace with leaning on cloud resources for anything that genuinely needs more headroom. What surprised me was how much of the actual difficulty wasn't the spec math — I'd already worked that out ahead of time — it was the psychological part of accepting a smaller machine than the one I'd pictured, in a market where every day of hesitation seemed to cost more. That's a different problem than "what specs do I need," and it's the one nobody's buying guide prepares you for.
 
-![A weathered laptop sitting on a cluttered desk beside a half-empty coffee cup and a notebook with handwritten specs crossed out and rewritten](/images/laptop-desk-specs-notes.png)
+![A weathered laptop sitting on a cluttered desk beside a half-empty coffee cup and a notebook with handwritten specs crossed out and rewritten](/images/laptop-desk-specs-notes.webp)
 
 ## What Actually Slowed Me Down Wasn't the Math
 

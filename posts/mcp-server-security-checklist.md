@@ -3,7 +3,7 @@ title: "MCP Server Security: How I Vet Servers Before Installing"
 description: "MCP server security matters more after the 2026 stdio RCE disclosure. Here's the actual checklist I run before connecting any server to my agents."
 date: "2026-08-05"
 category: "saas-ai-tools"
-thumbnail: "/images/mcp-server-security-cover.png"
+thumbnail: "/images/mcp-server-security-cover.webp"
 ---
 
 I added three new MCP servers to my Claude Code setup last month without reading a single line of their source. One was a GitHub integration, one touched my Supabase project, one was a random productivity tool I found linked from a tweet. It took me about four minutes total. It wasn't until I read about the stdio RCE disclosure that hit the MCP ecosystem in April 2026 that I went back and actually looked at what I'd installed.
@@ -20,7 +20,7 @@ What I found more unsettling than the bug itself was Anthropic's response. Durin
 
 In other words: this isn't a bug that gets patched out from under you. It's a trust boundary that the protocol never drew, and every server you run over stdio inherits that gap until you draw the boundary yourself.
 
-![SCREENSHOT NEEDED: A real terminal window showing an MCP server's stdio configuration file, with the command field visible](/images/mcp-stdio-config-screenshot.png)
+![SCREENSHOT NEEDED: A real terminal window showing an MCP server's stdio configuration file, with the command field visible](/images/mcp-stdio-config-screenshot.webp)
 
 ## Why This Matters Even If You're Not Running an Enterprise Fleet of Agents
 
@@ -44,7 +44,7 @@ This isn't a theoretical framework. It's what I now do every time, and it takes 
 
 **Consider the blast radius alongside your other servers.** A moderately risky server combined with three other moderately risky servers, all with stdio access to the same machine, is not a moderate risk overall. I stopped thinking about each new server in isolation once I had more than four or five connected at once.
 
-![A cluttered keyring with many keys next to a single labeled key tag, illustrating an MCP server security practice: swapping broad admin access for one scoped credential](/images/mcp-scoped-permissions-keys.png)
+![A cluttered keyring with many keys next to a single labeled key tag, illustrating an MCP server security practice: swapping broad admin access for one scoped credential](/images/mcp-scoped-permissions-keys.webp)
 
 ## Red Flags That Make Me Walk Away
 

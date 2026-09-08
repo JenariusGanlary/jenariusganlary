@@ -3,7 +3,7 @@ title: "What I Don't Share When Building in Public"
 description: "The specific things I hold back when building in public, why I hold them back, and the one time I shared too early and regretted it."
 date: "2026-07-27"
 category: "building-in-public"
-thumbnail: "/images/what-i-dont-share-building-in-public-cover.png"
+thumbnail: "/images/what-i-dont-share-building-in-public-cover.webp"
 ---
 
 Most building-in-public advice is written as a case for transparency: share your revenue, share your struggles, share your roadmap, and trust will follow. What almost nobody writes about is the other half of the decision — the specific moments where I'm looking at an update I'm about to post and deciding not to post it, and why that's usually the right call.
@@ -20,7 +20,7 @@ This isn't just caution about upsetting a client. It's that client work isn't mi
 
 I share revenue and usage trends in a general sense — up, down, flat, meaningfully changed — more often than I share the precise figure at a specific moment. Early-stage numbers in particular get outsized meaning attached to them by people reading from outside. A small absolute number looks discouraging even when the trend behind it is healthy. A number that jumped for one reason — a single referral, a short-lived spike in traffic — reads as a growth story when it was really a coincidence.
 
-![What I don't share when building in public shown as a simple filter diagram over a notebook and laptop](/images/building-in-public-what-not-to-share-filter.png)
+![What I don't share when building in public shown as a simple filter diagram over a notebook and laptop](/images/building-in-public-what-not-to-share-filter.webp)
 
 That's less about hiding bad news and more about not wanting a single snapshot to become the thing people remember, when the number itself wasn't stable enough to mean what it looked like it meant. If I'm going to share a number, I want to be able to explain it in the same sentence, not let it sit there as a data point people draw their own conclusions from.
 
@@ -36,7 +36,7 @@ The clearest mistake I've made here was sharing a "shipped" update for a feature
 
 The lesson wasn't "don't share unfinished work." Building in public is supposed to include the unfinished parts. The lesson was to be precise about what state something is actually in — "I built this and I'm testing it" reads just as honestly as "I shipped this," and it doesn't leave me quietly correcting the record later. I'm more careful now about the verb I use, not about whether I post at all.
 
-![SCREENSHOT NEEDED: A real building-in-public post or thread showing a founder update, for reference on tone/format](/images/placeholder-building-in-public-post-example.png)
+![SCREENSHOT NEEDED: A real building-in-public post or thread showing a founder update, for reference on tone/format](/images/placeholder-building-in-public-post-example.webp)
 
 ## The Filter I Use Now
 

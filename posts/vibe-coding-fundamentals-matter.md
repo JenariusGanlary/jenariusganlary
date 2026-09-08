@@ -3,7 +3,7 @@ title: "Vibe Coding Doesn't Skip the Fundamentals"
 description: "Vibe coding feels like it skips the fundamentals. After years of freelance client work, here's where that understanding actually still shows up."
 date: "2026-07-23"
 category: "tech-dev-life"
-thumbnail: "/images/vibe-coding-fundamentals-cover.png"
+thumbnail: "/images/vibe-coding-fundamentals-cover.webp"
 ---
 
 A client sent me a message a few months back: "the app works, but something feels off with the login." Not a stack trace. Not a specific bug report. Just a feeling that something was wrong, coming from someone who'd built most of the app themselves by prompting an AI tool. When I opened the codebase, the issue took about four minutes to find. It would have taken them a lot longer than four minutes to even know what they were looking for, because they didn't know what a session token was, let alone why one showing up in a client-side console log was a problem.
@@ -33,7 +33,7 @@ ADD CONSTRAINT unique_submission UNIQUE (user_id, form_type);
 
 The AI can write that line perfectly well once you ask for it. What it usually won't do on its own is recognize that this specific bug is a race condition in the first place, especially when the bug report is vague and the failure isn't consistent. That recognition step — pattern-matching a vague symptom to a known category of problem — is exactly what fundamentals give you. Without them, you're stuck re-describing the symptom to the AI in slightly different words and hoping it stumbles onto the right diagnosis.
 
-![A stack trace error message on a laptop screen next to a handwritten note reading "why does this only happen sometimes"](/images/vibe-coding-fundamentals-debugging.png)
+![A stack trace error message on a laptop screen next to a handwritten note reading "why does this only happen sometimes"](/images/vibe-coding-fundamentals-debugging.webp)
 
 ## Security is where "I don't need to know code" gets expensive
 

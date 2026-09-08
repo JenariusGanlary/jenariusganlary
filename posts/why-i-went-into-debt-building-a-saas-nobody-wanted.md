@@ -3,7 +3,7 @@ title: "Why I Went Into Debt Building a SaaS Nobody Wanted"
 description: "I believed the million-dollar SaaS myth, skipped validation, and ended up in debt and burnt out. Here's what building without proof actually costs."
 date: "2026-08-22"
 category: "startups-indie-hacking"
-thumbnail: "/images/saas-debt-burnout-cover.png"
+thumbnail: "/images/saas-debt-burnout-cover.webp"
 ---
 
 I used to believe that a million-dollar SaaS idea was a golden ticket. Pick the right niche, build the product, automate everything, and the money shows up while you sleep. That fantasy is everywhere — threads telling you which idea to clone, which micro-SaaS to chase, which stack guarantees passive income. I fell for it hard enough to go into debt over it.
@@ -22,7 +22,7 @@ I spent money I didn't have. I hired help I couldn't afford, because a growing t
 
 It wasn't an investment. It was debt against a product nobody had asked for. The UI was clean. The features were clever. None of it mattered, because I'd built for a market that didn't exist yet — I'd only assumed it did.
 
-![A laptop showing an empty analytics dashboard with zero signups next to a stack of unopened bills](/images/saas-debt-empty-dashboard.png)
+![A laptop showing an empty analytics dashboard with zero signups next to a stack of unopened bills](/images/saas-debt-empty-dashboard.webp)
 
 The part that's harder to admit: I knew, somewhere underneath the excitement, that I hadn't actually confirmed anyone wanted this. I just didn't want to slow down long enough to find out. Momentum felt like progress. It wasn't — it was just spending, dressed up as motion.
 
@@ -40,7 +40,7 @@ It's tempting to blame the UI, the onboarding, the marketing. I did all three, f
 
 A clean interface doesn't create demand. Clever features don't create demand. Demand is either already there, in the form of a problem someone's actively frustrated by, or it isn't — and no amount of execution manufactures it after the fact.
 
-![A whiteboard with a crossed-out product mockup and a single sticky note reading 'did anyone ask for this?'](/images/saas-idea-whiteboard-question.png)
+![A whiteboard with a crossed-out product mockup and a single sticky note reading 'did anyone ask for this?'](/images/saas-idea-whiteboard-question.webp)
 
 ## The Validation I Skipped, in Plain Terms
 

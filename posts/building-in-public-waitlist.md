@@ -3,7 +3,7 @@ title: "My First Waitlist: What I Actually Learned"
 description: "The unglamorous truth about pre-launch waitlists, and what actually converts signups into users."
 date: "2026-06-28"
 category: "startups-indie-hacking"
-thumbnail: "/images/first-waitlist-lessons-cover.png"
+thumbnail: "/images/first-waitlist-lessons-cover.webp"
 ---
 
 A waitlist page feels like progress. It rarely is, on its own.
@@ -28,7 +28,7 @@ I sent a short, direct follow-up two weeks after launch: one specific question a
 
 I kept the page itself deliberately plain: a single sentence describing the problem, one email field, one button. No countdown timer, no "127 people ahead of you" queue graphic, no referral mechanic asking people to share for early access. I'd read enough waitlist playbooks pushing those tactics to know they exist, and I skipped all of them on purpose — a queue-position gimmick felt dishonest for a product that didn't have urgency behind it yet.
 
-![A simple form with a single email field and one button, representing a deliberately minimal waitlist landing page](/images/minimal-waitlist-form.png)
+![A simple form with a single email field and one button, representing a deliberately minimal waitlist landing page](/images/minimal-waitlist-form.webp)
 
 The one thing I did track, and wish I'd started tracking on day one instead of adding a week in, was where each signup came from. A signup from someone who found the page cold on Twitter tells you something different than a signup from someone who already knows your work. Lumping them into one number hides the difference that actually matters.
 

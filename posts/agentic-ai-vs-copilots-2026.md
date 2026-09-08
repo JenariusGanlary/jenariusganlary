@@ -3,7 +3,7 @@ title: "AI Copilots Are Old News: What Actually Makes Something 'Agentic' in 202
 description: "The real difference between an AI copilot and true agentic AI, a concrete before/after workflow example, a practical checklist for spotting agent-washing, and the trust gap most trend roundups skip."
 date: "2026-07-19"
 category: "saas-ai-tools"
-thumbnail: "/images/agentic-ai-vs-copilots-cover.png"
+thumbnail: "/images/agentic-ai-vs-copilots-cover.webp"
 ---
 
 If a product calls itself "agentic," the fastest way to know whether that's true is to ask one question: can it fail a step, notice, and change its own plan without you clicking anything? If the answer is no, you're looking at a copilot with a new label. That's the entire distinction, and most of the "10 AI trends for 2026" posts you've read this year give it one paragraph before moving on to the next bullet. I've spent the last few months building both kinds of systems — a copilot-style automation layer for a government-funded rural development programme, and an early agentic workflow inside CreatorBit — and the gap between them is bigger and more expensive than the marketing suggests.
@@ -30,7 +30,7 @@ The system is given the goal directly: recover failed payments while protecting 
 
 Same underlying problem, same AI model quality even. The difference is entirely about who's making the moment-to-moment decisions and where the human's attention actually gets spent — on outcomes and edge cases, not on approving every step.
 
-![Side-by-side diagram comparing a copilot dunning workflow with constant human approval steps against an agentic dunning workflow with autonomous decision points and a single human escalation threshold](/images/agentic-dunning-workflow-diagram.png)
+![Side-by-side diagram comparing a copilot dunning workflow with constant human approval steps against an agentic dunning workflow with autonomous decision points and a single human escalation threshold](/images/agentic-dunning-workflow-diagram.webp)
 
 ## Why so much "agentic AI" in SaaS right now is a copilot wearing a name tag
 
@@ -50,7 +50,7 @@ I use this list now whenever I'm evaluating a tool for CreatorBit or recommendin
 6. **What's the defined escalation threshold, and can you actually change it?** Real agentic products let you set the boundary — dollar amount, risk level, customer tier — where the system has to stop and ask a human. If there's no configurable threshold, there's no real governance layer.
 7. **Is pricing tied to seats, or to outcomes?** This one is a surprisingly reliable signal, and it's the search term a lot of buyers are typing into Google right now without finding a straight answer — more on that below.
 
-![A seven-item scorecard checklist for evaluating whether a SaaS tool is genuinely agentic AI or repackaged automation, shown as a clean editorial diagram](/images/agentic-ai-checklist-scorecard.png)
+![A seven-item scorecard checklist for evaluating whether a SaaS tool is genuinely agentic AI or repackaged automation, shown as a clean editorial diagram](/images/agentic-ai-checklist-scorecard.webp)
 
 ## The trust and oversight gap nobody wants to write a full section about
 

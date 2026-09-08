@@ -3,7 +3,7 @@ title: "AEO and GEO Are Just SEO, Google Confirms"
 description: "Google confirmed AEO and GEO are just SEO. What that means if you're a solo dev writing every post yourself, no optimizer subscription required."
 date: "2026-07-24"
 category: "tech-dev-life"
-thumbnail: "/images/aeo-geo-solo-blog-cover.png"
+thumbnail: "/images/aeo-geo-solo-blog-cover.webp"
 ---
 
 Back in May, Google put out its first official guidance on the AEO/GEO question everyone in the SEO industry has been arguing about for two years: is optimizing for AI search actually a different discipline, or is it just SEO wearing a new acronym? Google's answer was short. "In short, yes" — SEO is still relevant, and AEO and GEO are treated as extensions of it, not replacements. I read that and had a weirdly anticlimactic reaction: I didn't need to change anything. Not because I'm already some SEO expert, but because the rules I'd been following for this blog — write the answer first, structure headings so they stand alone, format the FAQ so a machine can lift it cleanly — were already the thing Google just described. So instead of writing a generic "here's what AEO and GEO mean" explainer, I want to walk through what actually changed this year, what didn't, and where I think solo developers writing their own content are wasting time chasing the wrong fix.
@@ -52,7 +52,7 @@ The habits I already had — direct-answer-first sections, descriptive standalon
 
 That's really the whole thesis of Google's May guidance, if you strip the acronyms out: write for a person who's in a hurry and needs the actual answer, not a person who wants to be sold to for three paragraphs first. Do that consistently, and you're accidentally doing AEO and GEO correctly, because those disciplines were describing "good writing, formatted so it doesn't have to be excavated" the whole time.
 
-![Close-up of a laptop screen showing a blog draft in a code editor, with the opening sentence of a paragraph highlighted in yellow to mark it as the direct-answer edit, dim desk lighting at night](/images/aeo-geo-direct-answer-editing.png)
+![Close-up of a laptop screen showing a blog draft in a code editor, with the opening sentence of a paragraph highlighted in yellow to mark it as the direct-answer edit, dim desk lighting at night](/images/aeo-geo-direct-answer-editing.webp)
 
 ## The Part Nobody Selling You an AI-Optimizer Tool Wants You to Notice
 

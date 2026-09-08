@@ -3,7 +3,7 @@ title: "How Much Do Indie Hackers Actually Make in 2026?"
 description: "The real income data behind indie hacking in 2026 — survivorship bias, median revenue, and what building solo actually pays before you quit your job."
 date: "2026-08-03"
 category: "startups-indie-hacking"
-thumbnail: "/images/indie-hacker-income-reality-cover.png"
+thumbnail: "/images/indie-hacker-income-reality-cover.webp"
 ---
 
 Most indie hackers make close to nothing. Not "a modest side income" — nothing. The public data on this is more consistent than the Twitter timeline would suggest, and it's worth sitting with the actual numbers before you quit anything or reorganize your life around a dream that mostly doesn't pay.
@@ -31,7 +31,7 @@ If you strip out the outliers and look at where actively-building solo founders 
 
 If you've seen a solo founder's Twitter thread this year, it almost certainly came from that bottom 5%. Nobody screenshots their Stripe dashboard to announce $47 in MRR after eight months of work — but that outcome is far more common than the $100K one, and it's still a perfectly legitimate place to be if you're building for reasons beyond the number.
 
-![SCREENSHOT NEEDED: A real Indie Hackers or Stripe revenue distribution chart showing the heavy skew toward $0-1K MRR products with a long flat tail](/images/placeholder-indie-hacker-revenue-distribution.png)
+![SCREENSHOT NEEDED: A real Indie Hackers or Stripe revenue distribution chart showing the heavy skew toward $0-1K MRR products with a long flat tail](/images/placeholder-indie-hacker-revenue-distribution.webp)
 
 ## Survivorship bias isn't a minor caveat, it's the entire mechanism
 

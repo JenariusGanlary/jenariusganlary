@@ -3,7 +3,7 @@ title: "You Don't Need a Powerful Laptop to Build a Startup"
 description: "My gaming laptop died in remote Arunachal, no repair shop nearby. Turns out you don't need a powerful laptop to keep shipping — you need a browser."
 date: "2026-07-25"
 category: "building-in-public"
-thumbnail: "/images/you-dont-need-a-powerful-laptop-to-build-a-startup.png"
+thumbnail: "/images/you-dont-need-a-powerful-laptop-to-build-a-startup.webp"
 ---
 
 My laptop is dead. Not "running slow" dead — actually dead. The HDD failed, the battery won't hold a charge past twenty minutes, and the thermal paste is so old the fans sound like a leaf blower before I've even opened VS Code. It's an Asus TUF Gaming FX505 from 2019 — 8th-gen i7, 16GB RAM, GTX 1050 Ti. Solid machine in its day. Right now it's a paperweight with a keyboard.
@@ -20,7 +20,7 @@ When it started dying, it didn't announce itself. First the battery stopped hold
 
 The thermal paste issue is almost funny in hindsight. A laptop that runs hot enough to throttle isn't broken, exactly — it's just old. But old plus a dead HDD plus a dead battery adds up to a machine you can't trust to stay on for the length of a coding session, let alone survive being carried around a rural programme office all day.
 
-![A worn Asus TUF gaming laptop sitting closed and unused next to an older office desktop tower, soft daylight from a window overlooking hills in the background](/images/dead-tuf-laptop-office-desktop.png)
+![A worn Asus TUF gaming laptop sitting closed and unused next to an older office desktop tower, soft daylight from a window overlooking hills in the background](/images/dead-tuf-laptop-office-desktop.webp)
 
 If I lived in Guwahati or Bengaluru, this would be a two-day story: drop it off, get a new SSD and battery, move on. In Sagalee Block, it's a different math. Courier shipping for parts alone can take over a week each way, if the part is even available to order to begin with. So the laptop sits, and the work doesn't get to sit with it.
 
@@ -30,7 +30,7 @@ The machine I actually have access to day-to-day is a shared office desktop — 
 
 So I stopped trying to make VS Code work locally and stopped treating "local development environment" as a requirement at all. If the machine in front of me can open a browser tab, that's now the only hardware requirement my workflow has.
 
-![A dated beige office desktop tower under a desk with a single monitor showing a plain browser window, in a small rural programme office with a ceiling fan overhead](/images/office-desktop-workstation.png)
+![A dated beige office desktop tower under a desk with a single monitor showing a plain browser window, in a small rural programme office with a ceiling fan overhead](/images/office-desktop-workstation.webp)
 
 ## Why I Moved My Entire Dev Environment to the Browser
 

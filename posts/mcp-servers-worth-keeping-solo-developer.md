@@ -3,7 +3,7 @@ title: "MCP Servers Worth Keeping as a Solo Developer"
 description: "As a solo developer running client projects, I tried a dozen MCP servers. Here's which ones stayed, and which ones just burned tokens."
 date: "2026-07-23"
 category: "saas-ai-tools"
-thumbnail: "/images/mcp-servers-kept-vs-cut-cover.png"
+thumbnail: "/images/mcp-servers-kept-vs-cut-cover.webp"
 ---
 
 I installed eleven MCP servers over about six weeks. I use four of them now. The other seven are still sitting in my config files, disabled, because I never got around to deleting the entries.
@@ -31,7 +31,7 @@ Four made it past the trial period. Here's what they have in common: each one re
 
 The common thread: each of these saves me a context switch that I was making constantly, not once a week. GitHub MCP is the one I'd keep if I could only keep one — asking "what did I actually change in this file yesterday" as a one-line question in the same chat window beats opening a browser tab every time.
 
-![A simple comparison chart showing four kept MCP servers on one side and seven removed MCP servers on the other, on a light background](/images/mcp-servers-kept-vs-cut-chart.png)
+![A simple comparison chart showing four kept MCP servers on one side and seven removed MCP servers on the other, on a light background](/images/mcp-servers-kept-vs-cut-chart.webp)
 
 ## The MCP servers I ripped out and why
 

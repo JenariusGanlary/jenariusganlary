@@ -3,7 +3,7 @@ title: "Why I Write a Problem Statement Before I Write Code"
 description: "AI coding agents make it easier than ever to build the wrong thing fast. Here's the problem-definition habit that's saved me from rebuilding client features from scratch."
 date: "2026-08-20"
 category: "tech-dev-life"
-thumbnail: "/images/problem-statement-before-code-cover.png"
+thumbnail: "/images/problem-statement-before-code-cover.webp"
 ---
 
 A client once sent me a message: "Can you add a dashboard that shows our top-performing content?" I opened Claude Code, described the request, and had a working chart in about twenty minutes — sortable table, a bar chart of engagement by post, a date range picker. I sent a Loom. They watched it, said thanks, and never opened it again.
@@ -28,7 +28,7 @@ This is the trap: a request can be perfectly well-specified as a sentence and st
 
 The tell, in hindsight, was that I could picture the UI before I could explain the decision it supported. That's usually backwards. If you can sketch the interface faster than you can state what question it answers, you don't have a problem yet — you have a shape.
 
-![SCREENSHOT NEEDED: A Slack or email thread showing a vague client feature request next to the notes from a follow-up clarifying question](/images/placeholder-vague-request-clarification.png)
+![SCREENSHOT NEEDED: A Slack or email thread showing a vague client feature request next to the notes from a follow-up clarifying question](/images/placeholder-vague-request-clarification.webp)
 
 ## This Isn't the Same Thing as Market Validation
 

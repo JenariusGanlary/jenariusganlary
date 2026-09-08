@@ -3,7 +3,7 @@ title: "Claude Code Review 2026: Is Anthropic's AI Coding Agent Worth the Price?
 description: "An honest breakdown of Claude Code's pricing, features, and the friction points most reviews skip — permission prompts, rate limits, and Agent Teams — so you know which plan to actually buy."
 date: "2026-08-02"
 category: "saas-ai-tools"
-thumbnail: "/images/claude-code-review.png"
+thumbnail: "/images/claude-code-review.webp"
 ---
 
 Claude Code is Anthropic's terminal-based AI coding agent that reads your entire codebase — not just the file you have open — and helps you generate, edit, debug, and review code through natural language. It runs in the terminal, a desktop app for Mac and Windows, VS Code, JetBrains, an iOS app, and inside Slack, with pricing that ranges from $20/month to $200/month depending on how hard you push it.
@@ -24,7 +24,7 @@ For code review specifically, Claude Code reads diffs and analyzes pull requests
 
 ## Claude Code Pricing: Pro, Max 5x, and Max 20x
 
-![Comparison of Claude Code's Pro, Max 5x, and Max 20x plans by relative usage capacity](/images/claude-code-plan-comparison.png)
+![Comparison of Claude Code's Pro, Max 5x, and Max 20x plans by relative usage capacity](/images/claude-code-plan-comparison.webp)
 
 | Plan | Price | What You Get |
 |---|---|---|

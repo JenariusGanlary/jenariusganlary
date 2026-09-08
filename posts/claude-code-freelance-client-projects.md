@@ -3,7 +3,7 @@ title: "Using Claude Code on Freelance Client Projects: What I Tell Clients, Wha
 description: "How I use Claude Code on real client work through Ganlary Labs — the disclosure conversation, my review process before anything ships, how billing changed, and where the '3x more clients' promise falls apart."
 date: "2026-07-21"
 category: "tech-dev-life"
-thumbnail: "/images/claude-code-client-work-cover.png"
+thumbnail: "/images/claude-code-client-work-cover.webp"
 ---
 
 Yes, I use Claude Code on freelance client projects, and yes, I tell my clients. That answer surprises people on both sides of the argument — the developers quietly using AI and hoping nobody asks, and the ones convinced that disclosure kills deals. After running client work through Ganlary Labs with an AI coding agent in the loop, my experience is that neither camp has it right.
@@ -32,7 +32,7 @@ What I don't do is itemize AI usage per task or perform some elaborate transpare
 
 Everything — but not everything equally, and being honest about that distinction is the whole discipline. Claude Code is genuinely good at scaffolding, CRUD flows, refactors, and test coverage. It is also confidently wrong in ways that compile, pass a happy-path test, and fail in production. So my review time concentrates where the blast radius is largest.
 
-![Flow diagram showing AI-generated code passing through four review gates — security and auth, data handling, dependencies, and business logic — before shipping to the client](/images/claude-code-review-gates.png)
+![Flow diagram showing AI-generated code passing through four review gates — security and auth, data handling, dependencies, and business logic — before shipping to the client](/images/claude-code-review-gates.webp)
 
 The four gates every piece of generated code passes through before a client sees it:
 

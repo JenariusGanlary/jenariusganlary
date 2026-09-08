@@ -3,7 +3,7 @@ title: "How to Price Your SaaS Before You Have Any Users"
 description: "How I actually priced my SaaS with zero users and no data to lean on — comparables, tier logic, and no borrowed benchmarks."
 date: "2026-07-26"
 category: "finance-builders"
-thumbnail: "/images/how-to-price-your-saas-before-users-cover.png"
+thumbnail: "/images/how-to-price-your-saas-before-users-cover.webp"
 ---
 
 You price a SaaS product before you have users the same way you'd price anything you've never sold before: by finding honest comparables, picking a number you're willing to be wrong about, and building in a way to correct course later. There's no formula that replaces that, no matter how many decimal points other guides put on it.
@@ -24,7 +24,7 @@ This matters more than cost-plus math or "value-based pricing" frameworks when y
 
 So I looked at what creators and small teams already pay for adjacent categories — the tools already sitting in that budget line — rather than trying to back into a number from imagined unit economics I didn't have yet. That gave me a range to sit inside, not a precise number, which turned out to be exactly the right amount of certainty for this stage.
 
-![A laptop screen showing three pricing plan cards side by side, soft desk lighting](/images/how-to-price-your-saas-before-users-tiers.png)
+![A laptop screen showing three pricing plan cards side by side, soft desk lighting](/images/how-to-price-your-saas-before-users-tiers.webp)
 
 ## The tier structure I actually landed on
 

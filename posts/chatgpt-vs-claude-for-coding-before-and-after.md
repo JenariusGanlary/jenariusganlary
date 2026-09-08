@@ -3,7 +3,7 @@ title: "ChatGPT vs Claude for Coding: What Actually Changed"
 description: "I've used both since the early, rough days. Here's what actually changed in ChatGPT vs Claude for coding, automation, and real productivity."
 date: "2026-07-25"
 category: "saas-ai-tools"
-thumbnail: "/images/chatgpt-vs-claude-coding-timeline.png"
+thumbnail: "/images/chatgpt-vs-claude-coding-timeline.webp"
 ---
 
 I want to be upfront about something before I get into this: I'm not going to hand you a benchmark table. I went looking for one before writing this, and every "Claude vs ChatGPT 2026" comparison I found cited a different score for the exact same benchmark on the exact same model — sometimes a 10-point spread, sometimes a flat contradiction between two articles published the same week. That's not a data problem I can solve by picking the biggest number. So instead, this is the comparison I can actually stand behind: what changed in what I could trust each tool to do, across the years I've actually used both for real coding and automation work.
@@ -22,7 +22,7 @@ By the time I actually sat down with Claude seriously, the landscape had already
 
 The difference I noticed immediately wasn't raw code quality — plenty of tools could write a clean function by that point. It was that Claude was less likely to state something with total confidence when it wasn't actually sure. Early ChatGPT would give you a wrong answer with the same tone as a right one. Claude, more often, would flag its own uncertainty, or ask a clarifying question instead of guessing. For automation work specifically — scripts that touch real data, real reports, things where a silent wrong answer is worse than an honest "I'm not sure" — that difference mattered more to me than raw generation speed.
 
-![A side-by-side view of two code editor windows on one monitor, one showing a red error underline and the other showing a clean diff](/images/chatgpt-vs-claude-coding-side-by-side.png)
+![A side-by-side view of two code editor windows on one monitor, one showing a red error underline and the other showing a clean diff](/images/chatgpt-vs-claude-coding-side-by-side.webp)
 
 ## Where Early ChatGPT Actually Failed Me
 

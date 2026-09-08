@@ -3,7 +3,7 @@ title: "OpenAI Codex vs. Claude AI in 2026: Which Coding Agent Should You Actual
 description: "A practical comparison of OpenAI Codex and Claude Code in 2026 — architecture, benchmarks, pricing, and which one fits solo developers versus teams."
 date: "2026-08-02"
 category: "tech-dev-life"
-thumbnail: "/images/openai-codex-vs-claude-comparison.png"
+thumbnail: "/images/openai-codex-vs-claude-comparison.webp"
 ---
 
 OpenAI Codex and Claude Code solve the same problem — an AI agent that writes, tests, and ships code with less hand-holding — from two different starting points. Codex runs in the cloud and works asynchronously while you do something else; Claude Code lives in your terminal and works alongside you in real time. Neither is strictly "better." The right one depends on how you actually work, not which benchmark number is higher this month.
@@ -30,7 +30,7 @@ A 500+ developer Reddit survey from mid-2026 adds a useful wrinkle: 65% of devel
 
 ## Multi-Agent Workflows: Subagents vs. Agent Teams
 
-![Diagram comparing Codex's isolated parallel subagents to Claude Code's coordinated Agent Teams](/images/codex-subagents-vs-claude-agent-teams.png)
+![Diagram comparing Codex's isolated parallel subagents to Claude Code's coordinated Agent Teams](/images/codex-subagents-vs-claude-agent-teams.webp)
 
 Both tools shipped GA multi-agent features in 2026, and they're built around different mental models.
 

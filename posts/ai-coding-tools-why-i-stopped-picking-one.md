@@ -3,7 +3,7 @@ title: "AI Coding Tools: Why I Stopped Picking Just One"
 description: "I stopped hunting for the best AI coding tool and started running three. Here's my actual workflow, real costs, and what's worth it."
 date: "2026-07-25"
 category: "tech-dev-life"
-thumbnail: "/images/ai-coding-tools-stack-desk.png"
+thumbnail: "/images/ai-coding-tools-stack-desk.webp"
 ---
 
 For about four months I kept asking myself the wrong question. Every time a new model dropped, or a friend switched editors, or a thread on X turned into a pile-on about which agent was "actually" the best, I'd go back to the same loop: which one AI coding tool should I commit to.
@@ -18,7 +18,7 @@ The instinct to consolidate makes sense on paper. Fewer subscriptions, fewer con
 
 But the "pick one" framing assumes all coding tasks look the same, and they don't. Reviewing my own logic against a naming decision I've already convinced myself is fine is a different job than tracing why a report generation script silently drops rows on the 31st of a month. Writing a first draft of a component is a different job than deciding whether that component's edge cases actually hold up. I was trying to make one tool do jobs that have different failure modes, and I kept hitting the same wall: the tool that's fast at generating isn't always the one that catches its own mistakes.
 
-![Laptop screen split between two terminal windows running different AI coding tools side by side](/images/ai-coding-tools-split-terminal.png)
+![Laptop screen split between two terminal windows running different AI coding tools side by side](/images/ai-coding-tools-split-terminal.webp)
 
 ## What I Actually Run Now
 
@@ -50,7 +50,7 @@ The math started making sense for me specifically because of the kind of work I 
 
 The clearest win has been on anything security- or money-adjacent. I had a case where Claude Code confidently told me an auth check was handled correctly, and it was — for the case I'd described. Codex, coming at the same code cold, asked what happened if the session token expired mid-request. It hadn't been handled. That's not a knock on Claude Code's reasoning; it's what happens when the same mind reviews its own output. A second, independently-reasoning pass genuinely catches things.
 
-![Close-up of a monitor showing a code editor with an expired-session check circled in red pen marks on the glass](/images/ai-coding-tools-second-opinion-catch.png)
+![Close-up of a monitor showing a code editor with an expired-session check circled in red pen marks on the glass](/images/ai-coding-tools-second-opinion-catch.webp)
 
 The second win is smaller but adds up: having Cursor's editor pane open means I stop writing paragraph-long prompts for one-character fixes. Some corrections are just faster with your own hands on the keyboard, and pretending otherwise for the sake of "staying in the agentic workflow" was slowing me down, not speeding me up.
 

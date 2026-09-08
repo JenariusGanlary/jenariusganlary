@@ -3,7 +3,7 @@ title: "How I Decide What to Build Next as a Solo Founder"
 description: "My actual filters for solo founder feature prioritization — not a framework, the real reasoning I use before touching code, including where I got it wrong."
 date: "2026-07-27"
 category: "startups-indie-hacking"
-thumbnail: "/images/solo-founder-feature-prioritization-cover.png"
+thumbnail: "/images/solo-founder-feature-prioritization-cover.webp"
 ---
 
 Every few weeks someone asks me how I decide what to build next, and I used to feel a little embarrassed that my answer wasn't a framework. No MoSCoW matrix, no RICE score spreadsheet, no weighted scoring model. Just a set of questions I've built up from getting it wrong enough times that the wrong answer started to hurt in a specific, memorable way.
@@ -16,7 +16,7 @@ Most prioritization frameworks assume you have slack somewhere — a backlog gro
 
 I tried running a lightweight scoring system for about a month, early on with a freelance client project. Impact, effort, confidence, each rated 1–5, multiplied together into a single number. It felt rigorous. It also took me longer to score requests than to just build the small ones, and the big ones always scored high regardless of the math because I was the one filling in the numbers, and I already had a gut feeling I was rationalizing. The framework wasn't wrong, it was just solving a coordination problem I didn't have.
 
-![Solo founder feature prioritization decision filter shown as a simple flowchart on a desk with a laptop and notebook](/images/solo-founder-feature-decision-filter.png)
+![Solo founder feature prioritization decision filter shown as a simple flowchart on a desk with a laptop and notebook](/images/solo-founder-feature-decision-filter.webp)
 
 ## The Filters I Actually Use
 
@@ -42,7 +42,7 @@ I say this as someone who has a settings page with options that maybe four peopl
 
 If I can't finish that sentence without hedging, I'm not ready to build it. "This is for users who need X because Y" should come out cleanly. When it turns into "well, it's mostly for this one client, but other people might also want it eventually, probably," that's usually a sign I'm building a one-off and telling myself it's a platform feature.
 
-![SCREENSHOT NEEDED: A real Notion or Trello board showing a backlog of feature requests with tags/labels for prioritization](/images/placeholder-feature-request-board.png)
+![SCREENSHOT NEEDED: A real Notion or Trello board showing a backlog of feature requests with tags/labels for prioritization](/images/placeholder-feature-request-board.webp)
 
 ## Where I Got This Wrong
 

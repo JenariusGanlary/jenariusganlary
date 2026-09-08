@@ -3,7 +3,7 @@ title: "How AI Features Wrecked My SaaS Gross Margin"
 description: "Adding AI features to my SaaS quietly cut my gross margin in half. Here's the real math, and what I'm doing about it as a solo builder."
 date: "2026-08-01"
 category: "finance-builders"
-thumbnail: "/images/ai-saas-gross-margin-cover.png"
+thumbnail: "/images/ai-saas-gross-margin-cover.webp"
 ---
 
 For most of the time I've run my SaaS, gross margin wasn't something I thought about often. It was just high, the way SaaS margins are supposed to be — hosting was cheap, the marginal cost of a new user was close to nothing, and the number took care of itself. Then I added AI features, and somewhere in the last few months I looked at the actual cost per active user and realized the number hadn't taken care of itself at all. It had quietly moved, and I hadn't been watching.
@@ -24,7 +24,7 @@ Industry benchmarks bear this out at a scale much bigger than mine. ICONIQ's 202
 
 The part that actually got me wasn't the average — it was realizing that a chunk of my own cost structure had shifted from "fixed cost I already accounted for" to "variable cost tied to how heavily a given user actually uses the AI features," and I hadn't updated how I was tracking any of it. I was still mentally filing AI infrastructure spend under "hosting," a semi-fixed cost, when it had actually become something closer to a second COGS line that moves with usage in a way hosting never did.
 
-![A simplified profit and loss breakdown showing a software product's cost stack split into traditional hosting costs and a separate AI inference cost layer](/images/saas-pnl-ai-cost-layer.png)
+![A simplified profit and loss breakdown showing a software product's cost stack split into traditional hosting costs and a separate AI inference cost layer](/images/saas-pnl-ai-cost-layer.webp)
 
 ## The Line Item I Was Ignoring
 
@@ -44,7 +44,7 @@ The third was the harder one: actually deciding what to do about pricing. A flat
 
 None of this required a board meeting or a finance team, which is the part I'd want another solo builder to actually take from this: the tools to fix this are genuinely available at small scale. What's missing at small scale isn't the ability to fix it — it's someone whose job it is to notice before it's a real problem. That someone is you.
 
-![A simple decision flowchart showing a cheap model handling most requests and an expensive model handling only complex edge cases](/images/model-routing-decision-flow.png)
+![A simple decision flowchart showing a cheap model handling most requests and an expensive model handling only complex edge cases](/images/model-routing-decision-flow.webp)
 
 ## What I'd Tell Myself a Year Ago
 

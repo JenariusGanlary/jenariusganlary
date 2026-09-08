@@ -3,7 +3,7 @@ title: "Gemini CLI Shut Down: How I Pick AI Tools Now"
 description: "Gemini CLI shut down on June 18, 2026, despite 100k GitHub stars. Here's the framework I now use to pick AI coding tools that won't die under me."
 date: "2026-07-21"
 category: "saas-ai-tools"
-thumbnail: "/images/gemini-cli-shut-down-cover.png"
+thumbnail: "/images/gemini-cli-shut-down-cover.webp"
 ---
 
 I didn't use Gemini CLI every day. I want to be upfront about that, because this isn't a "Google broke my workflow" rant. But I watched it die on June 18, 2026 — a tool with over 100,000 GitHub stars and thousands of community contributions, switched off for individual users with no grace period — and it permanently changed how I evaluate every tool in my own stack.
@@ -41,7 +41,7 @@ I had internalized "open source = safe bet" as a heuristic somewhere along the w
 
 This is the same reasoning I worked through when I picked Supabase over Firebase for CreatorBit — Supabase's self-hostable Postgres core was a genuine exit hatch in a way that Firebase's open SDKs never were. I got that one right partly by luck. The Gemini CLI shutdown turned the luck into a rule I can apply deliberately.
 
-![Diagram contrasting an open-source client connected to a proprietary backend against a fully self-hostable tool, showing where the dependency actually lives](/images/open-client-proprietary-backend.png)
+![Diagram contrasting an open-source client connected to a proprietary backend against a fully self-hostable tool, showing where the dependency actually lives](/images/open-client-proprietary-backend.webp)
 
 There's a second, more cynical lesson in Google's own announcement. It cited the community's contributions and the project's success as part of the justification for consolidating into a closed replacement. Your stars, issues, and merged PRs are evidence of demand — and demand can be migrated to whatever product the vendor prefers you use next. Community traction is a signal of a tool's popularity, not its longevity. Those are different things, and I used to conflate them.
 
@@ -57,7 +57,7 @@ Which is exactly why my evaluation process changed.
 
 The framework is four questions, and the answer to each one is knowable before you adopt anything. None of them require predicting the future — they only require looking at structure and incentives that already exist.
 
-![Four-panel framework diagram showing the questions: is the backend open, am I the customer, what breaks on death, and what is the exit cost](/images/ai-tool-evaluation-framework.png)
+![Four-panel framework diagram showing the questions: is the backend open, am I the customer, what breaks on death, and what is the exit cost](/images/ai-tool-evaluation-framework.webp)
 
 ### 1. Is the backend as open as the code?
 

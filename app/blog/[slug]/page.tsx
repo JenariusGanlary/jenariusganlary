@@ -67,7 +67,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       name: "Ganlary Labs",
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/images/og-default.png`,
+        url: `${SITE_URL}/images/og-default.webp`,
       },
     },
     mainEntityOfPage: {

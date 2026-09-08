@@ -3,7 +3,7 @@ title: "The AI Tool Stack Tax: Why Adding More AI Tools Is Quietly Bleeding Your
 description: "Stacking more AI tools isn't making solo founders more productive — it's draining their margins through subscription creep, attention tax, and unpredictable usage-based billing. Here's the audit framework to fix it."
 date: "2026-07-21"
 category: "finance-builders"
-thumbnail: "/images/ai-tool-stack-tax-cover.png"
+thumbnail: "/images/ai-tool-stack-tax-cover.webp"
 ---
 
 If you've spent any time in indie hacker Twitter/X or LinkedIn over the past year, you've seen some version of this advice: stack more AI tools, automate everything, let the agents do the work while you focus on "high-leverage" activities. I believed it too. At one point I was paying for eleven different AI tools across CreatorBit and Ganlary Labs — and when I actually sat down and added up what they were costing me, in dollars and in attention, the math didn't support the productivity story I'd been telling myself.
@@ -40,7 +40,7 @@ There's also a comparison worth making explicitly: most founders would never let
 
 This fragmentation is not an accident of how these products happen to be priced — it's the natural result of a market where every tool is optimized to look inexpensive in isolation, because that's the only way any individual purchase decision gets made. Nobody converts on a landing page that shows them their eventual aggregate spend across a full stack; they convert on a landing page that shows them $20/month next to a feature list. The incentive for any single vendor is to make their own price look small, not to help you see your total. That means the responsibility for tracking the aggregate sits entirely with you, and it's a responsibility most solo founders simply haven't built a habit around yet, because nothing in the AI tool market prompts you to.
 
-![A stack of overlapping subscription cards forming a rising cost curve, representing accumulating AI tool expenses](/images/ai-stack-cost-curve.png)
+![A stack of overlapping subscription cards forming a rising cost curve, representing accumulating AI tool expenses](/images/ai-stack-cost-curve.webp)
 
 ## The Attention Tax: The Cost Nobody Puts on the Invoice
 
@@ -68,7 +68,7 @@ For a funded company with a finance team watching cloud spend daily, an unexpect
 
 If you're running any tool with consumption-based or usage-based pricing in your stack right now, the practical question is simple: do you know what your actual worst-case monthly bill could be, not your typical one? If you don't know the answer, that's the first thing to go fix — before you add a single new tool to the stack.
 
-![A billing dashboard showing a flat subscription line suddenly spiking upward, representing unpredictable usage-based AI pricing](/images/usage-based-billing-spike.png)
+![A billing dashboard showing a flat subscription line suddenly spiking upward, representing unpredictable usage-based AI pricing](/images/usage-based-billing-spike.webp)
 
 ## A Practical Framework to Audit and Cut Your AI Stack This Month
 

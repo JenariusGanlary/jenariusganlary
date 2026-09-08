@@ -3,7 +3,7 @@ title: "How I Build a SaaS While Working a Full-Time Job"
 description: "Building a SaaS while working full-time and freelancing, without the quit-your-job cliché. What actually gets sacrificed and what makes it sustainable."
 date: "2026-08-04"
 category: "startups-indie-hacking"
-thumbnail: "/images/saas-while-working-full-time-cover.png"
+thumbnail: "/images/saas-while-working-full-time-cover.webp"
 ---
 
 Most advice about building a startup while employed comes down to one question: when do you quit? That's the wrong question for me, because I'm not choosing between two things. I have a full-time day job as an MIS and Data Analyst on a rural development programme in Arunachal Pradesh, I take on freelance client work on the side, and I'm building my own SaaS product in whatever time is left. Three tracks, not two. Nobody writing "quit your job" content is doing that math.
@@ -26,7 +26,7 @@ Freelance work fills evenings and weekends, on a client-driven schedule. Some we
 
 I used to feel guilty about how inconsistent that made my SaaS progress look. I don't anymore. The inconsistency isn't a discipline problem. It's what happens when the thing you care about most is structurally the lowest-priority item on your calendar, because it's the only one of the three that doesn't have someone else waiting on it.
 
-![A cluttered desk at night with a laptop showing a code editor, a half-finished dinner plate, and a phone with unread client messages](/images/three-jobs-desk-night.png)
+![A cluttered desk at night with a laptop showing a code editor, a half-finished dinner plate, and a phone with unread client messages](/images/three-jobs-desk-night.webp)
 
 ## Why I Haven't Quit, and Why That's Not Fear
 

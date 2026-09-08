@@ -3,7 +3,7 @@ title: "5 Solo Developer Tools Actually Worth Paying For"
 description: "The 5 solo developer tools I still pay for after cancelling everything else: error monitoring, secrets, managed Postgres, scheduling, and uptime."
 date: "2026-07-21"
 category: "saas-ai-tools"
-thumbnail: "/images/five-solo-developer-tools-cover.png"
+thumbnail: "/images/five-solo-developer-tools-cover.webp"
 ---
 
 Every list of solo developer tools right now is an AI tools list. Cursor, Copilot, Claude Code, ranked and re-ranked. I've written about those trade-offs separately in [my comparison of AI coding agents for solo devs on a budget](/blog/ai-coding-agents-solo-devs) — this post is about the other layer of the stack. The boring one. The one nobody writes about because "uptime monitoring" doesn't get clicks.
@@ -26,7 +26,7 @@ Console logs don't survive a production incident. The core problem is that by th
 
 The difference in practice is time-to-cause. With monitoring, a production bug arrives in your inbox as "TypeError in checkout.ts line 82, 14 users affected, started after yesterday's deploy." Without it, the same bug arrives as a vague support email three days later, and you spend two hours trying to reproduce something that only happens on Android Chrome with an expired session.
 
-![Solo developer tools comparison showing an error report with a full stack trace and user context beside a vague customer complaint email](/images/error-monitoring-vs-guessing.png)
+![Solo developer tools comparison showing an error report with a full stack trace and user context beside a vague customer complaint email](/images/error-monitoring-vs-guessing.webp)
 
 ### What it costs, honestly
 

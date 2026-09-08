@@ -3,7 +3,7 @@ title: "Market Research Reports Are Not a Business Plan"
 description: "I built a SaaS feature nobody asked for, then finally did the market research. Here's what backwards validation taught me about picking what to build."
 date: "2026-08-06"
 category: "startups-indie-hacking"
-thumbnail: "/images/market-research-reports-not-a-business-plan-cover.png"
+thumbnail: "/images/market-research-reports-not-a-business-plan-cover.webp"
 ---
 
 I built a scheduling feature nobody used. The idea was simple: let creators using my SaaS coordinate content drops with collaborators — set a date, tag who's involved, get a nudge before it's due. I built it over a long weekend because I was excited, shipped it, and then watched the usage numbers for six weeks. A handful of people opened it once. Almost nobody came back to it a second time.
@@ -22,7 +22,7 @@ Looking back, the signs that this wasn't a real pain point were available the wh
 
 That's the part that stings most in hindsight. It wasn't a case of misreading ambiguous signals. It was a case of not looking for signals at all.
 
-![SCREENSHOT NEEDED: A real analytics dashboard screenshot showing near-flat usage on an underused feature over several weeks](/images/placeholder-feature-usage-flatline.png)
+![SCREENSHOT NEEDED: A real analytics dashboard screenshot showing near-flat usage on an underused feature over several weeks](/images/placeholder-feature-usage-flatline.webp)
 
 ## What I Skipped, And Why It Felt Fine At The Time
 

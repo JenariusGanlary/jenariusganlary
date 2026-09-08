@@ -3,7 +3,7 @@ title: "The PRD Behind a 5-Day NGO MIS Build: Scoping Sahayog MIS for a Real CSR
 description: "A build-in-public breakdown of the PRD behind Sahayog MIS, a multi-tenant NGO reporting platform scoped for a real CSR pilot with Citizens Foundation, and the tradeoffs behind its 5-day MVP."
 date: "2026-08-06"
 category: "building-in-public"
-thumbnail: "/images/sahayog-mis-prd-cover.png"
+thumbnail: "/images/sahayog-mis-prd-cover.webp"
 ---
 
 Before I wrote a line of Next.js for Sahayog MIS, I spent a full day writing the PRD. Not a one-pager, a complete one: problem statement, org hierarchy, role permissions, data model, approval workflow, MVP scope, tech stack, and a business model. This post is that PRD, walked through, with the reasoning behind each decision — because the decisions were harder than the code turned out to be.
@@ -62,7 +62,7 @@ The **MIS review** is a data-quality gate — someone checks that a photo's GPS 
 
 All five roles share one login page. After authentication, the system reads the user's role and redirects to the correct dashboard — no separate login screen per role, which sounds trivial but removes an entire class of "which portal do I use" support questions before they start.
 
-![Four-stage sequential approval chain from field submission to organization dashboard](/images/sahayog-mis-approval-chain-diagram.png)
+![Four-stage sequential approval chain from field submission to organization dashboard](/images/sahayog-mis-approval-chain-diagram.webp)
 
 [SCREENSHOT NEEDED: MIS preview queue showing a pending Field Mobilizer submission with photo, GPS location, and date awaiting verification]
 
@@ -72,7 +72,7 @@ The data model mirrors the hierarchy, with one addition that took longer to get 
 
 A Project Area's multi-year duration (say, Year 1: March 2025–April 2026) is split into yearly phases, and each phase gets its own set of activities defined fresh by the Project Manager. Activities are not fixed categories — they change year to year, because what a rural development programme does in Year 1 (say, infrastructure assessment) is not what it does in Year 3 (say, livelihood training). Every Field Mobilizer and MIS submission ties back to a specific activity within a specific year, which is what makes the "drill into a Project Area, see full approved history by year and activity" view on the Org Admin dashboard possible without any post-hoc reorganization.
 
-![Five-level data model tree from Organization down to Upload](/images/sahayog-mis-data-model-diagram.png)
+![Five-level data model tree from Organization down to Upload](/images/sahayog-mis-data-model-diagram.webp)
 
 A simplified version of the core schema:
 

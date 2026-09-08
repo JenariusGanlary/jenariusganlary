@@ -3,7 +3,7 @@ title: "How Much to Pay Yourself From a Bootstrapped SaaS"
 description: "How to decide what to pay yourself from a bootstrapped SaaS with no funding, no board, and no VC salary bands to lean on."
 date: "2026-07-24"
 category: "finance-builders"
-thumbnail: "/images/pay-yourself-bootstrapped-saas-cover.png"
+thumbnail: "/images/pay-yourself-bootstrapped-saas-cover.webp"
 ---
 
 Every article I've read about founder salary assumes you have a board, a cap table, or at least a seed round to reference against. "Pre-seed founders average $50K, Series A founders average $100K" — none of that means anything when your entire company is a Stripe account, a few hundred dollars of MRR, and you, deciding at 11pm whether it's okay to move money from the business account to your personal one.
@@ -26,7 +26,7 @@ The mistake I see (and made myself, watching freelance clients do this) is treat
 
 The fix is boring but it works: pay yourself something, however small, on a fixed schedule, and treat it as a real expense line in the business's books — not a withdrawal you'll "true up later." Later never comes cleanly, and by the time you try to reconstruct it, you won't trust your own numbers.
 
-![Two parallel countdown timers labeled Business Runway and Personal Runway ticking down at different speeds](/images/two-runways-diagram.png)
+![Two parallel countdown timers labeled Business Runway and Personal Runway ticking down at different speeds](/images/two-runways-diagram.webp)
 
 ## A Rough Framework by Revenue Stage
 

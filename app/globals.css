@@ -44,6 +44,19 @@ body {
 .prose-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 .prose-body blockquote { border-left: 3px solid var(--accent); padding-left: 1em; font-style: italic; color: var(--mute); margin: 1.5em 0; }
 
+/* In-content images now ship with explicit width/height attributes (added
+   by lib/rehype-image-dimensions.ts) so the browser can reserve their
+   space before they load, fixing layout shift. This rule is what keeps
+   them responsive despite the fixed attributes — without it, an image
+   would render at its native pixel width and could overflow the article
+   column on smaller screens. */
+.prose-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.75em 0;
+}
+
 /* Inline code, e.g. `like this`. Scoped with :not(pre) so it never leaks
    into fenced code blocks below — pre/code inside fences are styled
    separately, with colors driven by rehype-pretty-code/Shiki instead. */
@@ -55,10 +68,6 @@ body {
   font-size: 0.9em;
 }
 
-/* Fenced code blocks (```sql ... ```), processed by rehype-pretty-code at
-   build time. Structural styling (box, spacing, scroll) lives here; token
-   colors and the background come from Shiki's dual-theme CSS variables
-   below, not hardcoded here. */
 .prose-body pre {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -77,14 +86,6 @@ body {
   display: block;
 }
 
-/* Shiki dual-theme colors (rehype-pretty-code theme: { light, dark }).
-   Shiki puts CSS custom properties (--shiki-light, --shiki-light-bg,
-   --shiki-dark, --shiki-dark-bg) directly on the <pre>/<code> elements as
-   inline styles; these rules just decide which pair is visible. The site
-   toggles dark mode via next-themes adding a .dark class to <html>, so we
-   key off that class rather than the prefers-color-scheme media query
-   Shiki's own docs default to.
-*/
 .prose-body pre,
 .prose-body code[data-theme*=" "] {
   color: var(--shiki-light);
@@ -102,14 +103,10 @@ body {
   color: var(--shiki-dark);
 }
 
-/* Lists — Tailwind preflight strips default bullets/numbers, so restore them
-   for article prose. */
 .prose-body ul { list-style: disc; padding-left: 1.5em; margin-bottom: 1.25em; }
 .prose-body ol { list-style: decimal; padding-left: 1.5em; margin-bottom: 1.25em; }
 .prose-body li { margin-bottom: 0.4em; line-height: 1.7; }
 
-/* Tables — GFM comparison tables (via remark-gfm). display:block + overflow
-   lets wide tables scroll horizontally on mobile instead of breaking layout. */
 .prose-body table {
   display: block;
   width: 100%;
@@ -137,10 +134,6 @@ body {
 }
 .prose-body tbody tr:nth-child(even) { background: var(--surface); }
 
-/* Fade-up entrance animation — replaces framer-motion for simple on-load
-   effects (opacity 0->1, y 20px->0) to avoid shipping a ~50KB animation
-   library for something CSS can do natively. Stagger with an inline
-   animation-delay style, e.g. style={{ animationDelay: "0.1s" }}. */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }

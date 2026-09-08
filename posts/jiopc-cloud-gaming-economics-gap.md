@@ -3,7 +3,7 @@ title: "Why JioPC Works But Cloud Gaming in India Doesn't (Yet)"
 description: "JioPC proves Indians will rent cloud compute. Here's why the same pricing model can't yet work for GPU-based cloud gaming in India."
 date: "2026-09-08"
 category: "startups-indie-hacking"
-thumbnail: "/images/jiopc-cloud-gaming-economics-cover.png"
+thumbnail: "/images/jiopc-cloud-gaming-economics-cover.webp"
 ---
 
 On September 2, 2026, Reliance Jio opened JioPC — its cloud-based virtual desktop — to anyone in India with an internet connection, dropping the old requirement that you had to be a JioFiber broadband subscriber to use it. Within two days, half a dozen tech outlets had published some version of the same article: what JioPC is, what it costs, how to sign up. What none of them asked is the question that actually matters if you build software for a living: why can Jio rent out a full desktop's worth of compute for a couple hundred rupees a month, while cloud gaming — a problem that looks superficially identical — is still an unsolved, half-launched category in this country?
@@ -45,7 +45,7 @@ A CPU server handling ten people's document editing and browser tabs is barely b
 
 There's also a build-cost signal hiding in plain sight here. Reliance is arguably the single best-positioned company in India to solve this — it already owns the data centers, the fiber backbone, and a gaming-specific cloud product in JioGames Cloud. And it has kept JioGames Cloud and JioPC as two separate products rather than merging GPU access into the same subscription. If solving GPU-backed cloud compute at CPU-like pricing were straightforward, the company with the most infrastructure to do it cheaply would have done it already. It hasn't, and that's more informative than anything in the JioPC launch coverage itself.
 
-![Side-by-side comparison of CPU cloud compute economics versus GPU cloud gaming economics, showing shared server resources on one side and a dedicated GPU-per-session model on the other](/images/jiopc-cpu-vs-gpu-economics-diagram.png)
+![Side-by-side comparison of CPU cloud compute economics versus GPU cloud gaming economics, showing shared server resources on one side and a dedicated GPU-per-session model on the other](/images/jiopc-cpu-vs-gpu-economics-diagram.webp)
 
 ## Who Each Product Actually Serves, and Where Each One Breaks
 
