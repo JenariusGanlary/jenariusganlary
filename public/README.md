@@ -21,3 +21,31 @@ lines up with IndexNow already being active on this site.
 start failing authentication (HTTP 403) the next time a search engine
 re-checks the key, silently breaking instant-indexing for new posts — not a
 build error, so it wouldn't surface in `npm run build` or deployment logs.
+
+## Image Workflow
+
+### New thumbnail/cover image
+Crop/resize to the site's 1200×675 standard, in place:
+\`\`\`bash
+node scripts/normalize-thumbnail.mjs public/images/your-file.webp
+\`\`\`
+Or fix every thumbnail across all posts that doesn't already match:
+\`\`\`bash
+node scripts/normalize-thumbnail.mjs --all
+\`\`\`
+
+### New in-content image(s)
+Step 1 — preview only, nothing is changed yet:
+\`\`\`bash
+node scripts/compress-images.mjs
+\`\`\`
+Step 2 — actually compress + convert to WebP + rewrite references:
+\`\`\`bash
+node scripts/compress-images.mjs --apply
+\`\`\`
+
+### Before every push
+\`\`\`bash
+npm run build
+\`\`\`
+This auto-runs a thumbnail validation check (`prebuild`) and fails the build if any thumbnail isn't 1200×675. It does **not** check in-content image size — run `compress-images.mjs` manually for those.
