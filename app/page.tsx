@@ -9,7 +9,7 @@ import HeroHeadline from "@/components/HeroHeadline";
 import HomeCategoriesAndLatest from "@/components/HomeCategoriesAndLatest";
 import TerminalCard from "@/components/TerminalCard";
 import ProductCard from "@/components/ProductCard";
-import { PRODUCTS } from "@/lib/products";
+import { PRODUCTS, STARTER_KIT_URL } from "@/lib/products";
 
 export default function Home() {
   const posts = getAllPosts();
@@ -36,6 +36,44 @@ export default function Home() {
             <Link href="/newsletter" className="border border-line text-foreground px-5 py-3 rounded-md text-sm font-medium hover:border-[#34343a] transition">
               Subscribe
             </Link>
+          </div>
+
+          <div className="relative mt-8 md:mt-10 max-w-md">
+            {/* Soft accent glow behind the card — same technique as TerminalCard,
+                reused so this reads as part of the site rather than a bolted-on banner. */}
+            <div
+              className="absolute -inset-4 rounded-2xl pointer-events-none opacity-30 dark:opacity-20"
+              style={{ background: "radial-gradient(circle, #2B6FFF 0%, transparent 70%)" }}
+            />
+            <div className="relative rounded-xl border-2 border-accent/40 bg-gradient-to-br from-accent/10 via-surface to-surface p-5 md:p-6 shadow-sm hover:border-accent hover:shadow-md transition-all">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                <span className="text-[10px] font-mono uppercase tracking-wide text-accent bg-accent/10 px-2 py-0.5 rounded">
+                  Free Download
+                </span>
+              </div>
+              <p className="font-semibold text-foreground mb-1.5">
+                Want to turn your skills into a business?
+              </p>
+              <p className="text-sm text-mute mb-4 leading-relaxed">
+                Grab my free Solopreneur Starter Kit — a practical guide to
+                finding an idea, validating it, building your first product,
+                and figuring out how to make money from it.
+              </p>
+                            <Link
+                href={STARTER_KIT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center gap-2 overflow-hidden bg-accent text-white px-5 py-3 rounded-md text-sm font-semibold hover:opacity-90 transition animate-glow-pulse"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-y-0 left-0 w-1/4 bg-white/25 animate-shimmer-sweep"
+                />
+                <span className="relative">Get the Free Starter Kit</span>
+                <span aria-hidden="true" className="relative">&rarr;</span>
+              </Link>
+            </div>
           </div>
         </div>
 
