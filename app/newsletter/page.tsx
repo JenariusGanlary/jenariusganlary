@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/metadata";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Newsletter",
@@ -30,17 +31,8 @@ export default function NewsletterPage() {
       </div>
 
       <div className="rounded-2xl border border-line bg-surface p-8 md:p-10 mb-10 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-        <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto mb-2">
-          <input
-            placeholder="you@company.com"
-            aria-label="Email address"
-            className="flex-1 bg-transparent border border-line rounded-md px-4 py-3 text-sm text-foreground focus:outline-none focus:border-accent transition-colors"
-          />
-          <button className="bg-accent text-white px-5 py-3 rounded-md text-sm font-semibold hover:opacity-90 transition">
-            Subscribe
-          </button>
-        </div>
-        <p className="text-xs text-mute">No spam. Unsubscribe anytime.</p>
+        <NewsletterForm />
+        <p className="text-xs text-mute mt-2">No spam. Unsubscribe anytime.</p>
       </div>
 
       <div className="text-left max-w-sm mx-auto space-y-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>

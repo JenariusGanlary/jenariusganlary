@@ -9,7 +9,8 @@ import HeroHeadline from "@/components/HeroHeadline";
 import HomeCategoriesAndLatest from "@/components/HomeCategoriesAndLatest";
 import TerminalCard from "@/components/TerminalCard";
 import ProductCard from "@/components/ProductCard";
-import { PRODUCTS, STARTER_KIT_URL } from "@/lib/products";
+import { PRODUCTS } from "@/lib/products";
+import NewsletterForm from "@/components/NewsletterForm";
 
 export default function Home() {
   const posts = getAllPosts();
@@ -60,7 +61,7 @@ export default function Home() {
                 finding an idea, validating it, building your first product,
                 and figuring out how to make money from it.
               </p>
-                                          <Link
+              <Link
                 href="/starter-kit"
                 className="group relative inline-flex items-center gap-2 overflow-hidden bg-accent text-white px-5 py-3 rounded-md text-sm font-semibold hover:opacity-90 transition animate-glow-pulse"
               >
@@ -202,16 +203,7 @@ export default function Home() {
         <div className="rounded-2xl border-2 border-line bg-surface p-6 md:p-12 text-center shadow-sm">
           <h2 className="text-2xl md:text-3xl font-bold mb-3 text-foreground">Join the newsletter.</h2>
           <p className="text-mute mb-6 md:mb-8">Weekly insights. No spam. Just value.</p>
-          <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-2">
-            <input
-              placeholder="you@company.com"
-              aria-label="Email address"
-              className="flex-1 bg-transparent border border-line rounded-md px-4 py-3 text-sm text-foreground"
-            />
-            <button className="bg-accent text-white px-5 py-3 rounded-md text-sm font-semibold hover:opacity-90 transition">
-              Subscribe
-            </button>
-          </div>
+          <NewsletterForm />
         </div>
       </section>
     </div>
