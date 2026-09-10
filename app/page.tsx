@@ -60,10 +60,8 @@ export default function Home() {
                 finding an idea, validating it, building your first product,
                 and figuring out how to make money from it.
               </p>
-                            <Link
-                href={STARTER_KIT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                                          <Link
+                href="/starter-kit"
                 className="group relative inline-flex items-center gap-2 overflow-hidden bg-accent text-white px-5 py-3 rounded-md text-sm font-semibold hover:opacity-90 transition animate-glow-pulse"
               >
                 <span
