@@ -16,13 +16,11 @@ const subscribeSchema = z.object({
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 
-// Optional: create a Segment in the Resend dashboard (Contacts → Segments)
-// and set its ID here so the Starter Kit form and the newsletter form feed
-// one shared list, distinguished by the `source` property below. Contacts
-// still get created fine without this — segment assignment is additive.
 const SEGMENT_ID = process.env.RESEND_SEGMENT_ID;
 
-type Properties = { key: string; value: string }[];
+const STARTER_KIT_EVENT_NAME = "starter_kit_signup";
+
+type Properties = Record<string, string>;
 
 function buildProperties(input: {
   source: string;
@@ -32,15 +30,15 @@ function buildProperties(input: {
   utmCampaign?: string;
   utmContent?: string;
 }): Properties {
-  const properties: Properties = [
-    { key: "source", value: input.source },
-    { key: "createdAt", value: new Date().toISOString() },
-  ];
-  if (input.sourcePage) properties.push({ key: "sourcePage", value: input.sourcePage });
-  if (input.utmSource) properties.push({ key: "utmSource", value: input.utmSource });
-  if (input.utmMedium) properties.push({ key: "utmMedium", value: input.utmMedium });
-  if (input.utmCampaign) properties.push({ key: "utmCampaign", value: input.utmCampaign });
-  if (input.utmContent) properties.push({ key: "utmContent", value: input.utmContent });
+  const properties: Properties = {
+    source: input.source,
+    createdAt: new Date().toISOString(),
+  };
+  if (input.sourcePage) properties.sourcePage = input.sourcePage;
+  if (input.utmSource) properties.utmSource = input.utmSource;
+  if (input.utmMedium) properties.utmMedium = input.utmMedium;
+  if (input.utmCampaign) properties.utmCampaign = input.utmCampaign;
+  if (input.utmContent) properties.utmContent = input.utmContent;
   return properties;
 }
 
@@ -99,12 +97,6 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify(payload),
     });
 
-    // Resubscribing is a normal, expected action — if the contact already
-    // exists, update it instead of treating this as a failure. NOTE: Resend's
-    // exact "already exists" error shape hasn't been confirmed against a
-    // live account yet, so this checks loosely (status + message text).
-    // Worth verifying — and tightening this check — on the first real
-    // duplicate signup.
     if (!res.ok) {
       const errText = await res.text();
       const looksLikeDuplicate = res.status === 409 || /already exists/i.test(errText);
@@ -132,6 +124,25 @@ export async function POST(req: NextRequest) {
       const errText = await res.text();
       console.error("Resend error (update contact):", errText);
       return NextResponse.json({ error: "Failed to subscribe" }, { status: 500 });
+    }
+
+    if (source === "starter_kit") {
+      const eventRes = await fetch("https://api.resend.com/events/send", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          event: STARTER_KIT_EVENT_NAME,
+          email,
+        }),
+      });
+
+      if (!eventRes.ok) {
+        const errText = await eventRes.text();
+        console.error("Resend error (trigger automation event):", errText);
+      }
     }
 
     return NextResponse.json({ ok: true });
