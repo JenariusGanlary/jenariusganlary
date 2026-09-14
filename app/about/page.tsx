@@ -27,6 +27,7 @@ const skills = [
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/JenariusGanlary", external: true },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/jenarius-ganlary/", external: true },
+  { label: "X", href: "https://x.com/jenariusdev", external: true },
   { label: "Email", href: "mailto:hello@jenariusganlary.com", external: false },
 ];
 
