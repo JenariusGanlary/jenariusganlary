@@ -3,7 +3,7 @@ title: "AutoGTM by Explee Review: AI Cold Outreach for Freelancers"
 description: "I signed up for AutoGTM by Explee to find freelance leads. Here's what actually happens in the first 48 hours, pricing included."
 date: "2026-09-14"
 category: "saas-ai-tools"
-thumbnail: "/images/autogtm-explee-review-cover.png"
+thumbnail: "/images/autogtm-explee-review-cover.webp"
 ---
 
 AutoGTM by [Explee](https://explee.com/auto-gtm/x/2vj9p0wm7b) is an AI agent that takes your website's domain and tries to run your entire cold outreach pipeline for you — research, targeting, writing, sending, and follow-ups — without you touching a CRM, a DNS setting, or a spreadsheet of scraped leads. I signed up for it this week to find freelance leads for my own web development work, and the thing that actually surprised me wasn't the AI writing part. It was how much infrastructure it quietly removes from the process. Here's exactly what happened when I set it up, what it costs, and what the first email it actually sent looked like.
