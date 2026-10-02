@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -7,8 +8,6 @@ import ReadingProgress from "@/components/ReadingProgress";
 import CookieConsent from "@/components/CookieConsent";
 import AnalyticsScripts from "@/components/AnalyticsScripts";
 import ChatWidget from "@/components/ChatWidget";
-import MonetagAds from "@/components/MonetagAds";
-import MonetagVignette from "@/components/MonetagVignette";
 import { ThemeProvider } from "next-themes";
 import {
   buildPageMetadata,
@@ -18,16 +17,33 @@ import {
   SITE_DESCRIPTION,
 } from "@/lib/metadata";
 
-const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-display" });
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  ...buildPageMetadata({ description: SITE_DESCRIPTION, path: "/" }),
+  ...buildPageMetadata({
+    description: SITE_DESCRIPTION,
+    path: "/",
+  }),
   title: {
     default: SITE_TITLE,
     template: `%s | ${SITE_NAME}`,
+  },
+  other: {
+    "google-adsense-account": "ca-pub-4240391525576407",
   },
 };
 
@@ -44,22 +60,44 @@ const websiteJsonLd = {
   inLanguage: "en-US",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${inter.variable} ${mono.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-sans">
         <script
           id="website-jsonld"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
+          }}
         />
+
+        <Script
+          id="adsense-verification"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4240391525576407"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
+
         <AnalyticsScripts />
-        <MonetagAds />
-        <MonetagVignette />
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
           <ReadingProgress />
           <Header />
-          <main className="max-w-6xl mx-auto px-4 py-10 min-h-screen">{children}</main>
+          <main className="max-w-6xl mx-auto px-4 py-10 min-h-screen">
+            {children}
+          </main>
           <Footer />
           <CookieConsent />
           <ChatWidget />

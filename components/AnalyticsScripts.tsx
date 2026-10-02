@@ -8,7 +8,6 @@ import {
 } from "@/lib/cookie-consent";
 
 const GA_MEASUREMENT_ID = "G-YWGV9NL8Q0";
-const ADSENSE_CLIENT_ID = "ca-pub-4240391525576407";
 
 export default function AnalyticsScripts() {
   const [allowed, setAllowed] = useState(false);
@@ -22,7 +21,10 @@ export default function AnalyticsScripts() {
     }
 
     window.addEventListener(CONSENT_CHANGE_EVENT, handleChange);
-    return () => window.removeEventListener(CONSENT_CHANGE_EVENT, handleChange);
+
+    return () => {
+      window.removeEventListener(CONSENT_CHANGE_EVENT, handleChange);
+    };
   }, []);
 
   if (!allowed) return null;
@@ -41,17 +43,6 @@ export default function AnalyticsScripts() {
           gtag('config', '${GA_MEASUREMENT_ID}');
         `}
       </Script>
-      {/* AdSense only ever mounts once consent === "accepted" (the `allowed`
-          check above already gates this whole component's return). Moved
-          from layout.tsx and switched from beforeInteractive to
-          afterInteractive — it doesn't need to block hydration, and
-          Google's crawler/site-verification doesn't require it either. */}
-      <Script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
     </>
   );
 }
